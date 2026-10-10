@@ -23,6 +23,7 @@ async function bootstrap() {
     .setTitle('E-Commerce API')
     .setVersion('1.0')
     .addServer('http://localhost:3000')
+    .addServer(`${process.env.BASE_URL}`)
     .addSecurity('bearer', { type: 'http', scheme: 'bearer' })
     .addBearerAuth()
     .build();
@@ -30,7 +31,7 @@ async function bootstrap() {
     app,
     swagger,
   );
-  SwaggerModule.setup('/api-docs', app, documentation);
+  SwaggerModule.setup('api-docs', app, documentation);
 
   await app.listen(process.env.PORT ?? 3000);
 }
