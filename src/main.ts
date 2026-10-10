@@ -22,16 +22,21 @@ async function bootstrap() {
   const swagger = new DocumentBuilder()
     .setTitle('E-Commerce API')
     .setVersion('1.0')
-    .addServer('http://localhost:3000')
-    .addServer(`${process.env.BASE_URL}`)
-    .addSecurity('bearer', { type: 'http', scheme: 'bearer' })
+    .addServer('/')
     .addBearerAuth()
     .build();
+
   const documentation = SwaggerModule.createDocument(
     app,
     swagger,
   );
-  SwaggerModule.setup('api-docs', app, documentation);
+
+  SwaggerModule.setup('api-docs', app, documentation, {
+    jsonDocumentUrl: 'api-docs-json',
+    swaggerOptions: {
+      url: 'api-docs-json',
+    },
+  });
 
   await app.listen(process.env.PORT ?? 3000);
 }
