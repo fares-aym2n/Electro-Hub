@@ -1,15 +1,32 @@
 # E-Commerce RESTful API
 
+<<<<<<< HEAD
 A modular, production-ready RESTful API built with **NestJS**, **TypeScript**, **PostgreSQL**, and **TypeORM**. The application powers an e-commerce platform with token-based authentication, email verification, password recovery, role-based authorization (Admin / User), paginated product catalog management with dynamic filters, customer reviews, secure file uploads via Multer, and automated transactional emails.
 
 - **Live API Documentation:** [Swagger UI](https://nest-js-course1.vercel.app/api-docs)
 - **Production Base URL:** `https://nest-js-course1.vercel.app`
 - **GitHub Repository:** [fares-aym2n/Nest.js-Course](https://github.com/fares-aym2n/Nest.js-Course)
+=======
+<p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+<p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+<a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+<a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+</p>
+>>>>>>> fb0da93047b321bf17ab262aec28035e85f77d5b
 
 ---
 
 ## Table of Contents
 
+<<<<<<< HEAD
 - [Features](#features)
 - [Technologies](#technologies)
 - [Project Structure](#project-structure)
@@ -22,6 +39,13 @@ A modular, production-ready RESTful API built with **NestJS**, **TypeScript**, *
 - [API Documentation](#api-documentation)
 - [API Endpoints](#api-endpoints)
 - [Authentication Guide & Examples](#authentication-guide--examples)
+=======
+## API Documentation
+
+Live Swagger docs: [https://nest-js-course1.vercel.app/api-docs](https://nest-js-course1.vercel.app/api-docs)
+
+## Project setup
+>>>>>>> fb0da93047b321bf17ab262aec28035e85f77d5b
 
 ---
 
@@ -223,6 +247,7 @@ npm run migration:revert
 
 > **Note:** The `TypeORM` CLI script compiles the code into `dist/` before executing the migration runner via `dist/db/data-source.js`.
 
+<<<<<<< HEAD
 ---
 
 ## Running the Application
@@ -257,6 +282,9 @@ npx oxlint
 ## Testing
 
 The project includes unit tests, DTO validations, controller/service mocks, and end-to-end (E2E) integration tests using Jest and Supertest.
+=======
+Check the [deployment documentation](https://docs.nestjs.com/deployment) for production best practices. You can also deploy to AWS with [Mau](https://mau.nestjs.com):
+>>>>>>> fb0da93047b321bf17ab262aec28035e85f77d5b
 
 ```bash
 # Run unit and integration tests
@@ -272,6 +300,7 @@ npm run test:cov
 npm run test:e2e
 ```
 
+<<<<<<< HEAD
 ---
 
 ## API Documentation
@@ -282,9 +311,15 @@ Interactive API documentation is generated via Swagger (OpenAPI 3.0) and served 
 - **Live Documentation:** [https://nest-js-course1.vercel.app/api-docs](https://nest-js-course1.vercel.app/api-docs)
 
 ---
+=======
+## Observability
+
+[NestJS Observe](https://observe.nestjs.com) auto-instruments your app with distributed tracing, metrics, logging, error tracking, and alerts.
+>>>>>>> fb0da93047b321bf17ab262aec28035e85f77d5b
 
 ## API Endpoints
 
+<<<<<<< HEAD
 ### 1. System Health
 | Method | Endpoint | Access | Description |
 | --- | --- | --- | --- |
@@ -463,6 +498,21 @@ curl -X POST http://localhost:3000/api/users/me/upload_image \
 ```
 
 ---
+=======
+- [NestJS Documentation](https://docs.nestjs.com)
+- [Discord channel](https://discord.gg/G7Qnnhy)
+- [Official video courses](https://courses.nestjs.com/)
+- [NestJS Devtools](https://devtools.nestjs.com)
+- [Enterprise support](https://enterprise.nestjs.com)
+
+## Author
+
+**Fares Ayman**
+Backend Developer (Node.js)
+
+- GitHub: [fares-ayman100](https://github.com/fares-ayman100)
+- LinkedIn: [fares-ayman1](https://linkedin.com/in/fares-ayman1/)
+>>>>>>> fb0da93047b321bf17ab262aec28035e85f77d5b
 
 ## License
 
