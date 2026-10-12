@@ -108,12 +108,21 @@ describe('UserController', () => {
         password: 'password123',
       };
       const expectedResult = { token: 'jwt.token.here' };
+      const res = { cookie: jest.fn() } as unknown as Response;
       mockUserService.login.mockResolvedValue(expectedResult);
 
-      const result = await userController.login(dto);
+      const result = await userController.login(dto, res);
 
       expect(mockUserService.login).toHaveBeenCalledWith(dto);
       expect(mockUserService.login).toHaveBeenCalledTimes(1);
+      expect(res.cookie).toHaveBeenCalledWith(
+        'token',
+        expectedResult.token,
+        expect.objectContaining({
+          httpOnly: true,
+          secure: false,
+        }),
+      );
       expect(result).toEqual(expectedResult);
     });
 
@@ -122,13 +131,14 @@ describe('UserController', () => {
         email: 'test@example.com',
         password: 'wrongpassword',
       };
+      const res = { cookie: jest.fn() } as unknown as Response;
       mockUserService.login.mockRejectedValue(
         new BadRequestException('Incorrect in email or password'),
       );
 
-      await expect(userController.login(dto)).rejects.toThrow(
-        BadRequestException,
-      );
+      await expect(
+        userController.login(dto, res),
+      ).rejects.toThrow(BadRequestException);
     });
   });
 
@@ -282,7 +292,10 @@ describe('UserController', () => {
 
   describe('updateMe', () => {
     it('should call userService.update with payload id and dto', async () => {
-      const dto: updateTDO = { username: 'newname' };
+      const dto: updateTDO = {
+        username: 'newname',
+        password: '',
+      };
       const updatedUser = { id: 1, username: 'newname' };
       mockUserService.update.mockResolvedValue(updatedUser);
 

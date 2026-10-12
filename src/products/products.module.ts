@@ -15,7 +15,6 @@ import { Category } from '../categories/entities/category.entity';
   imports: [
     TypeOrmModule.forFeature([Product, Review, Category]),
     UserModule,
-
     JwtModule,
   ],
   exports: [ProductService],

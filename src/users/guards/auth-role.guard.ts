@@ -27,9 +27,14 @@ export class AuthRolesGuard implements CanActivate {
     if (!roles || roles.length == 0) return false;
 
     const request: Request = context.switchToHttp().getRequest();
-    const [type, token] =
+
+    const [type, headerToken] =
       request.headers.authorization?.split(' ') ?? [];
-    if (type === 'Bearer' && token) {
+
+    const token =
+      request.cookies?.token ??
+      (type === 'Bearer' ? headerToken : undefined);
+    if (token) {
       try {
         const payload: payloadTypes =
           await this.jwtService.verifyAsync(token, {

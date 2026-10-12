@@ -48,8 +48,21 @@ export class UserController {
   // POST: ~/api/users/auth/login
   @HttpCode(200)
   @Post('/auth/login')
-  public login(@Body() body: loginTDO) {
-    return this.userService.login(body);
+  public async login(
+    @Body() body: loginTDO,
+    @Res({ passthrough: true }) res: Response,
+  ) {
+    const result = await this.userService.login(body);
+
+    if ('token' in result) {
+      res.cookie('token', result.token, {
+        httpOnly: true,
+        secure: false,
+        sameSite: 'lax',
+        maxAge: 24 * 60 * 60 * 1000,
+      });
+    }
+    return result;
   }
 
   // GET: ~/api/users/auth/verify-email/:userId/:verificationToken

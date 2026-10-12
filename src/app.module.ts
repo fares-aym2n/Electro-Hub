@@ -48,8 +48,6 @@ import { CategoriesModule as CategoryModule } from './categories/categories.modu
     }),
 
     CategoryModule,
-
-    CategoryModule,
   ],
   providers: [
     {
