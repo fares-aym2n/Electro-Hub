@@ -11,7 +11,7 @@ import {
 } from 'class-validator';
 import { ApiPropertyOptional } from '@nestjs/swagger';
 
-export class UpdateProductDTO {
+export class updateProductDTO {
   @IsString()
   @Length(3, 150)
   @IsNotEmpty()

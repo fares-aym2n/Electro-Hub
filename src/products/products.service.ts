@@ -1,12 +1,12 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { createProductDTO } from './dto/create-product.dto';
-import { updateProductTDO } from './dto/update-product.dto';
 import { Repository } from 'typeorm';
 import { Product } from './products.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserService } from '../users/users.service';
 import { filterObj } from '../utils/filterQuery';
 import { Review } from '../reviews/reviews.entity';
+import { createProductDTO } from './dto/create-product.dto';
+import { updateProductDTO } from './dto/update-product.dto';
 
 @Injectable()
 export class ProductService {
@@ -83,7 +83,7 @@ export class ProductService {
    */
   public async updateOneBy(
     id: number,
-    dto: updateProductTDO,
+    dto: updateProductDTO,
   ): Promise<Product> {
     const product = await this.getOneBy(id);
     product.name = dto.name ?? product.name;

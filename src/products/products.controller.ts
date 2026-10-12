@@ -12,8 +12,6 @@ import {
   UseGuards,
 } from '@nestjs/common';
 
-import { createProductDTO } from './dto/create-product.dto';
-import { updateProductTDO } from './dto/update-product.dto';
 import { ProductService } from './products.service';
 import { Roles } from '../users/decorators/user-roles.decorator';
 import { AuthRolesGuard } from '../users/guards/auth-role.guard';
@@ -21,6 +19,8 @@ import { UserTypes } from '../utils/user-types';
 import { CurrentUser } from '../users/decorators/auth.decorator';
 import type { payloadTypes } from '../utils/payload';
 import { ApiQuery, ApiSecurity } from '@nestjs/swagger';
+import { createProductDTO } from './dto/create-product.dto';
+import { updateProductDTO } from './dto/update-product.dto';
 
 @Controller('/api/products')
 export class ProductController {
@@ -93,7 +93,7 @@ export class ProductController {
   @ApiSecurity('bearer')
   public updateProduct(
     @Param('id', ParseIntPipe) id: number,
-    @Body() body: updateProductTDO,
+    @Body() body: updateProductDTO,
   ) {
     return this.productService.updateOneBy(id, body);
   }

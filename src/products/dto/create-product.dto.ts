@@ -7,7 +7,6 @@ import {
   MinLength,
   IsInt,
   IsBoolean,
-  IsUrl,
   IsOptional,
 } from 'class-validator';
 import {
@@ -15,7 +14,7 @@ import {
   ApiPropertyOptional,
 } from '@nestjs/swagger';
 
-export class CreateProductDTO {
+export class createProductDTO {
   @IsString()
   @Length(3, 150)
   @IsNotEmpty()
