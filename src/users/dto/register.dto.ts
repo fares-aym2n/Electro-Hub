@@ -1,14 +1,12 @@
 import {
   IsEmail,
   IsNotEmpty,
-  IsOptional,
   Length,
   MaxLength,
 } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class registerTDO {
-  @IsOptional()
   @Length(2, 150)
   @IsNotEmpty()
   @ApiProperty({ example: 'test-user' })

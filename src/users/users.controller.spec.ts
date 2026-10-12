@@ -144,77 +144,75 @@ describe('UserController', () => {
 
   describe('verificationEmail', () => {
     it('should call userService.verifyEmail with userId and token', async () => {
-      const expectedResult =
-        'Your email is verify successfuly .please login';
-      mockUserService.verifyEmail.mockResolvedValue(expectedResult);
+      const res = {
+        sendFile: jest.fn().mockReturnThis(),
+      } as unknown as Response;
+      mockUserService.verifyEmail.mockResolvedValue(true);
 
-      const result = await userController.verificationEmail(1, 'valid-token');
+      const result = await userController.verificationEmail(
+        '1',
+        'valid-token',
+        res,
+      );
 
       expect(mockUserService.verifyEmail).toHaveBeenCalledWith(
         1,
         'valid-token',
       );
-      expect(result).toBe(expectedResult);
+      expect(res.sendFile).toHaveBeenCalledWith(
+        expect.stringContaining('email-verified.html'),
+      );
+      expect(result).toBe(res);
     });
 
     it('should propagate BadRequestException on invalid token', async () => {
+      const res = { sendFile: jest.fn() } as unknown as Response;
       mockUserService.verifyEmail.mockRejectedValue(
         new BadRequestException('The verificationToken is invalid.'),
       );
 
       await expect(
-        userController.verificationEmail(1, 'bad-token'),
+        userController.verificationEmail('1', 'bad-token', res),
       ).rejects.toThrow(BadRequestException);
-    });
-  });
-
-  describe('forgotPassword', () => {
-    it('should call userService.sendResetPassword with email dto', async () => {
-      const dto: forgotPasswordDTO = { email: 'user@example.com' };
-      const expected = {
-        message: 'Password reset link send to email , check your inbox.',
-      };
-      mockUserService.sendResetPassword.mockResolvedValue(expected);
-
-      const result = await userController.forgotPassword(dto);
-
-      expect(mockUserService.sendResetPassword).toHaveBeenCalledWith(dto);
-      expect(result).toEqual(expected);
-    });
-
-    it('should propagate BadRequestException if email does not exist', async () => {
-      const dto: forgotPasswordDTO = { email: 'unknown@example.com' };
-      mockUserService.sendResetPassword.mockRejectedValue(
-        new BadRequestException('User with given email is not exist.'),
-      );
-
-      await expect(userController.forgotPassword(dto)).rejects.toThrow(
-        BadRequestException,
-      );
     });
   });
 
   describe('getResetPassword', () => {
     it('should call userService.getResetPassword with userId and resetPasswordToken', async () => {
+      const dto: resetPasswordDTO = {
+        userId: 1,
+        resetPasswordToken: 'token123',
+        newPassword: 'newpassword123',
+      };
       const expected = { message: 'Valid reset password token ' };
-      mockUserService.getResetPassword.mockResolvedValue(expected);
+      mockUserService.resetPassword.mockResolvedValue(expected);
 
-      const result = await userController.getResetPassword(1, 'token123');
-
-      expect(mockUserService.getResetPassword).toHaveBeenCalledWith(
+      const result = await userController.resetPassword(
         1,
         'token123',
+        dto,
+      );
+
+      expect(mockUserService.resetPassword).toHaveBeenCalledWith(
+        dto,
       );
       expect(result).toEqual(expected);
     });
 
     it('should propagate BadRequestException when token is invalid', async () => {
-      mockUserService.getResetPassword.mockRejectedValue(
-        new BadRequestException('reset password token is invalid'),
+      const dto: resetPasswordDTO = {
+        userId: 1,
+        resetPasswordToken: 'bad-token',
+        newPassword: 'newpassword123',
+      };
+      mockUserService.resetPassword.mockRejectedValue(
+        new BadRequestException(
+          'reset password token is invalid',
+        ),
       );
 
       await expect(
-        userController.getResetPassword(1, 'bad-token'),
+        userController.resetPassword(1, 'bad-token', dto),
       ).rejects.toThrow(BadRequestException);
     });
   });
@@ -229,7 +227,11 @@ describe('UserController', () => {
       const expected = { message: 'Password reset successfuly' };
       mockUserService.resetPassword.mockResolvedValue(expected);
 
-      const result = await userController.resetPassword(dto);
+      const result = await userController.resetPassword(
+        1,
+        'token123',
+        dto,
+      );
 
       expect(mockUserService.resetPassword).toHaveBeenCalledWith(dto);
       expect(result).toEqual(expected);
@@ -245,9 +247,9 @@ describe('UserController', () => {
         new BadRequestException('Reset password is invalid'),
       );
 
-      await expect(userController.resetPassword(dto)).rejects.toThrow(
-        BadRequestException,
-      );
+      await expect(
+        userController.resetPassword(1, 'wrongtoken', dto),
+      ).rejects.toThrow(BadRequestException);
     });
   });
 

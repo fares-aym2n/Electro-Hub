@@ -50,6 +50,12 @@ describe('UserService', () => {
     };
   };
 
+  const createMockFile = (name: string, mimeType: string) =>
+    ({
+      originalname: name,
+      mimetype: mimeType,
+    }) as Express.Multer.File;
+
   const mockUserRepository = {
     find: jest.fn(),
     findOne: jest.fn(),
@@ -196,6 +202,7 @@ describe('UserService', () => {
 
       const dto: updateTDO = {
         username: 'new_name_only',
+        password: '',
       };
 
       const result = await userService.update(1, dto);
@@ -215,6 +222,7 @@ describe('UserService', () => {
 
       const dto: updateTDO = {
         password: 'new_password',
+        username: '',
       };
 
       const result = await userService.update(1, dto);
@@ -227,8 +235,13 @@ describe('UserService', () => {
       mockUserRepository.findOne.mockResolvedValue(null);
 
       await expect(
-        userService.update(999, { username: 'test' }),
-      ).rejects.toThrow(new NotFoundException('User is not found'));
+        userService.update(999, {
+          username: 'test',
+          password: '',
+        }),
+      ).rejects.toThrow(
+        new NotFoundException('User is not found'),
+      );
     });
   });
 
@@ -307,10 +320,11 @@ describe('UserService', () => {
   describe('setProfileImage', () => {
     it('should set profile image directly if user has no existing profile image', async () => {
       const user = createMockUser({ profile_image: null });
+      const file = createMockFile('new-avatar.png', 'image/png');
       mockUserRepository.findOne.mockResolvedValue(user);
       mockUserRepository.save.mockImplementation((u) => Promise.resolve(u));
 
-      const result = await userService.setProfileImage(1, 'new-avatar.png');
+      const result = await userService.setProfileImage(1, file);
 
       expect(user.profile_image).toBe('new-avatar.png');
       expect(mockUserRepository.save).toHaveBeenCalledWith(user);
@@ -319,10 +333,11 @@ describe('UserService', () => {
 
     it('should delete previous profile image and set new one if user already has one', async () => {
       const user = createMockUser({ profile_image: 'old-avatar.png' });
+      const file = createMockFile('new-avatar.png', 'image/png');
       mockUserRepository.findOne.mockResolvedValue(user);
       mockUserRepository.save.mockImplementation((u) => Promise.resolve(u));
 
-      const result = await userService.setProfileImage(1, 'new-avatar.png');
+      const result = await userService.setProfileImage(1, file);
 
       expect(fs.unlinkSync).toHaveBeenCalled();
       expect(user.profile_image).toBe('new-avatar.png');

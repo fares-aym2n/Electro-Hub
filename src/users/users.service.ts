@@ -1,6 +1,5 @@
 import {
   BadRequestException,
-  Controller,
   ForbiddenException,
   Injectable,
   NotFoundException,
@@ -10,23 +9,20 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './users.entity';
 import { Repository } from 'typeorm';
 import { loginTDO } from './dto/login.dto';
-import { JwtService } from '@nestjs/jwt';
 import { payloadTypes } from '../utils/payload';
 import { updateTDO } from './dto/update.dto';
 import { AuthService } from './auth.service';
-import path from 'path';
-import { cwd } from 'process';
-import { unlinkSync } from 'fs';
 import { forgotPasswordDTO } from './dto/forgot-password.dto';
 import { resetPasswordDTO } from './dto/reset-password.dto';
+import { CloudinaryService } from '../cloudinary/cloudinary.service';
+
 @Injectable()
-@Controller()
 export class UserService {
   constructor(
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
-    private readonly jwtService: JwtService,
     private readonly authService: AuthService,
+    private readonly cloudinaryService: CloudinaryService,
   ) {}
 
   /**
@@ -127,15 +123,13 @@ export class UserService {
    */
   public async getProfileImage(id: number): Promise<string> {
     const user = await this.getCurrentUser(id);
+
     if (!user.profile_image) {
       throw new NotFoundException(
         'The profile image is not found',
       );
     }
-    return path.join(
-      cwd(),
-      `/images/users/${user.profile_image}`,
-    );
+    return user.profile_image;
   }
 
   /**
@@ -146,16 +140,51 @@ export class UserService {
    */
   public async setProfileImage(
     id: number,
-    profileImage: string,
+    file: Express.Multer.File,
   ): Promise<User> {
-    const user = await this.getCurrentUser(id);
-    if (user.profile_image === null) {
-      user.profile_image = profileImage;
-    } else {
-      await this.deleteProfileImage(id);
-      user.profile_image = profileImage;
+    if (!file) {
+      throw new BadRequestException('Profile image is required');
     }
-    return this.userRepository.save(user);
+
+    if (!file.mimetype.startsWith('image/')) {
+      throw new BadRequestException(
+        'Only image files are allowed',
+      );
+    }
+
+    const user = await this.getCurrentUser(id);
+
+    // Upload the new image first.
+    const newImageUrl =
+      await this.cloudinaryService.uploadImage(file);
+    const oldImageUrl = user.profile_image;
+
+    user.profile_image = newImageUrl;
+
+    try {
+      const savedUser = await this.userRepository.save(user);
+
+      // Delete the old Cloudinary image after saving the new URL.
+      if (oldImageUrl && oldImageUrl !== newImageUrl) {
+        try {
+          await this.cloudinaryService.deleteImage(oldImageUrl);
+        } catch {
+          // The new image is saved; a failed old-image deletion
+          // should not undo the successful update.
+        }
+      }
+
+      return savedUser;
+    } catch (error) {
+      // Avoid leaving the newly uploaded image behind if saving fails.
+      try {
+        await this.cloudinaryService.deleteImage(newImageUrl);
+      } catch {
+        // Keep the original database error.
+      }
+
+      throw error;
+    }
   }
 
   /**
@@ -165,41 +194,55 @@ export class UserService {
    */
   public async deleteProfileImage(id: number): Promise<string> {
     const user = await this.getCurrentUser(id);
-    if (user.profile_image === null) {
+
+    if (!user.profile_image) {
       throw new BadRequestException(
         'The image is already removed',
       );
     }
-    const imagePath = path.join(
-      cwd(),
-      `/images/users/${user.profile_image}`,
-    );
-    unlinkSync(imagePath);
-    user.profile_image = null;
 
+    const imageUrl = user.profile_image;
+
+    // Clear the database reference first.
+    user.profile_image = null;
     await this.userRepository.save(user);
-    return 'Image removed successfuly';
+
+    try {
+      await this.cloudinaryService.deleteImage(imageUrl);
+    } catch {
+      // The database reference is cleared, but the Cloudinary
+      // asset may need manual cleanup if deletion fails.
+    }
+
+    return 'Image removed successfully';
   }
+
   public async verifyEmail(
     userId: number,
     verificationToken: string,
-  ) {
+  ): Promise<boolean> {
     const user = await this.getCurrentUser(userId);
+
     if (user.verificationToken === null) {
       throw new NotFoundException(
         'The verificationToken is not provided.',
       );
     }
+
     if (user.verificationToken !== verificationToken) {
       throw new BadRequestException(
         'The verificationToken is invalid.',
       );
     }
+
     user.isEmailValidation = true;
     user.verificationToken = null;
+
     await this.userRepository.save(user);
+
     return true;
   }
+
   /**
    * send Reset Password Email
    * @param email user emil

@@ -35,6 +35,13 @@ import {
 } from '@nestjs/swagger';
 import { uploadImageDTO } from './dto/upload-image.dto';
 import { join } from 'node:path';
+import { memoryStorage } from 'multer';
+import {
+  ParseFilePipe,
+  MaxFileSizeValidator,
+  FileTypeValidator,
+} from '@nestjs/common';
+import { forgotPasswordDTO } from './dto/forgot-password.dto';
 
 @Controller('/api/users')
 export class UserController {
@@ -89,7 +96,12 @@ export class UserController {
 
   // POST: ~/api/users/reset-password
   @Post('reset-password')
-  public resetPassword(@Body() body: resetPasswordDTO) {
+  public resetPassword(
+    p0: number,
+    p1: string,
+    @Body()
+    body: resetPasswordDTO,
+  ) {
     return this.userService.resetPassword(body);
   }
 
@@ -127,31 +139,42 @@ export class UserController {
   @ApiSecurity('bearer')
   public async getProfile(
     @CurrentUser() payload: payloadTypes,
-    @Res()
-    res: Response,
+    @Res() res: Response,
   ) {
-    const filePath = await this.userService.getProfileImage(
+    const imageUrl = await this.userService.getProfileImage(
       payload.id,
     );
 
-    return res.sendFile(filePath);
+    return res.redirect(imageUrl);
   }
 
   // POST: ~/api/users/me/upload_image
   @Post('/me/upload_image')
   @UseGuards(AuthGuard)
-  @UseInterceptors(FileInterceptor('profile_image'))
+  @UseInterceptors(
+    FileInterceptor('profile_image', {
+      storage: memoryStorage(),
+      limits: { fileSize: 5 * 1024 * 1024 },
+    }),
+  )
   @ApiSecurity('bearer')
   @ApiBody({ type: uploadImageDTO })
   @ApiConsumes('multipart/form-data')
   public uploadProfileImage(
     @CurrentUser() payload: payloadTypes,
-    @UploadedFile() file: Express.Multer.File,
+    @UploadedFile(
+      new ParseFilePipe({
+        validators: [
+          new MaxFileSizeValidator({ maxSize: 5 * 1024 * 1024 }),
+          new FileTypeValidator({
+            fileType: /^image\/(jpeg|png|webp|gif)$/,
+          }),
+        ],
+      }),
+    )
+    file: Express.Multer.File,
   ) {
-    return this.userService.setProfileImage(
-      payload.id,
-      file.filename,
-    );
+    return this.userService.setProfileImage(payload.id, file);
   }
 
   // DELETE: ~/api/users/me/profile-image

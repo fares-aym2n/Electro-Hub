@@ -63,6 +63,7 @@ import { CategoriesModule as CategoryModule } from './categories/categories.modu
       useValue: new ValidationPipe({
         whitelist: true,
         forbidNonWhitelisted: true,
+        transform: true,
       }),
     },
   ],
