@@ -3,7 +3,7 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class updateTDO {
   @IsOptional()
-  @Length(5, 150)
+  @Length(2, 150)
   @IsOptional()
   @ApiProperty({ example: 'test-user' })
   public username: string;

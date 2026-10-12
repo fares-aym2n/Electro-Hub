@@ -1,4 +1,5 @@
 import {
+  Check,
   Column,
   CreateDateColumn,
   Entity,
@@ -6,19 +7,21 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+
 import { TIMESTAMP } from '../utils/constrants';
 import { Product } from '../products/products.entity';
 import { User } from '../users/users.entity';
 
 @Entity({ name: 'reviews' })
+@Check('"rating" >= 1 AND "rating" <= 5')
 export class Review {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'varchar', length: 50 })
+  @Column({ type: 'varchar', length: 500 })
   review: string;
 
-  @Column({ type: 'float' })
+  @Column({ type: 'int' })
   rating: number;
 
   @CreateDateColumn({
@@ -36,11 +39,13 @@ export class Review {
 
   @ManyToOne(() => Product, (product) => product.reviews, {
     onDelete: 'CASCADE',
+    nullable: false,
   })
   product: Product;
 
   @ManyToOne(() => User, (user) => user.reviews, {
     onDelete: 'CASCADE',
+    nullable: false,
   })
   user: User;
 }

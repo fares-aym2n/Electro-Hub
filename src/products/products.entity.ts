@@ -7,25 +7,55 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+
 import { TIMESTAMP } from '../utils/constrants';
 import { Review } from '../reviews/reviews.entity';
 import { User } from '../users/users.entity';
+import { Category } from '../categories/entities/category.entity';
 
 @Entity({ name: 'products' })
 export class Product {
   @PrimaryGeneratedColumn()
   id: number;
-  @Column({ type: 'varchar', length: 50 })
+
+  @Column({ type: 'varchar', length: 150 })
   name: string;
-  @Column()
+
+  @Column({ type: 'text' })
   description: string;
-  @Column({ type: 'float' })
+
+  @Column({ type: 'numeric', precision: 12, scale: 2 })
   price: number;
+
+  @Column({ type: 'varchar', length: 500 })
+  image: string;
+
+  @Column({ type: 'int', default: 0 })
+  stockQuantity: number;
+
+  @Column({ type: 'boolean', default: true })
+  isActive: boolean;
+
+  @Column({ type: 'boolean', default: false })
+  isFeatured: boolean;
+
+  @Column({
+    type: 'numeric',
+    precision: 2,
+    scale: 1,
+    default: 0,
+  })
+  averageRating: number;
+
+  @Column({ type: 'int', default: 0 })
+  ratingsCount: number;
+
   @CreateDateColumn({
     type: 'timestamp',
     default: () => TIMESTAMP,
   })
   createdAt: Date;
+
   @UpdateDateColumn({
     type: 'timestamp',
     default: () => TIMESTAMP,
@@ -38,6 +68,13 @@ export class Product {
 
   @ManyToOne(() => User, (user) => user.products, {
     onDelete: 'SET NULL',
+    nullable: true,
   })
-  user: User;
+  user: User | null;
+
+  @ManyToOne(() => Category, (category) => category.products, {
+    nullable: false,
+    onDelete: 'RESTRICT',
+  })
+  category: Category;
 }
