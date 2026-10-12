@@ -6,27 +6,65 @@ import {
   Min,
   IsOptional,
   MinLength,
+  IsInt,
+  IsBoolean,
 } from 'class-validator';
 import { ApiPropertyOptional } from '@nestjs/swagger';
 
-export class updateProductTDO {
+export class UpdateProductDTO {
   @IsString()
-  @Length(3, 20)
+  @Length(3, 150)
   @IsNotEmpty()
   @IsOptional()
-  @ApiPropertyOptional({ example: 'laptop' })
+  @ApiPropertyOptional({ example: 'Gaming Laptop' })
   name?: string;
 
   @IsString()
   @IsNotEmpty()
-  @IsOptional()
   @MinLength(5)
-  @ApiPropertyOptional({ example: 'this is very good laptop' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'High-performance gaming laptop',
+  })
   description?: string;
 
-  @IsNumber()
+  @IsNumber({ maxDecimalPlaces: 2 })
   @Min(5)
   @IsOptional()
   @ApiPropertyOptional({ example: 1500 })
   price?: number;
+
+  @IsString()
+  @IsNotEmpty()
+  @Length(1, 500)
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'https://example.com/laptop.jpg',
+  })
+  image?: string;
+
+  @IsInt()
+  @Min(0)
+  @IsOptional()
+  @ApiPropertyOptional({ example: 10 })
+  stockQuantity?: number;
+
+  @IsBoolean()
+  @IsOptional()
+  @ApiPropertyOptional({ example: true })
+  isActive?: boolean;
+
+  @IsBoolean()
+  @IsOptional()
+  @ApiPropertyOptional({ example: false })
+  isFeatured?: boolean;
+
+  @IsInt()
+  @Min(1)
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 2,
+    description: 'ID of an existing category',
+  })
+  categoryId?: number;
 }
