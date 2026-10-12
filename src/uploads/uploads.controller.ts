@@ -1,10 +1,7 @@
 import {
   BadRequestException,
   Controller,
-  Get,
-  Param,
   Post,
-  Res,
   UploadedFile,
   UploadedFiles,
   UseInterceptors,
@@ -13,47 +10,95 @@ import {
   FileInterceptor,
   FilesInterceptor,
 } from '@nestjs/platform-express';
-import type { Response } from 'express';
-import { ApiBody, ApiConsumes, ApiParam } from '@nestjs/swagger';
+import { memoryStorage } from 'multer';
+import { ApiBody, ApiConsumes } from '@nestjs/swagger';
+import { CloudinaryService } from '../cloudinary/cloudinary.service';
 import { uploadMultiFileDTO } from './dto/upload-multi-file.dto';
 import { uploadSingleFileDTO } from './dto/upload-single-file.dto';
 
+const MAX_FILE_SIZE = 2 * 1024 * 1024;
+
 @Controller('/api/uploads')
-export class uploadsController {
+export class UploadsController {
+  constructor(
+    private readonly cloudinaryService: CloudinaryService,
+  ) {}
+
   @Post('single-file')
-  @UseInterceptors(FileInterceptor('file'))
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: memoryStorage(),
+      limits: { fileSize: MAX_FILE_SIZE },
+    }),
+  )
   @ApiBody({ type: uploadSingleFileDTO })
   @ApiConsumes('multipart/form-data')
-  public uploadFile(@UploadedFile() file: Express.Multer.File) {
+  public async uploadFile(
+    @UploadedFile() file: Express.Multer.File,
+  ) {
     if (!file) {
       throw new BadRequestException('The file is not provided');
     }
-    return 'File uploaded successfuly';
-  }
-  @Post('multiple-file')
-  @UseInterceptors(FilesInterceptor('files'))
-  @ApiBody({ type: uploadMultiFileDTO })
-  @ApiConsumes('multipart/form-data')
-  public uploadMultipleFile(
-    @UploadedFiles() files: Array<Express.Multer.File>,
-  ) {
-    if (!files || files.length == 0) {
-      throw new BadRequestException('The files is not provided');
+
+    if (!file.mimetype.startsWith('image/')) {
+      throw new BadRequestException(
+        'Please provide an image file only',
+      );
     }
-    return 'Files uploaded successfuly';
+
+    const imageUrl = await this.cloudinaryService.uploadImage(
+      file,
+      'electro-hub/uploads',
+    );
+
+    return {
+      message: 'File uploaded successfully',
+      url: imageUrl,
+    };
   }
 
-  @Get(':image')
-  @ApiParam({
-    type: 'string',
-    name: 'image',
-    required: true,
-    description: 'Retrieve an image by its image path',
-  })
-  public getImage(
-    @Param('image') image: string,
-    @Res() res: Response,
+  @Post('multiple-file')
+  @UseInterceptors(
+    FilesInterceptor('files', 10, {
+      storage: memoryStorage(),
+      limits: {
+        fileSize: MAX_FILE_SIZE,
+        files: 10,
+      },
+    }),
+  )
+  @ApiBody({ type: uploadMultiFileDTO })
+  @ApiConsumes('multipart/form-data')
+  public async uploadMultipleFile(
+    @UploadedFiles() files: Express.Multer.File[],
   ) {
-    return res.sendFile(image, { root: 'images' });
+    if (!files || files.length === 0) {
+      throw new BadRequestException(
+        'The files are not provided',
+      );
+    }
+
+    for (const file of files) {
+      if (!file.mimetype.startsWith('image/')) {
+        throw new BadRequestException(
+          'Please provide image files only',
+        );
+      }
+    }
+
+    const urls = await Promise.all(
+      files.map((file) =>
+        this.cloudinaryService.uploadImage(
+          file,
+          'electro-hub/uploads',
+        ),
+      ),
+    );
+
+    return {
+      message: 'Files uploaded successfully',
+      count: urls.length,
+      urls,
+    };
   }
 }
