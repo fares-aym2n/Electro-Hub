@@ -311,7 +311,8 @@ describe('UserController', () => {
 
   describe('getProfile', () => {
     it('should get profile image path and send file through response', async () => {
-      const mockFilePath = 'D:/Projects/Node Js/nestjs-course/images/users/image.png';
+      const mockFilePath =
+        'D:/Projects/Node Js/Electro Hub/images/users/image.png';
       mockUserService.getProfileImage.mockResolvedValue(mockFilePath);
 
       const mockRes = {
