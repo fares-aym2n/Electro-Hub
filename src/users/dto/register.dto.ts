@@ -9,7 +9,7 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class registerTDO {
   @IsOptional()
-  @Length(5, 150)
+  @Length(2, 150)
   @IsNotEmpty()
   @ApiProperty({ example: 'test-user' })
   public username: string;

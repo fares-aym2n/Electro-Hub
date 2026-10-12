@@ -1,0 +1,3958 @@
+{
+  "_metadata": {
+    "title": "Electronics E-Commerce Test Data",
+    "description": "Realistic test data for NestJS / TypeORM / PostgreSQL API development and testing.",
+    "environment": "Development / Testing Only - Plaintext passwords ('test1234') - Never use in production",
+    "generatedAt": "2026-10-12",
+    "counts": {
+      "categories": 10,
+      "users": 50,
+      "products": 70,
+      "reviews": 200
+    }
+  },
+  "categories": [
+    {
+      "name": "Smartphones",
+      "slug": "smartphones"
+    },
+    {
+      "name": "Laptops",
+      "slug": "laptops"
+    },
+    {
+      "name": "Tablets",
+      "slug": "tablets"
+    },
+    {
+      "name": "Monitors",
+      "slug": "monitors"
+    },
+    {
+      "name": "Headphones",
+      "slug": "headphones"
+    },
+    {
+      "name": "Keyboards",
+      "slug": "keyboards"
+    },
+    {
+      "name": "Computer Mice",
+      "slug": "computer-mice"
+    },
+    {
+      "name": "Gaming Consoles",
+      "slug": "gaming-consoles"
+    },
+    {
+      "name": "Smartwatches",
+      "slug": "smartwatches"
+    },
+    {
+      "name": "Accessories",
+      "slug": "accessories"
+    }
+  ],
+  "users": [
+    {
+      "username": "tarek_admin",
+      "email": "tarek.admin.store@gmail.com",
+      "password": "test1234",
+      "role": "admin",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "nour_tech_admin",
+      "email": "nour.tech.admin@gmail.com",
+      "password": "test1234",
+      "role": "admin",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "omar_manager",
+      "email": "omar.store.manager@gmail.com",
+      "password": "test1234",
+      "role": "admin",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "ahmed_gamal",
+      "email": "ahmed.gamal.dev@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "youssef_gadget",
+      "email": "youssef.gadgets.eg@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "mariam_coder",
+      "email": "mariam.coder.cairo@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "mohamed_hassan",
+      "email": "mohamed.hassan.eng@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "fatma_dev",
+      "email": "fatma.dev.alex@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "khaled_saleh",
+      "email": "khaled.saleh.tech@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "salma_electronics",
+      "email": "salma.electronics.hub@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "ziad_designer",
+      "email": "ziad.designer99@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "rana_techie",
+      "email": "rana.techie.review@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "mostafa_kamal",
+      "email": "mostafa.kamal.pro@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "dina_ibrahim",
+      "email": "dina.ibrahim.alex@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "amr_audio",
+      "email": "amr.audiophile.eg@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "layla_gamer",
+      "email": "layla.gaming.zone@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "hany_elsharkawy",
+      "email": "hany.elsharkawy.tech@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "mona_systems",
+      "email": "mona.systems.eng@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "kareem_fawzy",
+      "email": "kareem.fawzy.dev@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "aya_abdelrahman",
+      "email": "aya.abdelrahman.cairo@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "tamer_hosny",
+      "email": "tamer.hosny.deals@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "sherif_ashraf",
+      "email": "sherif.ashraf.pc@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "nada_gamal",
+      "email": "nada.gamal.ui@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "hazem_emam",
+      "email": "hazem.emam.gamer@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "yasmin_samy",
+      "email": "yasmin.samy.tech@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "rami_nabil",
+      "email": "rami.nabil.hardware@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "reem_almasry",
+      "email": "reem.almasry.buyer@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "mahmoud_saad",
+      "email": "mahmoud.saad.studio@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "habiba_elhadary",
+      "email": "habiba.elhadary.eg@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "walid_soliman",
+      "email": "walid.soliman.dev@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "asmaa_ali",
+      "email": "asmaa.ali.cairo@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "ibrahim_khalil",
+      "email": "ibrahim.khalil.tech@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "sarah_mansour",
+      "email": "sarah.mansour.gadgets@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "osama_farouk",
+      "email": "osama.farouk.it@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "menna_tarek",
+      "email": "menna.tarek.designer@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "hossam_ghaly",
+      "email": "hossam.ghaly.reviews@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "samar_adel",
+      "email": "samar.adel.tech@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "fady_naguib",
+      "email": "fady.naguib.mobile@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "shaimaa_zaki",
+      "email": "shaimaa.zaki.developer@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "george_hanna",
+      "email": "george.hanna.cairo@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "mariam_yacoub",
+      "email": "mariam.yacoub.tech@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "mina_makram",
+      "email": "mina.makram.hardware@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "mirna_magdy",
+      "email": "mirna.magdy.electronics@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "peter_shafik",
+      "email": "peter.shafik.audio@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "christine_rizk",
+      "email": "christine.rizk.designer@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "andrew_nabil",
+      "email": "andrew.nabil.it@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "marian_girgis",
+      "email": "marian.girgis.review@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "david_morcos",
+      "email": "david.morcos.engineer@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": true,
+      "profile_image": null,
+      "verificationToken": null,
+      "resetPasswordToken": null
+    },
+    {
+      "username": "bassem_youssef",
+      "email": "bassem.youssef.tech@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": false,
+      "profile_image": null,
+      "verificationToken": "verify_tok_8e6419ld2j",
+      "resetPasswordToken": null
+    },
+    {
+      "username": "farah_elshami",
+      "email": "farah.elshami.shopper@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "isEmailValidation": false,
+      "profile_image": null,
+      "verificationToken": "verify_tok_61zv7asgj2",
+      "resetPasswordToken": null
+    }
+  ],
+  "products": [
+    {
+      "name": "Apple iPhone 15 Pro Max 256GB",
+      "description": "Flagship smartphone featuring aerospace-grade titanium design, A17 Pro chip, customizable Action button, and 5x telephoto optical zoom camera.",
+      "price": 74999,
+      "image": "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 28,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 5,
+      "ratingsCount": 4
+    },
+    {
+      "name": "Samsung Galaxy S24 Ultra 512GB",
+      "description": "Premier AI-powered smartphone with Snapdragon 8 Gen 3, titanium armor frame, integrated S Pen, and 200MP quad-telephoto camera system.",
+      "price": 68500,
+      "image": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 22,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 5,
+      "ratingsCount": 4
+    },
+    {
+      "name": "Google Pixel 8 Pro 128GB",
+      "description": "Google flagship powered by Tensor G3 with Super Actua display, advanced computational photography, Magic Editor, and 7 years of OS updates.",
+      "price": 43900,
+      "image": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 18,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 4.5,
+      "ratingsCount": 4
+    },
+    {
+      "name": "Xiaomi 14 Ultra 512GB",
+      "description": "Co-engineered with Leica featuring 1-inch Sony LYT-900 sensor with stepless variable aperture, Snapdragon 8 Gen 3, and 90W HyperCharge.",
+      "price": 52000,
+      "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 15,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 4,
+      "ratingsCount": 4
+    },
+    {
+      "name": "OnePlus 12 256GB",
+      "description": "Fast flagship phone with Snapdragon 8 Gen 3, 2K 120Hz ProXDR display with Aqua Touch, 4th Gen Hasselblad camera, and 100W SUPERVOOC charging.",
+      "price": 38500,
+      "image": "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 25,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 2.3,
+      "ratingsCount": 4
+    },
+    {
+      "name": "Samsung Galaxy A55 5G 128GB",
+      "description": "Mid-range champion with metal frame, Super AMOLED 120Hz display, 50MP camera with OIS, IP67 water resistance, and 5000mAh battery.",
+      "price": 19800,
+      "image": "https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 50,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 4
+    },
+    {
+      "name": "Apple iPhone 13 128GB",
+      "description": "Reliable Apple smartphone with A15 Bionic chip, durable Ceramic Shield front, Super Retina XDR display, and cinematic mode video recording.",
+      "price": 32500,
+      "image": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 35,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 4
+    },
+    {
+      "name": "Apple MacBook Pro 16 M3 Max",
+      "description": "High-performance workstation laptop with M3 Max 14-core CPU, 30-core GPU, 36GB unified memory, 1TB SSD, and Liquid Retina XDR display.",
+      "price": 158000,
+      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 10,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 4.5,
+      "ratingsCount": 4
+    },
+    {
+      "name": "Dell XPS 15 9530 i7 RTX 4060",
+      "description": "Premium creator laptop with 13th Gen Intel Core i7-13700H, 16GB DDR5 RAM, 1TB NVMe SSD, NVIDIA RTX 4060 graphics, and 3.5K OLED touchscreen.",
+      "price": 89500,
+      "image": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 12,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 4,
+      "ratingsCount": 4
+    },
+    {
+      "name": "ASUS ROG Zephyrus G16 RTX 4080",
+      "description": "Ultra-slim gaming laptop with Intel Core Ultra 9 185H, 32GB LPDDR5X, 1TB SSD, RTX 4080, and 2.5K 240Hz ROG Nebula OLED display.",
+      "price": 135000,
+      "image": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 8,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 2.3,
+      "ratingsCount": 4
+    },
+    {
+      "name": "Lenovo Legion Pro 5 Gen 8",
+      "description": "Powerful gaming laptop with AMD Ryzen 7 7745HX, 16GB DDR5, 1TB SSD, RTX 4070 8GB, and 16-inch WQXGA 240Hz 500 nits gaming display.",
+      "price": 76000,
+      "image": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 16,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "HP Spectre x360 14 2-in-1",
+      "description": "Versatile 2-in-1 convertible laptop with Intel Core Ultra 7 155H, 16GB RAM, 1TB SSD, 2.8K OLED touchscreen, and 9MP AI webcam.",
+      "price": 69900,
+      "image": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 14,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Apple MacBook Air 13 M2 256GB",
+      "description": "Ultra-thin, fanless laptop with Apple M2 chip, 8GB unified memory, 256GB SSD, 13.6-inch Liquid Retina display, and MagSafe 3 charging.",
+      "price": 49500,
+      "image": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 30,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Lenovo ThinkPad X1 Carbon Gen 11",
+      "description": "Legendary business ultrabook built with carbon fiber, Intel Core i7-1355U, 16GB LPDDR5, 512GB PCIe Gen4 SSD, and military-grade durability.",
+      "price": 64500,
+      "image": "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 15,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 4.3,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Apple iPad Pro 12.9 M2 128GB",
+      "description": "Ultimate tablet with Liquid Retina XDR Mini-LED display, M2 silicon, ProRes video capture, Apple Pencil hover, and Thunderbolt port.",
+      "price": 54000,
+      "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 20,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 4,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Samsung Galaxy Tab S9 Ultra 256GB",
+      "description": "Massive 14.6-inch Dynamic AMOLED 2X display tablet with Snapdragon 8 Gen 2, included S Pen, IP68 water resistance, and Samsung DeX.",
+      "price": 58500,
+      "image": "https://images.unsplash.com/photo-1561154464-82e9adf32764?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 12,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 3.3,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Apple iPad Air 5th Gen 64GB",
+      "description": "Lightweight performance tablet powered by Apple M1 chip, 10.9-inch Liquid Retina display, Touch ID in top button, and USB-C port.",
+      "price": 31000,
+      "image": "https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 24,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 2.7,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Xiaomi Pad 6 128GB",
+      "description": "Value productivity tablet with 11-inch 144Hz WQHD+ display, Snapdragon 870 processor, quad stereo speakers with Dolby Atmos, and 8840mAh battery.",
+      "price": 15400,
+      "image": "https://images.unsplash.com/photo-1589739900243-4b52cd9b104e?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 35,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Lenovo Tab P12 Pro 256GB",
+      "description": "Premium Android entertainment tablet with 12.6-inch 120Hz 2K AMOLED screen, Snapdragon 870, JBL quad speakers, and Lenovo Precision Pen 3.",
+      "price": 26800,
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 16,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Apple iPad 10th Gen 64GB",
+      "description": "All-screen redesigned iPad with 10.9-inch Liquid Retina display, A14 Bionic chip, landscape 12MP front camera, and USB-C connectivity.",
+      "price": 22900,
+      "image": "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 40,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Samsung Galaxy Tab A9+ 64GB",
+      "description": "Budget-friendly family tablet with 11-inch 90Hz display, Qualcomm Snapdragon 695 5G chipset, quad speakers, and multi-window multitasking.",
+      "price": 10500,
+      "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 45,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 4,
+      "ratingsCount": 3
+    },
+    {
+      "name": "LG UltraGear 27GR95QE-B OLED 240Hz",
+      "description": "Elite 27-inch QHD OLED gaming monitor featuring blistering 0.03ms response time, 240Hz refresh rate, 98.5% DCI-P3, and HDMI 2.1.",
+      "price": 42000,
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 14,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 4,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Samsung Odyssey OLED G9 49 Curved",
+      "description": "Dual QHD 49-inch 32:9 super ultrawide curved gaming monitor with Quantum Dot OLED, 240Hz refresh rate, 0.03ms response time, and Neo Quantum Processor.",
+      "price": 68000,
+      "image": "https://images.unsplash.com/photo-1551645120-d70bfe84c826?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 8,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 2.7,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Dell UltraSharp U2723QE 4K USB-C Hub",
+      "description": "Professional 27-inch 4K UHD monitor with IPS Black technology, 2000:1 contrast ratio, 90W USB-C Power Delivery, and integrated RJ45 ethernet.",
+      "price": 31500,
+      "image": "https://images.unsplash.com/photo-1547119957-637f8679db1e?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 18,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 3.7,
+      "ratingsCount": 3
+    },
+    {
+      "name": "ASUS TUF Gaming VG27AQ 27 165Hz",
+      "description": "27-inch WQHD 2560x1440 IPS gaming monitor with 165Hz overclocked refresh rate, Extreme Low Motion Blur Sync, and G-SYNC compatible support.",
+      "price": 17200,
+      "image": "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 28,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "LG 34WN80C-B 34 UltraWide Curved",
+      "description": "34-inch 21:9 UltraWide QHD curved IPS monitor with HDR10, sRGB 99% color gamut, USB-C 60W power delivery, and height/tilt adjustable stand.",
+      "price": 25900,
+      "image": "https://images.unsplash.com/photo-1586210579191-33b45e38fa2c?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 15,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "BenQ PD3200U 32 4K Designer Monitor",
+      "description": "32-inch 4K UHD monitor customized for creators with 100% sRGB/Rec.709, Darkroom and CAD/CAM modes, DualView, and Hotkey Puck controller.",
+      "price": 28900,
+      "image": "https://images.unsplash.com/photo-1542751110-97427bbecf20?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 10,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 4.7,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Xiaomi Curved Gaming Monitor 30",
+      "description": "Immersive 30-inch 21:9 WFHD 2560x1080 curved gaming display with 1800R curvature, 200Hz high refresh rate, AMD FreeSync Premium, and 99% sRGB.",
+      "price": 11500,
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 30,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 4,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Sony WH-1000XM5 Wireless ANC Headphone",
+      "description": "Industry-leading noise cancelling over-ear headphones with Auto NC Optimizer, 30-hour battery life, crystal-clear hands-free calling, and LDAC audio.",
+      "price": 18500,
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 35,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 3.7,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Apple AirPods Max Space Gray",
+      "description": "Luxury over-ear headphones with custom acoustic design, Apple H1 chips, Active Noise Cancellation with Transparency mode, and Spatial Audio.",
+      "price": 28900,
+      "image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 15,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 2,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Bose QuietComfort Ultra Headphones",
+      "description": "World-class noise cancellation headphones with groundbreaking Bose Immersive Audio, CustomTune technology, 24-hour battery, and ultra-plush cushions.",
+      "price": 21900,
+      "image": "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 20,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Sennheiser Momentum 4 Wireless",
+      "description": "Audiophile-grade 42mm transducer headphones offering signature sound, adaptive noise cancellation, and exceptional 60-hour battery life.",
+      "price": 16800,
+      "image": "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 18,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Sony WF-1000XM5 Wireless ANC Earbuds",
+      "description": "Flagship true wireless earbuds with Dynamic Driver X, dual feedback microphones, Bone conduction sensors, AI call noise reduction, and IPX4 rating.",
+      "price": 13900,
+      "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 28,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Apple AirPods Pro 2 USB-C Case",
+      "description": "Pro in-ear earphones with H2 chip, up to 2x more Active Noise Cancellation, Adaptive Audio, Conversation Awareness, and precision finding case.",
+      "price": 12500,
+      "image": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 45,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 4.3,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Logitech G PRO X 2 LIGHTSPEED Headset",
+      "description": "Pro gaming wireless headset with revolutionary 50mm Graphene drivers, LIGHTSPEED 50-hour wireless, detachable cardioid microphone, and DTS Headphone:X 2.0.",
+      "price": 11400,
+      "image": "https://images.unsplash.com/photo-1599669454699-248893623440?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 22,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 4,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Logitech MX Keys S Wireless Keyboard",
+      "description": "Advanced wireless illuminated productivity keyboard with spherically dished keys, smart backlighting proximity sensors, and multi-device Easy-Switch.",
+      "price": 6200,
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 40,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 3.3,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Logitech G915 LIGHTSPEED Wireless RGB",
+      "description": "Low-profile wireless mechanical gaming keyboard with GL Tactile switches, aircraft-grade aluminum alloy top case, and LIGHTSYNC RGB per-key lighting.",
+      "price": 10800,
+      "image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 20,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 2.7,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Keychron Q1 Pro Wireless Custom Keyboard",
+      "description": "Full CNC aluminum custom wireless mechanical keyboard with double-gasket design, QMK/VIA programmable keys, hot-swappable switches, and Mac/Windows layout.",
+      "price": 9900,
+      "image": "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 18,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "ASUS ROG Azoth 75 Wireless Keyboard",
+      "description": "75% custom DIY gaming mechanical keyboard with silicone gasket mount, pre-lubed ROG NX switches, OLED display screen, and three-way control knob.",
+      "price": 12500,
+      "image": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 15,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "SteelSeries Apex Pro TKL Mechanical",
+      "description": "Fastest Esports keyboard with OmniPoint 2.0 adjustable hyper-magnetic switches, rapid trigger capability, OLED smart display, and aircraft aluminum.",
+      "price": 11200,
+      "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 17,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Razer BlackWidow V4 Pro Mechanical",
+      "description": "Battlestation flagship mechanical keyboard with Razer Green Clicky switches, Command Dial, 8 dedicated macro keys, magnetic wrist rest, and underglow.",
+      "price": 11900,
+      "image": "https://images.unsplash.com/photo-1595044426077-d36d9236d54a?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 19,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 4,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Corsair K70 RGB PRO Mechanical Keyboard",
+      "description": "Iconic gaming keyboard with Cherry MX Red linear switches, 8000Hz hyper-polling AXON technology, tournament mode switch, and PBT double-shot keycaps.",
+      "price": 7800,
+      "image": "https://images.unsplash.com/photo-1529236183275-4fdcf2bc987e?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 25,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 4,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Logitech MX Master 3S Wireless Mouse",
+      "description": "Quiet-click ergonomic performance mouse with 8000 DPI Darkfield sensor, MagSpeed electromagnetic scroll wheel, and ergonomic thumb rest.",
+      "price": 5200,
+      "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 45,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 2.7,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Logitech G Pro X Superlight 2 Mouse",
+      "description": "Ultralight 60g wireless esports gaming mouse with HERO 2 sensor, 32000 DPI, LIGHTFORCE hybrid optical-mechanical switches, and 95-hour battery.",
+      "price": 7400,
+      "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 30,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 3.7,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Razer DeathAdder V3 Pro Wireless Mouse",
+      "description": "63g ultra-lightweight ergonomic esports mouse with Focus Pro 30K Optical Sensor, Gen-3 optical mouse switches, and smooth ergonomic design.",
+      "price": 6800,
+      "image": "https://images.unsplash.com/photo-1626218174358-7769486c4b79?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 24,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "ASUS ROG Harpe Ace Aim Lab Mouse",
+      "description": "Ultralight 54g ambidextrous gaming mouse tested with Aim Lab professionals, AimPoint 36K optical sensor, and ROG SpeedNova wireless.",
+      "price": 6100,
+      "image": "https://images.unsplash.com/photo-1605773527852-c546a8584ea3?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 18,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 3
+    },
+    {
+      "name": "SteelSeries Aerox 3 Wireless Mouse",
+      "description": "Ultra-lightweight 68g honeycomb design gaming mouse with TrueMove Air optical sensor, AquaBarrier IP54 water resistance, and 200-hour battery life.",
+      "price": 4300,
+      "image": "https://images.unsplash.com/photo-1613141411244-0e4ac259d217?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 26,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 4.7,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Apple Magic Mouse Black Multi-Touch",
+      "description": "Sleek wireless rechargeable mouse with smooth continuous shell and Multi-Touch surface allowing intuitive gestures to swipe between web pages.",
+      "price": 4900,
+      "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 32,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 4,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Logitech G502 HERO Wired Gaming Mouse",
+      "description": "High-performance wired gaming mouse with HERO 25K sensor, 11 programmable buttons, adjustable weight tuning system, and dual-mode hyper-fast scroll.",
+      "price": 2600,
+      "image": "https://images.unsplash.com/photo-1563297007-0686b7003af7?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 60,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 3.7,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Sony PlayStation 5 Slim 1TB Disc",
+      "description": "Sleek home gaming console with custom AMD Zen 2 CPU, RDNA 2 GPU, ultra-high speed 1TB SSD, DualSense haptic feedback triggers, and 4K 120Hz output.",
+      "price": 31500,
+      "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 25,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 2,
+      "ratingsCount": 3
+    },
+    {
+      "name": "Microsoft Xbox Series X 1TB Console",
+      "description": "Fastest most powerful Xbox console with 12 teraflops raw graphical processing power, DirectX raytracing, Quick Resume, and 1TB custom NVMe SSD.",
+      "price": 28900,
+      "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 20,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 5,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Nintendo Switch OLED Model White",
+      "description": "Versatile hybrid gaming console with vibrant 7-inch OLED screen, wide adjustable tabletop stand, dock with wired LAN port, and 64GB storage.",
+      "price": 18500,
+      "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 30,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 5,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Valve Steam Deck OLED 512GB Handheld",
+      "description": "Premium PC gaming handheld with 7.4-inch 90Hz HDR OLED display, custom AMD 6nm APU, Wi-Fi 6E, improved battery life, and responsive dual trackpads.",
+      "price": 34000,
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Steam_Deck_%28front%29.png/960px-Steam_Deck_%28front%29.png",
+      "stockQuantity": 15,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 5,
+      "ratingsCount": 2
+    },
+    {
+      "name": "ASUS ROG Ally Z1 Extreme 512GB",
+      "description": "Windows 11 handheld gaming computer powered by AMD Ryzen Z1 Extreme processor, 7-inch FHD 120Hz display with FreeSync Premium, and 16GB LPDDR5.",
+      "price": 32500,
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 14,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Sony PlayStation Portal Remote Player",
+      "description": "Dedicated remote gaming handheld for PS5 with 8-inch 1080p 60fps LCD screen, integrated DualSense adaptive triggers, and Wi-Fi streaming.",
+      "price": 13500,
+      "image": "https://images.unsplash.com/photo-1592840496694-26d035b52b48?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 18,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Microsoft Xbox Series S 512GB Console",
+      "description": "Compact all-digital next-gen Xbox console offering fast loading with Xbox Velocity Architecture, up to 120FPS gaming, and compact white chassis.",
+      "price": 17200,
+      "image": "https://images.unsplash.com/photo-1605901309584-818e25960a8f?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 35,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 4,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Apple Watch Ultra 2 49mm Titanium",
+      "description": "Rugged outdoor smartwatch with 49mm corrosion-resistant aerospace titanium case, precision dual-frequency GPS, 3000 nits display, and 36h battery.",
+      "price": 43500,
+      "image": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 16,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 4,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Samsung Galaxy Watch 6 Classic 47mm",
+      "description": "Sophisticated smartwatch featuring rotating physical bezel, sapphire crystal glass, BioActive sensor for ECG/blood pressure, and Wear OS by Google.",
+      "price": 17500,
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 28,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 4,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Apple Watch Series 9 45mm Aluminum",
+      "description": "Advanced everyday smartwatch with S9 SiP chip, magical Double Tap gesture, brighter 2000 nits edge-to-edge display, and on-device Siri.",
+      "price": 23800,
+      "image": "https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 30,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 3,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Garmin Fenix 7 Pro Sapphire Solar",
+      "description": "Ultimate multisport GPS smartwatch with solar charging lens, built-in LED flashlight, endurance score, topographic maps, and up to 22 days battery.",
+      "price": 39900,
+      "image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 12,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 1.5,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Xiaomi Watch 2 Pro 46mm LTE",
+      "description": "Snapdragon W5+ Gen 1 powered smartwatch running Wear OS by Google, 1.43-inch AMOLED with Always-On, stainless steel casing, and eSIM support.",
+      "price": 11800,
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 22,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Samsung Galaxy Watch 5 Pro Titanium",
+      "description": "Durable endurance smartwatch with tough titanium case, GPX route tracking with Track Back navigation, sapphire crystal, and huge 590mAh battery.",
+      "price": 13900,
+      "image": "https://images.unsplash.com/photo-1544117519-31a4b719223d?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 20,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Huawei Watch GT 4 46mm Steel",
+      "description": "Octagonal aesthetic smartwatch with 14-day battery life, enhanced 24/7 heart rate monitoring with TruSeen 5.5+, dual-band GNSS, and Bluetooth calls.",
+      "price": 9400,
+      "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 32,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Anker 737 Power Bank 24000mAh 140W",
+      "description": "Ultra-powerful two-way fast charging portable battery with Power Delivery 3.1, smart digital display screen showing charging metrics, and 140W output.",
+      "price": 5900,
+      "image": "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 50,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 5,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Apple MagSafe Charger 15W",
+      "description": "Original magnetic wireless charger that snaps seamlessly to iPhone 12/13/14/15 models with perfectly aligned magnets for fast 15W charging.",
+      "price": 2200,
+      "image": "https://images.unsplash.com/photo-1616353071588-708dcff912e2?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 65,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 5,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Belkin BoostCharge Pro 3-in-1 MagSafe",
+      "description": "Official 3-in-1 wireless charging stand with MagSafe 15W fast charging for iPhone, Apple Watch fast charging module, and dedicated AirPods wireless pad.",
+      "price": 6800,
+      "image": "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 22,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 4,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Samsung 45W USB-C Fast Wall Charger",
+      "description": "Official Samsung Super Fast Charging 2.0 wall power adapter with Power Delivery 3.0 PPS protocol and detachable 5A USB-C to USB-C cable.",
+      "price": 1450,
+      "image": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 80,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 4,
+      "ratingsCount": 2
+    },
+    {
+      "name": "SanDisk 1TB Extreme Portable SSD USB-C",
+      "description": "Rugged NVMe solid state drive with up to 1050MB/s read speeds, IP55 water and dust resistance, carabiner loop, and 2-meter drop protection.",
+      "price": 4950,
+      "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 42,
+      "isActive": true,
+      "isFeatured": true,
+      "averageRating": 4,
+      "ratingsCount": 2
+    },
+    {
+      "name": "Anker 575 USB-C Hub 12-in-1 Dock",
+      "description": "Versatile 12-in-1 triple display docking station with dual HDMI 4K, DisplayPort, 85W Power Delivery laptop pass-through, SD card reader, and Gigabit Ethernet.",
+      "price": 5200,
+      "image": "https://images.unsplash.com/photo-1625842268584-8f3296236761?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 25,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 3,
+      "ratingsCount": 2
+    },
+    {
+      "name": "UGREEN Nexode 100W GaN 4-Port Charger",
+      "description": "Compact 4-port desktop GaN II fast wall charger with 3 USB-C and 1 USB-A ports, intelligent power allocation, and broad multi-device protocol support.",
+      "price": 3400,
+      "image": "https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=800&q=80",
+      "stockQuantity": 48,
+      "isActive": true,
+      "isFeatured": false,
+      "averageRating": 1.5,
+      "ratingsCount": 2
+    }
+  ],
+  "reviews": [
+    {
+      "review": "The display on this Apple iPhone 15 Pro Max 256GB is stunning even under direct Cairo sunlight. The battery easily lasts a full day of heavy 5G usage and camera quality is top tier.",
+      "rating": 5
+    },
+    {
+      "review": "Blazing fast performance! Switching between heavy apps and gaming is completely smooth. Build quality feels truly premium in hand.",
+      "rating": 5
+    },
+    {
+      "review": "Worth every single Egyptian pound. The low-light photography and optical stabilization produce cinematic quality videos. Highly recommended!",
+      "rating": 5
+    },
+    {
+      "review": "Exceptional device. Call reception on local networks is rock solid, face unlock/fingerprint is instant, and the stereo speakers sound loud and clear.",
+      "rating": 5
+    },
+    {
+      "review": "The display on this Samsung Galaxy S24 Ultra 512GB is stunning even under direct Cairo sunlight. The battery easily lasts a full day of heavy 5G usage and camera quality is top tier.",
+      "rating": 5
+    },
+    {
+      "review": "Blazing fast performance! Switching between heavy apps and gaming is completely smooth. Build quality feels truly premium in hand.",
+      "rating": 5
+    },
+    {
+      "review": "Worth every single Egyptian pound. The low-light photography and optical stabilization produce cinematic quality videos. Highly recommended!",
+      "rating": 5
+    },
+    {
+      "review": "Exceptional device. Call reception on local networks is rock solid, face unlock/fingerprint is instant, and the stereo speakers sound loud and clear.",
+      "rating": 5
+    },
+    {
+      "review": "The display on this Google Pixel 8 Pro 128GB is stunning even under direct Cairo sunlight. The battery easily lasts a full day of heavy 5G usage and camera quality is top tier.",
+      "rating": 5
+    },
+    {
+      "review": "Blazing fast performance! Switching between heavy apps and gaming is completely smooth. Build quality feels truly premium in hand.",
+      "rating": 5
+    },
+    {
+      "review": "Very solid device for work and media consumption. Premium materials and nice ergonomics, though a bit slippery without a protective case.",
+      "rating": 4
+    },
+    {
+      "review": "Impressive cameras and fluid 120Hz display. The price is on the higher side in Egypt, but you definitely get flagship quality.",
+      "rating": 4
+    },
+    {
+      "review": "Fantastic smartphone overall with great performance and cameras. My only gripe is that it warms up slightly during fast charging and intensive gaming.",
+      "rating": 4
+    },
+    {
+      "review": "Great screen and snappy software experience. Battery life is decent around 6-7 hours SOT, but I wish the charging speed was slightly faster.",
+      "rating": 4
+    },
+    {
+      "review": "Very solid device for work and media consumption. Premium materials and nice ergonomics, though a bit slippery without a protective case.",
+      "rating": 4
+    },
+    {
+      "review": "Impressive cameras and fluid 120Hz display. The price is on the higher side in Egypt, but you definitely get flagship quality.",
+      "rating": 4
+    },
+    {
+      "review": "Good phone but not a huge leap over the previous generation. Cameras are good in daylight but struggle a bit in dim indoor lighting.",
+      "rating": 3
+    },
+    {
+      "review": "Decent daily driver. Software has a few minor bugs after the recent update, and battery life is just average for heavy users.",
+      "rating": 3
+    },
+    {
+      "review": "Disappointed with the thermal management. The phone throttles after 20 minutes of navigation with GPS under hot Egyptian weather.",
+      "rating": 2
+    },
+    {
+      "review": "Received a unit with a flickering display issue on the first day. Had to request a replacement immediately. Not happy.",
+      "rating": 1
+    },
+    {
+      "review": "The display on this Samsung Galaxy A55 5G 128GB is stunning even under direct Cairo sunlight. The battery easily lasts a full day of heavy 5G usage and camera quality is top tier.",
+      "rating": 5
+    },
+    {
+      "review": "Blazing fast performance! Switching between heavy apps and gaming is completely smooth. Build quality feels truly premium in hand.",
+      "rating": 5
+    },
+    {
+      "review": "Worth every single Egyptian pound. The low-light photography and optical stabilization produce cinematic quality videos. Highly recommended!",
+      "rating": 5
+    },
+    {
+      "review": "Exceptional device. Call reception on local networks is rock solid, face unlock/fingerprint is instant, and the stereo speakers sound loud and clear.",
+      "rating": 5
+    },
+    {
+      "review": "The display on this Apple iPhone 13 128GB is stunning even under direct Cairo sunlight. The battery easily lasts a full day of heavy 5G usage and camera quality is top tier.",
+      "rating": 5
+    },
+    {
+      "review": "Blazing fast performance! Switching between heavy apps and gaming is completely smooth. Build quality feels truly premium in hand.",
+      "rating": 5
+    },
+    {
+      "review": "Worth every single Egyptian pound. The low-light photography and optical stabilization produce cinematic quality videos. Highly recommended!",
+      "rating": 5
+    },
+    {
+      "review": "Exceptional device. Call reception on local networks is rock solid, face unlock/fingerprint is instant, and the stereo speakers sound loud and clear.",
+      "rating": 5
+    },
+    {
+      "review": "Incredible workstation power! Compiling massive NestJS and Docker projects takes seconds. The keyboard and trackpad are hands down the best.",
+      "rating": 5
+    },
+    {
+      "review": "Outstanding battery efficiency and silent operation. The display colors are accurate for UI design and color grading. Worth every pound.",
+      "rating": 5
+    },
+    {
+      "review": "Great keyboard travel and responsive precision touchpad. Battery life gets around 7-8 hours of coding and browsing.",
+      "rating": 4
+    },
+    {
+      "review": "Excellent productivity machine for developers. Thermals are well managed, though the aluminum finish attracts fingerprint smudges.",
+      "rating": 4
+    },
+    {
+      "review": "Super fast laptop with gorgeous display. The fans can get noticeably audible under full synthetic benchmarks, but in daily programming it stays quiet.",
+      "rating": 4
+    },
+    {
+      "review": "Very satisfied with build and performance. Only minor annoyance is the weight of the power brick when traveling.",
+      "rating": 4
+    },
+    {
+      "review": "Great keyboard travel and responsive precision touchpad. Battery life gets around 7-8 hours of coding and browsing.",
+      "rating": 4
+    },
+    {
+      "review": "Excellent productivity machine for developers. Thermals are well managed, though the aluminum finish attracts fingerprint smudges.",
+      "rating": 4
+    },
+    {
+      "review": "Good raw hardware specs, but the factory software includes too much pre-installed bloatware that needed a clean reinstall.",
+      "rating": 3
+    },
+    {
+      "review": "Performance is solid, but the battery drops quickly to under 3.5 hours when running high-performance graphics tasks unplugged.",
+      "rating": 3
+    },
+    {
+      "review": "Excessive heat around the top keyboard deck during sustained workloads. Fan noise is quite high in a quiet room.",
+      "rating": 2
+    },
+    {
+      "review": "Trackpad developed a loose click mechanism within two weeks of light usage. Very disappointing for a premium laptop.",
+      "rating": 1
+    },
+    {
+      "review": "Incredible workstation power! Compiling massive NestJS and Docker projects takes seconds. The keyboard and trackpad are hands down the best.",
+      "rating": 5
+    },
+    {
+      "review": "Outstanding battery efficiency and silent operation. The display colors are accurate for UI design and color grading. Worth every pound.",
+      "rating": 5
+    },
+    {
+      "review": "Absolute beast of a machine. Handles multiple 4K video streams and local AI models without breaking a sweat or spinning up fans loudly.",
+      "rating": 5
+    },
+    {
+      "review": "Incredible workstation power! Compiling massive NestJS and Docker projects takes seconds. The keyboard and trackpad are hands down the best.",
+      "rating": 5
+    },
+    {
+      "review": "Outstanding battery efficiency and silent operation. The display colors are accurate for UI design and color grading. Worth every pound.",
+      "rating": 5
+    },
+    {
+      "review": "Absolute beast of a machine. Handles multiple 4K video streams and local AI models without breaking a sweat or spinning up fans loudly.",
+      "rating": 5
+    },
+    {
+      "review": "Incredible workstation power! Compiling massive NestJS and Docker projects takes seconds. The keyboard and trackpad are hands down the best.",
+      "rating": 5
+    },
+    {
+      "review": "Outstanding battery efficiency and silent operation. The display colors are accurate for UI design and color grading. Worth every pound.",
+      "rating": 5
+    },
+    {
+      "review": "Absolute beast of a machine. Handles multiple 4K video streams and local AI models without breaking a sweat or spinning up fans loudly.",
+      "rating": 5
+    },
+    {
+      "review": "Incredible workstation power! Compiling massive NestJS and Docker projects takes seconds. The keyboard and trackpad are hands down the best.",
+      "rating": 5
+    },
+    {
+      "review": "Very satisfied with build and performance. Only minor annoyance is the weight of the power brick when traveling.",
+      "rating": 4
+    },
+    {
+      "review": "Great keyboard travel and responsive precision touchpad. Battery life gets around 7-8 hours of coding and browsing.",
+      "rating": 4
+    },
+    {
+      "review": "Great tablet with crisp display and long battery life. Stylus is sold separately which adds to the already premium cost.",
+      "rating": 4
+    },
+    {
+      "review": "Fast and lightweight. Excellent for entertainment and web browsing. Operating system still has some desktop workflow limitations.",
+      "rating": 4
+    },
+    {
+      "review": "High quality hardware and bright panel. Charging speed could be faster considering the large battery capacity.",
+      "rating": 4
+    },
+    {
+      "review": "Great tablet with crisp display and long battery life. Stylus is sold separately which adds to the already premium cost.",
+      "rating": 4
+    },
+    {
+      "review": "Screen is sharp, but reflections in daylight are noticeable. Adequate for video streaming and casual browsing.",
+      "rating": 3
+    },
+    {
+      "review": "Fair tablet for the price, though it occasionally drops frames when opening heavy documents.",
+      "rating": 3
+    },
+    {
+      "review": "Battery standby drain is noticeably high when idle overnight. Needs optimization in the next firmware update.",
+      "rating": 2
+    },
+    {
+      "review": "The charging port became loose after just a few weeks and only charges when held at a specific angle. Poor durability.",
+      "rating": 1
+    },
+    {
+      "review": "Replaced my bulky laptop for daily university lectures and client meetings. Battery easily lasts 10+ hours.",
+      "rating": 5
+    },
+    {
+      "review": "The perfect tablet for note-taking, sketching, and reading technical PDFs. Stylus latency is practically zero.",
+      "rating": 5
+    },
+    {
+      "review": "Vibrant OLED screen with deep blacks. Watching Netflix and YouTube in HDR is an absolute treat. Speakers are loud and clear.",
+      "rating": 5
+    },
+    {
+      "review": "Replaced my bulky laptop for daily university lectures and client meetings. Battery easily lasts 10+ hours.",
+      "rating": 5
+    },
+    {
+      "review": "The perfect tablet for note-taking, sketching, and reading technical PDFs. Stylus latency is practically zero.",
+      "rating": 5
+    },
+    {
+      "review": "Vibrant OLED screen with deep blacks. Watching Netflix and YouTube in HDR is an absolute treat. Speakers are loud and clear.",
+      "rating": 5
+    },
+    {
+      "review": "Replaced my bulky laptop for daily university lectures and client meetings. Battery easily lasts 10+ hours.",
+      "rating": 5
+    },
+    {
+      "review": "The perfect tablet for note-taking, sketching, and reading technical PDFs. Stylus latency is practically zero.",
+      "rating": 5
+    },
+    {
+      "review": "Vibrant OLED screen with deep blacks. Watching Netflix and YouTube in HDR is an absolute treat. Speakers are loud and clear.",
+      "rating": 5
+    },
+    {
+      "review": "Replaced my bulky laptop for daily university lectures and client meetings. Battery easily lasts 10+ hours.",
+      "rating": 5
+    },
+    {
+      "review": "Great tablet with crisp display and long battery life. Stylus is sold separately which adds to the already premium cost.",
+      "rating": 4
+    },
+    {
+      "review": "Fast and lightweight. Excellent for entertainment and web browsing. Operating system still has some desktop workflow limitations.",
+      "rating": 4
+    },
+    {
+      "review": "High quality hardware and bright panel. Charging speed could be faster considering the large battery capacity.",
+      "rating": 4
+    },
+    {
+      "review": "Superb display panel with great viewing angles. The built-in speakers are mediocre, but the picture quality is outstanding.",
+      "rating": 4
+    },
+    {
+      "review": "Crisp resolution and smooth refresh rate. The on-screen joystick menu is intuitive and easy to configure.",
+      "rating": 4
+    },
+    {
+      "review": "Very good monitor for both creative graphic design and casual FPS gaming. Takes up considerable desk depth, so consider an arm mount.",
+      "rating": 4
+    },
+    {
+      "review": "Good image quality, but slight backlight bleed is visible in the bottom corners when watching movies in a dark room.",
+      "rating": 3
+    },
+    {
+      "review": "Decent color reproduction, but factory calibration needed manual tuning with a colorimeter to fix a slight yellow tint.",
+      "rating": 3
+    },
+    {
+      "review": "Noticed one stuck green subpixel near the center of the panel after three days. Annoying during dark IDE themes.",
+      "rating": 2
+    },
+    {
+      "review": "HDMI port 2 stopped transmitting signal after a week. Waiting on warranty service inspection.",
+      "rating": 1
+    },
+    {
+      "review": "The 240Hz refresh rate and instant response time make gaming feel insanely responsive. Text clarity is also razor sharp for coding.",
+      "rating": 5
+    },
+    {
+      "review": "Massive screen real estate! Replaced dual 24-inch monitors with this single curved ultrawide and boosted my programming productivity.",
+      "rating": 5
+    },
+    {
+      "review": "Incredible color accuracy and contrast. The single USB-C cable setup charging my laptop with 90W PD cleans up my entire desk!",
+      "rating": 5
+    },
+    {
+      "review": "The 240Hz refresh rate and instant response time make gaming feel insanely responsive. Text clarity is also razor sharp for coding.",
+      "rating": 5
+    },
+    {
+      "review": "Massive screen real estate! Replaced dual 24-inch monitors with this single curved ultrawide and boosted my programming productivity.",
+      "rating": 5
+    },
+    {
+      "review": "Incredible color accuracy and contrast. The single USB-C cable setup charging my laptop with 90W PD cleans up my entire desk!",
+      "rating": 5
+    },
+    {
+      "review": "The 240Hz refresh rate and instant response time make gaming feel insanely responsive. Text clarity is also razor sharp for coding.",
+      "rating": 5
+    },
+    {
+      "review": "Massive screen real estate! Replaced dual 24-inch monitors with this single curved ultrawide and boosted my programming productivity.",
+      "rating": 5
+    },
+    {
+      "review": "Incredible color accuracy and contrast. The single USB-C cable setup charging my laptop with 90W PD cleans up my entire desk!",
+      "rating": 5
+    },
+    {
+      "review": "The 240Hz refresh rate and instant response time make gaming feel insanely responsive. Text clarity is also razor sharp for coding.",
+      "rating": 5
+    },
+    {
+      "review": "Very good monitor for both creative graphic design and casual FPS gaming. Takes up considerable desk depth, so consider an arm mount.",
+      "rating": 4
+    },
+    {
+      "review": "Superb display panel with great viewing angles. The built-in speakers are mediocre, but the picture quality is outstanding.",
+      "rating": 4
+    },
+    {
+      "review": "Crisp resolution and smooth refresh rate. The on-screen joystick menu is intuitive and easy to configure.",
+      "rating": 4
+    },
+    {
+      "review": "Very good monitor for both creative graphic design and casual FPS gaming. Takes up considerable desk depth, so consider an arm mount.",
+      "rating": 4
+    },
+    {
+      "review": "Superb ANC and premium audio quality. Headband clamping force was slightly tight out of the box but loosened comfortably after a week.",
+      "rating": 4
+    },
+    {
+      "review": "Great sound signature and intuitive touch controls. Companion app offers an extensive equalizer to customize sound profiles.",
+      "rating": 4
+    },
+    {
+      "review": "Average build materials featuring too much plastic for a headset priced this high.",
+      "rating": 3
+    },
+    {
+      "review": "Sound quality is balanced and pleasant, but the noise cancellation struggles with sudden high-pitched conversational chatter.",
+      "rating": 3
+    },
+    {
+      "review": "Bluetooth audio cuts out intermittently when my phone is in my back pocket. Disappointed with the range.",
+      "rating": 2
+    },
+    {
+      "review": "Right earbud stopped charging inside the case after less than a month. Cleaning contacts did not fix it.",
+      "rating": 1
+    },
+    {
+      "review": "The active noise cancellation is pure magic. It blocks out Cairo traffic and loud metro noise completely. Battery life is stellar.",
+      "rating": 5
+    },
+    {
+      "review": "Soundstage is spacious and bass is punchy without muddying the mids. Ear cushions are so comfortable I wear them 8 hours a day.",
+      "rating": 5
+    },
+    {
+      "review": "Multipoint Bluetooth works flawlessly between my MacBook and phone. Microphone quality during Zoom calls is crystal clear.",
+      "rating": 5
+    },
+    {
+      "review": "The active noise cancellation is pure magic. It blocks out Cairo traffic and loud metro noise completely. Battery life is stellar.",
+      "rating": 5
+    },
+    {
+      "review": "Soundstage is spacious and bass is punchy without muddying the mids. Ear cushions are so comfortable I wear them 8 hours a day.",
+      "rating": 5
+    },
+    {
+      "review": "Multipoint Bluetooth works flawlessly between my MacBook and phone. Microphone quality during Zoom calls is crystal clear.",
+      "rating": 5
+    },
+    {
+      "review": "The active noise cancellation is pure magic. It blocks out Cairo traffic and loud metro noise completely. Battery life is stellar.",
+      "rating": 5
+    },
+    {
+      "review": "Soundstage is spacious and bass is punchy without muddying the mids. Ear cushions are so comfortable I wear them 8 hours a day.",
+      "rating": 5
+    },
+    {
+      "review": "Multipoint Bluetooth works flawlessly between my MacBook and phone. Microphone quality during Zoom calls is crystal clear.",
+      "rating": 5
+    },
+    {
+      "review": "The active noise cancellation is pure magic. It blocks out Cairo traffic and loud metro noise completely. Battery life is stellar.",
+      "rating": 5
+    },
+    {
+      "review": "Great sound signature and intuitive touch controls. Companion app offers an extensive equalizer to customize sound profiles.",
+      "rating": 4
+    },
+    {
+      "review": "Comfortable fit and impressive battery life. The carrying case is a bit bulky to fit in compact messenger bags.",
+      "rating": 4
+    },
+    {
+      "review": "Superb ANC and premium audio quality. Headband clamping force was slightly tight out of the box but loosened comfortably after a week.",
+      "rating": 4
+    },
+    {
+      "review": "Great sound signature and intuitive touch controls. Companion app offers an extensive equalizer to customize sound profiles.",
+      "rating": 4
+    },
+    {
+      "review": "Comfortable fit and impressive battery life. The carrying case is a bit bulky to fit in compact messenger bags.",
+      "rating": 4
+    },
+    {
+      "review": "Very comfortable keyboard for long programming sessions. Low profile keys reduce wrist fatigue noticeably.",
+      "rating": 4
+    },
+    {
+      "review": "Stabilizers on the spacebar have slight rattle out of the box that required manual band-aid modding and lubrication.",
+      "rating": 3
+    },
+    {
+      "review": "Decent keyboard, but battery life drains significantly faster when RGB lighting is set to maximum brightness.",
+      "rating": 3
+    },
+    {
+      "review": "Key chatter started occurring on the 'E' key registering double presses after 3 months. Had to blow compressed air repeatedly.",
+      "rating": 2
+    },
+    {
+      "review": "Bluetooth connectivity drops frequently every 10 minutes on Windows 11. Very frustrating during fast typing.",
+      "rating": 1
+    },
+    {
+      "review": "Top-tier CNC aluminum build. Heavy, rock solid on the desk, and QMK/VIA software allows infinite key remapping.",
+      "rating": 5
+    },
+    {
+      "review": "Typing feel is buttery smooth with satisfying acoustic thock. The gasket mount and dampening foams make a massive difference.",
+      "rating": 5
+    },
+    {
+      "review": "Incredible wireless battery longevity. The smart proximity backlighting is a subtle but awesome luxury touch.",
+      "rating": 5
+    },
+    {
+      "review": "Top-tier CNC aluminum build. Heavy, rock solid on the desk, and QMK/VIA software allows infinite key remapping.",
+      "rating": 5
+    },
+    {
+      "review": "Typing feel is buttery smooth with satisfying acoustic thock. The gasket mount and dampening foams make a massive difference.",
+      "rating": 5
+    },
+    {
+      "review": "Incredible wireless battery longevity. The smart proximity backlighting is a subtle but awesome luxury touch.",
+      "rating": 5
+    },
+    {
+      "review": "Top-tier CNC aluminum build. Heavy, rock solid on the desk, and QMK/VIA software allows infinite key remapping.",
+      "rating": 5
+    },
+    {
+      "review": "Typing feel is buttery smooth with satisfying acoustic thock. The gasket mount and dampening foams make a massive difference.",
+      "rating": 5
+    },
+    {
+      "review": "Incredible wireless battery longevity. The smart proximity backlighting is a subtle but awesome luxury touch.",
+      "rating": 5
+    },
+    {
+      "review": "Top-tier CNC aluminum build. Heavy, rock solid on the desk, and QMK/VIA software allows infinite key remapping.",
+      "rating": 5
+    },
+    {
+      "review": "Very comfortable keyboard for long programming sessions. Low profile keys reduce wrist fatigue noticeably.",
+      "rating": 4
+    },
+    {
+      "review": "Responsive tactile feedback and customizable RGB lighting effects. Would prefer dedicated print screen and pause keys.",
+      "rating": 4
+    },
+    {
+      "review": "Solid wireless connectivity across three paired devices. Keycaps show slight oil shine after months of intensive use.",
+      "rating": 4
+    },
+    {
+      "review": "Very comfortable keyboard for long programming sessions. Low profile keys reduce wrist fatigue noticeably.",
+      "rating": 4
+    },
+    {
+      "review": "Responsive tactile feedback and customizable RGB lighting effects. Would prefer dedicated print screen and pause keys.",
+      "rating": 4
+    },
+    {
+      "review": "Solid wireless connectivity across three paired devices. Keycaps show slight oil shine after months of intensive use.",
+      "rating": 4
+    },
+    {
+      "review": "Good mouse overall, but a bit too large and heavy for users with small to medium hands or fingertip grip styles.",
+      "rating": 3
+    },
+    {
+      "review": "Sensor precision is good, but scroll wheel encoder feels slightly mushy when switching back and forth quickly.",
+      "rating": 3
+    },
+    {
+      "review": "The scroll wheel started squeaking after 4 weeks of use. Functional, but annoying in a quiet room.",
+      "rating": 2
+    },
+    {
+      "review": "Developed double-clicking issues on the left switch within two months. Classic mechanical switch failure.",
+      "rating": 1
+    },
+    {
+      "review": "Ultralight weight makes flicking and tracking in competitive FPS titles effortless. Battery lasts weeks between USB-C charges.",
+      "rating": 5
+    },
+    {
+      "review": "Ergonomic shape cradles the palm perfectly and eliminated wrist strain during 10-hour workstation days.",
+      "rating": 5
+    },
+    {
+      "review": "The MagSpeed electromagnetic scroll wheel is an absolute game-changer for scrolling through thousands of lines of code.",
+      "rating": 5
+    },
+    {
+      "review": "Ultralight weight makes flicking and tracking in competitive FPS titles effortless. Battery lasts weeks between USB-C charges.",
+      "rating": 5
+    },
+    {
+      "review": "Ergonomic shape cradles the palm perfectly and eliminated wrist strain during 10-hour workstation days.",
+      "rating": 5
+    },
+    {
+      "review": "The MagSpeed electromagnetic scroll wheel is an absolute game-changer for scrolling through thousands of lines of code.",
+      "rating": 5
+    },
+    {
+      "review": "Ultralight weight makes flicking and tracking in competitive FPS titles effortless. Battery lasts weeks between USB-C charges.",
+      "rating": 5
+    },
+    {
+      "review": "Ergonomic shape cradles the palm perfectly and eliminated wrist strain during 10-hour workstation days.",
+      "rating": 5
+    },
+    {
+      "review": "The MagSpeed electromagnetic scroll wheel is an absolute game-changer for scrolling through thousands of lines of code.",
+      "rating": 5
+    },
+    {
+      "review": "Ultralight weight makes flicking and tracking in competitive FPS titles effortless. Battery lasts weeks between USB-C charges.",
+      "rating": 5
+    },
+    {
+      "review": "Very accurate sensor and light click actuation. Rubberized side grips feel grippy though they may wear over years of sweat.",
+      "rating": 4
+    },
+    {
+      "review": "Smooth PTFE feet glide effortlessly on cloth mousepads. Side buttons are crisp and well-placed. A bit pricey but durable.",
+      "rating": 4
+    },
+    {
+      "review": "Great battery life and responsive wireless sensor. Thumb rest button takes some getting used to but is very useful once mapped.",
+      "rating": 4
+    },
+    {
+      "review": "Very accurate sensor and light click actuation. Rubberized side grips feel grippy though they may wear over years of sweat.",
+      "rating": 4
+    },
+    {
+      "review": "Smooth PTFE feet glide effortlessly on cloth mousepads. Side buttons are crisp and well-placed. A bit pricey but durable.",
+      "rating": 4
+    },
+    {
+      "review": "Great battery life and responsive wireless sensor. Thumb rest button takes some getting used to but is very useful once mapped.",
+      "rating": 4
+    },
+    {
+      "review": "Decent mouse, but the cable on this wired model is slightly stiff and drags without a mouse bungee.",
+      "rating": 3
+    },
+    {
+      "review": "Good console hardware, but game prices in Egypt on digital storefronts have become quite high. Subscription services help ease the cost.",
+      "rating": 3
+    },
+    {
+      "review": "Controller analog sticks started showing slight drift after 6 months of moderate weekend gaming.",
+      "rating": 2
+    },
+    {
+      "review": "Console overheated and shut down during the initial system setup update. Had to RMA with the local distributor.",
+      "rating": 1
+    },
+    {
+      "review": "Next-gen gaming at its finest. Load times on the internal NVMe SSD are practically non-existent and 60fps performance is buttery smooth.",
+      "rating": 5
+    },
+    {
+      "review": "The haptic feedback and adaptive triggers on the controller add unbelievable immersion to racing and shooting games.",
+      "rating": 5
+    },
+    {
+      "review": "Next-gen gaming at its finest. Load times on the internal NVMe SSD are practically non-existent and 60fps performance is buttery smooth.",
+      "rating": 5
+    },
+    {
+      "review": "The haptic feedback and adaptive triggers on the controller add unbelievable immersion to racing and shooting games.",
+      "rating": 5
+    },
+    {
+      "review": "Next-gen gaming at its finest. Load times on the internal NVMe SSD are practically non-existent and 60fps performance is buttery smooth.",
+      "rating": 5
+    },
+    {
+      "review": "The haptic feedback and adaptive triggers on the controller add unbelievable immersion to racing and shooting games.",
+      "rating": 5
+    },
+    {
+      "review": "Next-gen gaming at its finest. Load times on the internal NVMe SSD are practically non-existent and 60fps performance is buttery smooth.",
+      "rating": 5
+    },
+    {
+      "review": "The haptic feedback and adaptive triggers on the controller add unbelievable immersion to racing and shooting games.",
+      "rating": 5
+    },
+    {
+      "review": "Next-gen gaming at its finest. Load times on the internal NVMe SSD are practically non-existent and 60fps performance is buttery smooth.",
+      "rating": 5
+    },
+    {
+      "review": "The haptic feedback and adaptive triggers on the controller add unbelievable immersion to racing and shooting games.",
+      "rating": 5
+    },
+    {
+      "review": "Fantastic gaming console with stunning graphics fidelity. Quick resume feature switching between 4 games instantly is awesome.",
+      "rating": 4
+    },
+    {
+      "review": "OLED screen upgrades handheld gaming drastically with vivid colors. Battery lasts 4-5 hours on lighter indie titles.",
+      "rating": 4
+    },
+    {
+      "review": "Accurate heart rate sensor and seamless integration with my smartphone ecosystem. Quick reply to messages from the wrist is smooth.",
+      "rating": 4
+    },
+    {
+      "review": "Vibrant always-on AMOLED display is easily readable under bright outdoor sun. Sleep tracking metrics provide actionable health insights.",
+      "rating": 4
+    },
+    {
+      "review": "Accurate heart rate sensor and seamless integration with my smartphone ecosystem. Quick reply to messages from the wrist is smooth.",
+      "rating": 4
+    },
+    {
+      "review": "Vibrant always-on AMOLED display is easily readable under bright outdoor sun. Sleep tracking metrics provide actionable health insights.",
+      "rating": 4
+    },
+    {
+      "review": "Good fitness tracker, but third-party app ecosystem is sparse compared to Apple Watch and Wear OS platforms.",
+      "rating": 3
+    },
+    {
+      "review": "Decent smartwatch, but automatic workout detection can be slow to trigger until 10 minutes into a run.",
+      "rating": 3
+    },
+    {
+      "review": "Step count algorithm is overly optimistic and counts driving over bumpy Cairo roads as hundreds of walking steps.",
+      "rating": 2
+    },
+    {
+      "review": "The watch back sensor glass cracked while snapping into the magnetic charging puck. Poor build inspection.",
+      "rating": 1
+    },
+    {
+      "review": "The sapphire glass and titanium casing are practically indestructible. Dual-frequency GPS accuracy during Cairo marathon training is pinpoint.",
+      "rating": 5
+    },
+    {
+      "review": "Rotating physical bezel makes navigating notifications and menus a joy without smudging the screen with sweaty fingers.",
+      "rating": 5
+    },
+    {
+      "review": "The sapphire glass and titanium casing are practically indestructible. Dual-frequency GPS accuracy during Cairo marathon training is pinpoint.",
+      "rating": 5
+    },
+    {
+      "review": "Rotating physical bezel makes navigating notifications and menus a joy without smudging the screen with sweaty fingers.",
+      "rating": 5
+    },
+    {
+      "review": "The sapphire glass and titanium casing are practically indestructible. Dual-frequency GPS accuracy during Cairo marathon training is pinpoint.",
+      "rating": 5
+    },
+    {
+      "review": "Rotating physical bezel makes navigating notifications and menus a joy without smudging the screen with sweaty fingers.",
+      "rating": 5
+    },
+    {
+      "review": "The digital screen showing real-time watt input and output is incredibly useful. Charges my MacBook Pro and iPhone simultaneously at full speed!",
+      "rating": 5
+    },
+    {
+      "review": "Magnetic snap is strong and holds firmly through MagSafe phone cases. Fast wireless charging without overheating.",
+      "rating": 5
+    },
+    {
+      "review": "The digital screen showing real-time watt input and output is incredibly useful. Charges my MacBook Pro and iPhone simultaneously at full speed!",
+      "rating": 5
+    },
+    {
+      "review": "Magnetic snap is strong and holds firmly through MagSafe phone cases. Fast wireless charging without overheating.",
+      "rating": 5
+    },
+    {
+      "review": "Compact GaN charger that stays cool even when outputting 100W across multiple connected USB-C devices. Great for travel.",
+      "rating": 4
+    },
+    {
+      "review": "Durable braided cable and sturdy metal housing on ports. Delivers true 45W PPS fast charging to Samsung flagships.",
+      "rating": 4
+    },
+    {
+      "review": "Compact GaN charger that stays cool even when outputting 100W across multiple connected USB-C devices. Great for travel.",
+      "rating": 4
+    },
+    {
+      "review": "Durable braided cable and sturdy metal housing on ports. Delivers true 45W PPS fast charging to Samsung flagships.",
+      "rating": 4
+    },
+    {
+      "review": "Compact GaN charger that stays cool even when outputting 100W across multiple connected USB-C devices. Great for travel.",
+      "rating": 4
+    },
+    {
+      "review": "Durable braided cable and sturdy metal housing on ports. Delivers true 45W PPS fast charging to Samsung flagships.",
+      "rating": 4
+    },
+    {
+      "review": "Works as advertised, but when you plug in a second device, the charger briefly renegotiates and disconnects power for 1 second.",
+      "rating": 3
+    },
+    {
+      "review": "Good transfer speeds, but the included short USB-C cable feels rigid and awkward on desktop setups.",
+      "rating": 3
+    },
+    {
+      "review": "Heavy power bank that pulls down lightweight loose wall outlet sockets when using short cables.",
+      "rating": 2
+    },
+    {
+      "review": "Stopped charging after 3 weeks. No LED indicator lights up when plugged into the wall outlet. Cheap internal capacitors.",
+      "rating": 1
+    }
+  ],
+  "relationships": {
+    "products": [
+      {
+        "productIndex": 0,
+        "productName": "Apple iPhone 15 Pro Max 256GB",
+        "categorySlug": "smartphones",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 1,
+        "productName": "Samsung Galaxy S24 Ultra 512GB",
+        "categorySlug": "smartphones",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 2,
+        "productName": "Google Pixel 8 Pro 128GB",
+        "categorySlug": "smartphones",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 3,
+        "productName": "Xiaomi 14 Ultra 512GB",
+        "categorySlug": "smartphones",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 4,
+        "productName": "OnePlus 12 256GB",
+        "categorySlug": "smartphones",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 5,
+        "productName": "Samsung Galaxy A55 5G 128GB",
+        "categorySlug": "smartphones",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 6,
+        "productName": "Apple iPhone 13 128GB",
+        "categorySlug": "smartphones",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 7,
+        "productName": "Apple MacBook Pro 16 M3 Max",
+        "categorySlug": "laptops",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 8,
+        "productName": "Dell XPS 15 9530 i7 RTX 4060",
+        "categorySlug": "laptops",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 9,
+        "productName": "ASUS ROG Zephyrus G16 RTX 4080",
+        "categorySlug": "laptops",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 10,
+        "productName": "Lenovo Legion Pro 5 Gen 8",
+        "categorySlug": "laptops",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 11,
+        "productName": "HP Spectre x360 14 2-in-1",
+        "categorySlug": "laptops",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 12,
+        "productName": "Apple MacBook Air 13 M2 256GB",
+        "categorySlug": "laptops",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 13,
+        "productName": "Lenovo ThinkPad X1 Carbon Gen 11",
+        "categorySlug": "laptops",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 14,
+        "productName": "Apple iPad Pro 12.9 M2 128GB",
+        "categorySlug": "tablets",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 15,
+        "productName": "Samsung Galaxy Tab S9 Ultra 256GB",
+        "categorySlug": "tablets",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 16,
+        "productName": "Apple iPad Air 5th Gen 64GB",
+        "categorySlug": "tablets",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 17,
+        "productName": "Xiaomi Pad 6 128GB",
+        "categorySlug": "tablets",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 18,
+        "productName": "Lenovo Tab P12 Pro 256GB",
+        "categorySlug": "tablets",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 19,
+        "productName": "Apple iPad 10th Gen 64GB",
+        "categorySlug": "tablets",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 20,
+        "productName": "Samsung Galaxy Tab A9+ 64GB",
+        "categorySlug": "tablets",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 21,
+        "productName": "LG UltraGear 27GR95QE-B OLED 240Hz",
+        "categorySlug": "monitors",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 22,
+        "productName": "Samsung Odyssey OLED G9 49 Curved",
+        "categorySlug": "monitors",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 23,
+        "productName": "Dell UltraSharp U2723QE 4K USB-C Hub",
+        "categorySlug": "monitors",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 24,
+        "productName": "ASUS TUF Gaming VG27AQ 27 165Hz",
+        "categorySlug": "monitors",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 25,
+        "productName": "LG 34WN80C-B 34 UltraWide Curved",
+        "categorySlug": "monitors",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 26,
+        "productName": "BenQ PD3200U 32 4K Designer Monitor",
+        "categorySlug": "monitors",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 27,
+        "productName": "Xiaomi Curved Gaming Monitor 30",
+        "categorySlug": "monitors",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 28,
+        "productName": "Sony WH-1000XM5 Wireless ANC Headphone",
+        "categorySlug": "headphones",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 29,
+        "productName": "Apple AirPods Max Space Gray",
+        "categorySlug": "headphones",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 30,
+        "productName": "Bose QuietComfort Ultra Headphones",
+        "categorySlug": "headphones",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 31,
+        "productName": "Sennheiser Momentum 4 Wireless",
+        "categorySlug": "headphones",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 32,
+        "productName": "Sony WF-1000XM5 Wireless ANC Earbuds",
+        "categorySlug": "headphones",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 33,
+        "productName": "Apple AirPods Pro 2 USB-C Case",
+        "categorySlug": "headphones",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 34,
+        "productName": "Logitech G PRO X 2 LIGHTSPEED Headset",
+        "categorySlug": "headphones",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 35,
+        "productName": "Logitech MX Keys S Wireless Keyboard",
+        "categorySlug": "keyboards",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 36,
+        "productName": "Logitech G915 LIGHTSPEED Wireless RGB",
+        "categorySlug": "keyboards",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 37,
+        "productName": "Keychron Q1 Pro Wireless Custom Keyboard",
+        "categorySlug": "keyboards",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 38,
+        "productName": "ASUS ROG Azoth 75 Wireless Keyboard",
+        "categorySlug": "keyboards",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 39,
+        "productName": "SteelSeries Apex Pro TKL Mechanical",
+        "categorySlug": "keyboards",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 40,
+        "productName": "Razer BlackWidow V4 Pro Mechanical",
+        "categorySlug": "keyboards",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 41,
+        "productName": "Corsair K70 RGB PRO Mechanical Keyboard",
+        "categorySlug": "keyboards",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 42,
+        "productName": "Logitech MX Master 3S Wireless Mouse",
+        "categorySlug": "computer-mice",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 43,
+        "productName": "Logitech G Pro X Superlight 2 Mouse",
+        "categorySlug": "computer-mice",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 44,
+        "productName": "Razer DeathAdder V3 Pro Wireless Mouse",
+        "categorySlug": "computer-mice",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 45,
+        "productName": "ASUS ROG Harpe Ace Aim Lab Mouse",
+        "categorySlug": "computer-mice",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 46,
+        "productName": "SteelSeries Aerox 3 Wireless Mouse",
+        "categorySlug": "computer-mice",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 47,
+        "productName": "Apple Magic Mouse Black Multi-Touch",
+        "categorySlug": "computer-mice",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 48,
+        "productName": "Logitech G502 HERO Wired Gaming Mouse",
+        "categorySlug": "computer-mice",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 49,
+        "productName": "Sony PlayStation 5 Slim 1TB Disc",
+        "categorySlug": "gaming-consoles",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 50,
+        "productName": "Microsoft Xbox Series X 1TB Console",
+        "categorySlug": "gaming-consoles",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 51,
+        "productName": "Nintendo Switch OLED Model White",
+        "categorySlug": "gaming-consoles",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 52,
+        "productName": "Valve Steam Deck OLED 512GB Handheld",
+        "categorySlug": "gaming-consoles",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 53,
+        "productName": "ASUS ROG Ally Z1 Extreme 512GB",
+        "categorySlug": "gaming-consoles",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 54,
+        "productName": "Sony PlayStation Portal Remote Player",
+        "categorySlug": "gaming-consoles",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 55,
+        "productName": "Microsoft Xbox Series S 512GB Console",
+        "categorySlug": "gaming-consoles",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 56,
+        "productName": "Apple Watch Ultra 2 49mm Titanium",
+        "categorySlug": "smartwatches",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 57,
+        "productName": "Samsung Galaxy Watch 6 Classic 47mm",
+        "categorySlug": "smartwatches",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 58,
+        "productName": "Apple Watch Series 9 45mm Aluminum",
+        "categorySlug": "smartwatches",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 59,
+        "productName": "Garmin Fenix 7 Pro Sapphire Solar",
+        "categorySlug": "smartwatches",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 60,
+        "productName": "Xiaomi Watch 2 Pro 46mm LTE",
+        "categorySlug": "smartwatches",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 61,
+        "productName": "Samsung Galaxy Watch 5 Pro Titanium",
+        "categorySlug": "smartwatches",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 62,
+        "productName": "Huawei Watch GT 4 46mm Steel",
+        "categorySlug": "smartwatches",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 63,
+        "productName": "Anker 737 Power Bank 24000mAh 140W",
+        "categorySlug": "accessories",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 64,
+        "productName": "Apple MagSafe Charger 15W",
+        "categorySlug": "accessories",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 65,
+        "productName": "Belkin BoostCharge Pro 3-in-1 MagSafe",
+        "categorySlug": "accessories",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 66,
+        "productName": "Samsung 45W USB-C Fast Wall Charger",
+        "categorySlug": "accessories",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      },
+      {
+        "productIndex": 67,
+        "productName": "SanDisk 1TB Extreme Portable SSD USB-C",
+        "categorySlug": "accessories",
+        "creatorEmail": "tarek.admin.store@gmail.com"
+      },
+      {
+        "productIndex": 68,
+        "productName": "Anker 575 USB-C Hub 12-in-1 Dock",
+        "categorySlug": "accessories",
+        "creatorEmail": "nour.tech.admin@gmail.com"
+      },
+      {
+        "productIndex": 69,
+        "productName": "UGREEN Nexode 100W GaN 4-Port Charger",
+        "categorySlug": "accessories",
+        "creatorEmail": "omar.store.manager@gmail.com"
+      }
+    ],
+    "reviews": [
+      {
+        "reviewIndex": 0,
+        "productIndex": 0,
+        "productName": "Apple iPhone 15 Pro Max 256GB",
+        "userEmail": "tarek.admin.store@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 1,
+        "productIndex": 0,
+        "productName": "Apple iPhone 15 Pro Max 256GB",
+        "userEmail": "rana.techie.review@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 2,
+        "productIndex": 0,
+        "productName": "Apple iPhone 15 Pro Max 256GB",
+        "userEmail": "nada.gamal.ui@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 3,
+        "productIndex": 0,
+        "productName": "Apple iPhone 15 Pro Max 256GB",
+        "userEmail": "osama.farouk.it@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 4,
+        "productIndex": 1,
+        "productName": "Samsung Galaxy S24 Ultra 512GB",
+        "userEmail": "mariam.coder.cairo@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 5,
+        "productIndex": 1,
+        "productName": "Samsung Galaxy S24 Ultra 512GB",
+        "userEmail": "hany.elsharkawy.tech@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 6,
+        "productIndex": 1,
+        "productName": "Samsung Galaxy S24 Ultra 512GB",
+        "userEmail": "mahmoud.saad.studio@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 7,
+        "productIndex": 1,
+        "productName": "Samsung Galaxy S24 Ultra 512GB",
+        "userEmail": "shaimaa.zaki.developer@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 8,
+        "productIndex": 2,
+        "productName": "Google Pixel 8 Pro 128GB",
+        "userEmail": "ziad.designer99@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 9,
+        "productIndex": 2,
+        "productName": "Google Pixel 8 Pro 128GB",
+        "userEmail": "sherif.ashraf.pc@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 10,
+        "productIndex": 2,
+        "productName": "Google Pixel 8 Pro 128GB",
+        "userEmail": "sarah.mansour.gadgets@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 11,
+        "productIndex": 2,
+        "productName": "Google Pixel 8 Pro 128GB",
+        "userEmail": "peter.shafik.audio@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 12,
+        "productIndex": 3,
+        "productName": "Xiaomi 14 Ultra 512GB",
+        "userEmail": "layla.gaming.zone@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 13,
+        "productIndex": 3,
+        "productName": "Xiaomi 14 Ultra 512GB",
+        "userEmail": "reem.almasry.buyer@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 14,
+        "productIndex": 3,
+        "productName": "Xiaomi 14 Ultra 512GB",
+        "userEmail": "fady.naguib.mobile@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 15,
+        "productIndex": 3,
+        "productName": "Xiaomi 14 Ultra 512GB",
+        "userEmail": "bassem.youssef.tech@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 16,
+        "productIndex": 4,
+        "productName": "OnePlus 12 256GB",
+        "userEmail": "tamer.hosny.deals@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 17,
+        "productIndex": 4,
+        "productName": "OnePlus 12 256GB",
+        "userEmail": "ibrahim.khalil.tech@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 18,
+        "productIndex": 4,
+        "productName": "OnePlus 12 256GB",
+        "userEmail": "mirna.magdy.electronics@gmail.com",
+        "rating": 2
+      },
+      {
+        "reviewIndex": 19,
+        "productIndex": 4,
+        "productName": "OnePlus 12 256GB",
+        "userEmail": "ahmed.gamal.dev@gmail.com",
+        "rating": 1
+      },
+      {
+        "reviewIndex": 20,
+        "productIndex": 5,
+        "productName": "Samsung Galaxy A55 5G 128GB",
+        "userEmail": "rami.nabil.hardware@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 21,
+        "productIndex": 5,
+        "productName": "Samsung Galaxy A55 5G 128GB",
+        "userEmail": "samar.adel.tech@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 22,
+        "productIndex": 5,
+        "productName": "Samsung Galaxy A55 5G 128GB",
+        "userEmail": "david.morcos.engineer@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 23,
+        "productIndex": 5,
+        "productName": "Samsung Galaxy A55 5G 128GB",
+        "userEmail": "khaled.saleh.tech@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 24,
+        "productIndex": 6,
+        "productName": "Apple iPhone 13 128GB",
+        "userEmail": "asmaa.ali.cairo@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 25,
+        "productIndex": 6,
+        "productName": "Apple iPhone 13 128GB",
+        "userEmail": "mina.makram.hardware@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 26,
+        "productIndex": 6,
+        "productName": "Apple iPhone 13 128GB",
+        "userEmail": "omar.store.manager@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 27,
+        "productIndex": 6,
+        "productName": "Apple iPhone 13 128GB",
+        "userEmail": "dina.ibrahim.alex@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 28,
+        "productIndex": 7,
+        "productName": "Apple MacBook Pro 16 M3 Max",
+        "userEmail": "hossam.ghaly.reviews@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 29,
+        "productIndex": 7,
+        "productName": "Apple MacBook Pro 16 M3 Max",
+        "userEmail": "marian.girgis.review@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 30,
+        "productIndex": 7,
+        "productName": "Apple MacBook Pro 16 M3 Max",
+        "userEmail": "fatma.dev.alex@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 31,
+        "productIndex": 7,
+        "productName": "Apple MacBook Pro 16 M3 Max",
+        "userEmail": "kareem.fawzy.dev@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 32,
+        "productIndex": 8,
+        "productName": "Dell XPS 15 9530 i7 RTX 4060",
+        "userEmail": "mariam.yacoub.tech@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 33,
+        "productIndex": 8,
+        "productName": "Dell XPS 15 9530 i7 RTX 4060",
+        "userEmail": "nour.tech.admin@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 34,
+        "productIndex": 8,
+        "productName": "Dell XPS 15 9530 i7 RTX 4060",
+        "userEmail": "mostafa.kamal.pro@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 35,
+        "productIndex": 8,
+        "productName": "Dell XPS 15 9530 i7 RTX 4060",
+        "userEmail": "hazem.emam.gamer@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 36,
+        "productIndex": 9,
+        "productName": "ASUS ROG Zephyrus G16 RTX 4080",
+        "userEmail": "andrew.nabil.it@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 37,
+        "productIndex": 9,
+        "productName": "ASUS ROG Zephyrus G16 RTX 4080",
+        "userEmail": "mohamed.hassan.eng@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 38,
+        "productIndex": 9,
+        "productName": "ASUS ROG Zephyrus G16 RTX 4080",
+        "userEmail": "mona.systems.eng@gmail.com",
+        "rating": 2
+      },
+      {
+        "reviewIndex": 39,
+        "productIndex": 9,
+        "productName": "ASUS ROG Zephyrus G16 RTX 4080",
+        "userEmail": "habiba.elhadary.eg@gmail.com",
+        "rating": 1
+      },
+      {
+        "reviewIndex": 40,
+        "productIndex": 10,
+        "productName": "Lenovo Legion Pro 5 Gen 8",
+        "userEmail": "youssef.gadgets.eg@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 41,
+        "productIndex": 10,
+        "productName": "Lenovo Legion Pro 5 Gen 8",
+        "userEmail": "amr.audiophile.eg@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 42,
+        "productIndex": 10,
+        "productName": "Lenovo Legion Pro 5 Gen 8",
+        "userEmail": "yasmin.samy.tech@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 43,
+        "productIndex": 11,
+        "productName": "HP Spectre x360 14 2-in-1",
+        "userEmail": "salma.electronics.hub@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 44,
+        "productIndex": 11,
+        "productName": "HP Spectre x360 14 2-in-1",
+        "userEmail": "aya.abdelrahman.cairo@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 45,
+        "productIndex": 11,
+        "productName": "HP Spectre x360 14 2-in-1",
+        "userEmail": "walid.soliman.dev@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 46,
+        "productIndex": 12,
+        "productName": "Apple MacBook Air 13 M2 256GB",
+        "userEmail": "menna.tarek.designer@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 47,
+        "productIndex": 12,
+        "productName": "Apple MacBook Air 13 M2 256GB",
+        "userEmail": "george.hanna.cairo@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 48,
+        "productIndex": 12,
+        "productName": "Apple MacBook Air 13 M2 256GB",
+        "userEmail": "christine.rizk.designer@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 49,
+        "productIndex": 13,
+        "productName": "Lenovo ThinkPad X1 Carbon Gen 11",
+        "userEmail": "farah.elshami.shopper@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 50,
+        "productIndex": 13,
+        "productName": "Lenovo ThinkPad X1 Carbon Gen 11",
+        "userEmail": "reem.almasry.buyer@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 51,
+        "productIndex": 13,
+        "productName": "Lenovo ThinkPad X1 Carbon Gen 11",
+        "userEmail": "fady.naguib.mobile@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 52,
+        "productIndex": 14,
+        "productName": "Apple iPad Pro 12.9 M2 128GB",
+        "userEmail": "tamer.hosny.deals@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 53,
+        "productIndex": 14,
+        "productName": "Apple iPad Pro 12.9 M2 128GB",
+        "userEmail": "ibrahim.khalil.tech@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 54,
+        "productIndex": 14,
+        "productName": "Apple iPad Pro 12.9 M2 128GB",
+        "userEmail": "mirna.magdy.electronics@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 55,
+        "productIndex": 15,
+        "productName": "Samsung Galaxy Tab S9 Ultra 256GB",
+        "userEmail": "rami.nabil.hardware@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 56,
+        "productIndex": 15,
+        "productName": "Samsung Galaxy Tab S9 Ultra 256GB",
+        "userEmail": "samar.adel.tech@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 57,
+        "productIndex": 15,
+        "productName": "Samsung Galaxy Tab S9 Ultra 256GB",
+        "userEmail": "david.morcos.engineer@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 58,
+        "productIndex": 16,
+        "productName": "Apple iPad Air 5th Gen 64GB",
+        "userEmail": "asmaa.ali.cairo@gmail.com",
+        "rating": 2
+      },
+      {
+        "reviewIndex": 59,
+        "productIndex": 16,
+        "productName": "Apple iPad Air 5th Gen 64GB",
+        "userEmail": "mina.makram.hardware@gmail.com",
+        "rating": 1
+      },
+      {
+        "reviewIndex": 60,
+        "productIndex": 16,
+        "productName": "Apple iPad Air 5th Gen 64GB",
+        "userEmail": "omar.store.manager@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 61,
+        "productIndex": 17,
+        "productName": "Xiaomi Pad 6 128GB",
+        "userEmail": "hossam.ghaly.reviews@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 62,
+        "productIndex": 17,
+        "productName": "Xiaomi Pad 6 128GB",
+        "userEmail": "marian.girgis.review@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 63,
+        "productIndex": 17,
+        "productName": "Xiaomi Pad 6 128GB",
+        "userEmail": "fatma.dev.alex@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 64,
+        "productIndex": 18,
+        "productName": "Lenovo Tab P12 Pro 256GB",
+        "userEmail": "mariam.yacoub.tech@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 65,
+        "productIndex": 18,
+        "productName": "Lenovo Tab P12 Pro 256GB",
+        "userEmail": "nour.tech.admin@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 66,
+        "productIndex": 18,
+        "productName": "Lenovo Tab P12 Pro 256GB",
+        "userEmail": "mostafa.kamal.pro@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 67,
+        "productIndex": 19,
+        "productName": "Apple iPad 10th Gen 64GB",
+        "userEmail": "andrew.nabil.it@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 68,
+        "productIndex": 19,
+        "productName": "Apple iPad 10th Gen 64GB",
+        "userEmail": "mohamed.hassan.eng@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 69,
+        "productIndex": 19,
+        "productName": "Apple iPad 10th Gen 64GB",
+        "userEmail": "mona.systems.eng@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 70,
+        "productIndex": 20,
+        "productName": "Samsung Galaxy Tab A9+ 64GB",
+        "userEmail": "tarek.admin.store@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 71,
+        "productIndex": 20,
+        "productName": "Samsung Galaxy Tab A9+ 64GB",
+        "userEmail": "rana.techie.review@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 72,
+        "productIndex": 20,
+        "productName": "Samsung Galaxy Tab A9+ 64GB",
+        "userEmail": "nada.gamal.ui@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 73,
+        "productIndex": 21,
+        "productName": "LG UltraGear 27GR95QE-B OLED 240Hz",
+        "userEmail": "mariam.coder.cairo@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 74,
+        "productIndex": 21,
+        "productName": "LG UltraGear 27GR95QE-B OLED 240Hz",
+        "userEmail": "hany.elsharkawy.tech@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 75,
+        "productIndex": 21,
+        "productName": "LG UltraGear 27GR95QE-B OLED 240Hz",
+        "userEmail": "mahmoud.saad.studio@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 76,
+        "productIndex": 22,
+        "productName": "Samsung Odyssey OLED G9 49 Curved",
+        "userEmail": "ziad.designer99@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 77,
+        "productIndex": 22,
+        "productName": "Samsung Odyssey OLED G9 49 Curved",
+        "userEmail": "sherif.ashraf.pc@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 78,
+        "productIndex": 22,
+        "productName": "Samsung Odyssey OLED G9 49 Curved",
+        "userEmail": "sarah.mansour.gadgets@gmail.com",
+        "rating": 2
+      },
+      {
+        "reviewIndex": 79,
+        "productIndex": 23,
+        "productName": "Dell UltraSharp U2723QE 4K USB-C Hub",
+        "userEmail": "layla.gaming.zone@gmail.com",
+        "rating": 1
+      },
+      {
+        "reviewIndex": 80,
+        "productIndex": 23,
+        "productName": "Dell UltraSharp U2723QE 4K USB-C Hub",
+        "userEmail": "habiba.elhadary.eg@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 81,
+        "productIndex": 23,
+        "productName": "Dell UltraSharp U2723QE 4K USB-C Hub",
+        "userEmail": "shaimaa.zaki.developer@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 82,
+        "productIndex": 24,
+        "productName": "ASUS TUF Gaming VG27AQ 27 165Hz",
+        "userEmail": "hazem.emam.gamer@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 83,
+        "productIndex": 24,
+        "productName": "ASUS TUF Gaming VG27AQ 27 165Hz",
+        "userEmail": "osama.farouk.it@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 84,
+        "productIndex": 24,
+        "productName": "ASUS TUF Gaming VG27AQ 27 165Hz",
+        "userEmail": "peter.shafik.audio@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 85,
+        "productIndex": 25,
+        "productName": "LG 34WN80C-B 34 UltraWide Curved",
+        "userEmail": "walid.soliman.dev@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 86,
+        "productIndex": 25,
+        "productName": "LG 34WN80C-B 34 UltraWide Curved",
+        "userEmail": "george.hanna.cairo@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 87,
+        "productIndex": 25,
+        "productName": "LG 34WN80C-B 34 UltraWide Curved",
+        "userEmail": "bassem.youssef.tech@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 88,
+        "productIndex": 26,
+        "productName": "BenQ PD3200U 32 4K Designer Monitor",
+        "userEmail": "menna.tarek.designer@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 89,
+        "productIndex": 26,
+        "productName": "BenQ PD3200U 32 4K Designer Monitor",
+        "userEmail": "christine.rizk.designer@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 90,
+        "productIndex": 26,
+        "productName": "BenQ PD3200U 32 4K Designer Monitor",
+        "userEmail": "ahmed.gamal.dev@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 91,
+        "productIndex": 27,
+        "productName": "Xiaomi Curved Gaming Monitor 30",
+        "userEmail": "farah.elshami.shopper@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 92,
+        "productIndex": 27,
+        "productName": "Xiaomi Curved Gaming Monitor 30",
+        "userEmail": "youssef.gadgets.eg@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 93,
+        "productIndex": 27,
+        "productName": "Xiaomi Curved Gaming Monitor 30",
+        "userEmail": "khaled.saleh.tech@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 94,
+        "productIndex": 28,
+        "productName": "Sony WH-1000XM5 Wireless ANC Headphone",
+        "userEmail": "salma.electronics.hub@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 95,
+        "productIndex": 28,
+        "productName": "Sony WH-1000XM5 Wireless ANC Headphone",
+        "userEmail": "dina.ibrahim.alex@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 96,
+        "productIndex": 28,
+        "productName": "Sony WH-1000XM5 Wireless ANC Headphone",
+        "userEmail": "amr.audiophile.eg@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 97,
+        "productIndex": 29,
+        "productName": "Apple AirPods Max Space Gray",
+        "userEmail": "kareem.fawzy.dev@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 98,
+        "productIndex": 29,
+        "productName": "Apple AirPods Max Space Gray",
+        "userEmail": "aya.abdelrahman.cairo@gmail.com",
+        "rating": 2
+      },
+      {
+        "reviewIndex": 99,
+        "productIndex": 29,
+        "productName": "Apple AirPods Max Space Gray",
+        "userEmail": "yasmin.samy.tech@gmail.com",
+        "rating": 1
+      },
+      {
+        "reviewIndex": 100,
+        "productIndex": 30,
+        "productName": "Bose QuietComfort Ultra Headphones",
+        "userEmail": "tarek.admin.store@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 101,
+        "productIndex": 30,
+        "productName": "Bose QuietComfort Ultra Headphones",
+        "userEmail": "rana.techie.review@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 102,
+        "productIndex": 30,
+        "productName": "Bose QuietComfort Ultra Headphones",
+        "userEmail": "nada.gamal.ui@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 103,
+        "productIndex": 31,
+        "productName": "Sennheiser Momentum 4 Wireless",
+        "userEmail": "mariam.coder.cairo@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 104,
+        "productIndex": 31,
+        "productName": "Sennheiser Momentum 4 Wireless",
+        "userEmail": "hany.elsharkawy.tech@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 105,
+        "productIndex": 31,
+        "productName": "Sennheiser Momentum 4 Wireless",
+        "userEmail": "mahmoud.saad.studio@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 106,
+        "productIndex": 32,
+        "productName": "Sony WF-1000XM5 Wireless ANC Earbuds",
+        "userEmail": "ziad.designer99@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 107,
+        "productIndex": 32,
+        "productName": "Sony WF-1000XM5 Wireless ANC Earbuds",
+        "userEmail": "sherif.ashraf.pc@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 108,
+        "productIndex": 32,
+        "productName": "Sony WF-1000XM5 Wireless ANC Earbuds",
+        "userEmail": "sarah.mansour.gadgets@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 109,
+        "productIndex": 33,
+        "productName": "Apple AirPods Pro 2 USB-C Case",
+        "userEmail": "layla.gaming.zone@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 110,
+        "productIndex": 33,
+        "productName": "Apple AirPods Pro 2 USB-C Case",
+        "userEmail": "reem.almasry.buyer@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 111,
+        "productIndex": 33,
+        "productName": "Apple AirPods Pro 2 USB-C Case",
+        "userEmail": "fady.naguib.mobile@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 112,
+        "productIndex": 34,
+        "productName": "Logitech G PRO X 2 LIGHTSPEED Headset",
+        "userEmail": "tamer.hosny.deals@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 113,
+        "productIndex": 34,
+        "productName": "Logitech G PRO X 2 LIGHTSPEED Headset",
+        "userEmail": "ibrahim.khalil.tech@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 114,
+        "productIndex": 34,
+        "productName": "Logitech G PRO X 2 LIGHTSPEED Headset",
+        "userEmail": "mirna.magdy.electronics@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 115,
+        "productIndex": 35,
+        "productName": "Logitech MX Keys S Wireless Keyboard",
+        "userEmail": "rami.nabil.hardware@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 116,
+        "productIndex": 35,
+        "productName": "Logitech MX Keys S Wireless Keyboard",
+        "userEmail": "samar.adel.tech@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 117,
+        "productIndex": 35,
+        "productName": "Logitech MX Keys S Wireless Keyboard",
+        "userEmail": "david.morcos.engineer@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 118,
+        "productIndex": 36,
+        "productName": "Logitech G915 LIGHTSPEED Wireless RGB",
+        "userEmail": "asmaa.ali.cairo@gmail.com",
+        "rating": 2
+      },
+      {
+        "reviewIndex": 119,
+        "productIndex": 36,
+        "productName": "Logitech G915 LIGHTSPEED Wireless RGB",
+        "userEmail": "mina.makram.hardware@gmail.com",
+        "rating": 1
+      },
+      {
+        "reviewIndex": 120,
+        "productIndex": 36,
+        "productName": "Logitech G915 LIGHTSPEED Wireless RGB",
+        "userEmail": "omar.store.manager@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 121,
+        "productIndex": 37,
+        "productName": "Keychron Q1 Pro Wireless Custom Keyboard",
+        "userEmail": "hossam.ghaly.reviews@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 122,
+        "productIndex": 37,
+        "productName": "Keychron Q1 Pro Wireless Custom Keyboard",
+        "userEmail": "marian.girgis.review@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 123,
+        "productIndex": 37,
+        "productName": "Keychron Q1 Pro Wireless Custom Keyboard",
+        "userEmail": "fatma.dev.alex@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 124,
+        "productIndex": 38,
+        "productName": "ASUS ROG Azoth 75 Wireless Keyboard",
+        "userEmail": "mariam.yacoub.tech@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 125,
+        "productIndex": 38,
+        "productName": "ASUS ROG Azoth 75 Wireless Keyboard",
+        "userEmail": "nour.tech.admin@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 126,
+        "productIndex": 38,
+        "productName": "ASUS ROG Azoth 75 Wireless Keyboard",
+        "userEmail": "mostafa.kamal.pro@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 127,
+        "productIndex": 39,
+        "productName": "SteelSeries Apex Pro TKL Mechanical",
+        "userEmail": "andrew.nabil.it@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 128,
+        "productIndex": 39,
+        "productName": "SteelSeries Apex Pro TKL Mechanical",
+        "userEmail": "mohamed.hassan.eng@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 129,
+        "productIndex": 39,
+        "productName": "SteelSeries Apex Pro TKL Mechanical",
+        "userEmail": "mona.systems.eng@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 130,
+        "productIndex": 40,
+        "productName": "Razer BlackWidow V4 Pro Mechanical",
+        "userEmail": "ahmed.gamal.dev@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 131,
+        "productIndex": 40,
+        "productName": "Razer BlackWidow V4 Pro Mechanical",
+        "userEmail": "dina.ibrahim.alex@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 132,
+        "productIndex": 40,
+        "productName": "Razer BlackWidow V4 Pro Mechanical",
+        "userEmail": "hazem.emam.gamer@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 133,
+        "productIndex": 41,
+        "productName": "Corsair K70 RGB PRO Mechanical Keyboard",
+        "userEmail": "khaled.saleh.tech@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 134,
+        "productIndex": 41,
+        "productName": "Corsair K70 RGB PRO Mechanical Keyboard",
+        "userEmail": "kareem.fawzy.dev@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 135,
+        "productIndex": 41,
+        "productName": "Corsair K70 RGB PRO Mechanical Keyboard",
+        "userEmail": "habiba.elhadary.eg@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 136,
+        "productIndex": 42,
+        "productName": "Logitech MX Master 3S Wireless Mouse",
+        "userEmail": "amr.audiophile.eg@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 137,
+        "productIndex": 42,
+        "productName": "Logitech MX Master 3S Wireless Mouse",
+        "userEmail": "yasmin.samy.tech@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 138,
+        "productIndex": 42,
+        "productName": "Logitech MX Master 3S Wireless Mouse",
+        "userEmail": "osama.farouk.it@gmail.com",
+        "rating": 2
+      },
+      {
+        "reviewIndex": 139,
+        "productIndex": 43,
+        "productName": "Logitech G Pro X Superlight 2 Mouse",
+        "userEmail": "aya.abdelrahman.cairo@gmail.com",
+        "rating": 1
+      },
+      {
+        "reviewIndex": 140,
+        "productIndex": 43,
+        "productName": "Logitech G Pro X Superlight 2 Mouse",
+        "userEmail": "walid.soliman.dev@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 141,
+        "productIndex": 43,
+        "productName": "Logitech G Pro X Superlight 2 Mouse",
+        "userEmail": "shaimaa.zaki.developer@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 142,
+        "productIndex": 44,
+        "productName": "Razer DeathAdder V3 Pro Wireless Mouse",
+        "userEmail": "menna.tarek.designer@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 143,
+        "productIndex": 44,
+        "productName": "Razer DeathAdder V3 Pro Wireless Mouse",
+        "userEmail": "george.hanna.cairo@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 144,
+        "productIndex": 44,
+        "productName": "Razer DeathAdder V3 Pro Wireless Mouse",
+        "userEmail": "peter.shafik.audio@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 145,
+        "productIndex": 45,
+        "productName": "ASUS ROG Harpe Ace Aim Lab Mouse",
+        "userEmail": "christine.rizk.designer@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 146,
+        "productIndex": 45,
+        "productName": "ASUS ROG Harpe Ace Aim Lab Mouse",
+        "userEmail": "bassem.youssef.tech@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 147,
+        "productIndex": 45,
+        "productName": "ASUS ROG Harpe Ace Aim Lab Mouse",
+        "userEmail": "farah.elshami.shopper@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 148,
+        "productIndex": 46,
+        "productName": "SteelSeries Aerox 3 Wireless Mouse",
+        "userEmail": "youssef.gadgets.eg@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 149,
+        "productIndex": 46,
+        "productName": "SteelSeries Aerox 3 Wireless Mouse",
+        "userEmail": "salma.electronics.hub@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 150,
+        "productIndex": 46,
+        "productName": "SteelSeries Aerox 3 Wireless Mouse",
+        "userEmail": "omar.store.manager@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 151,
+        "productIndex": 47,
+        "productName": "Apple Magic Mouse Black Multi-Touch",
+        "userEmail": "hossam.ghaly.reviews@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 152,
+        "productIndex": 47,
+        "productName": "Apple Magic Mouse Black Multi-Touch",
+        "userEmail": "marian.girgis.review@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 153,
+        "productIndex": 47,
+        "productName": "Apple Magic Mouse Black Multi-Touch",
+        "userEmail": "fatma.dev.alex@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 154,
+        "productIndex": 48,
+        "productName": "Logitech G502 HERO Wired Gaming Mouse",
+        "userEmail": "mariam.yacoub.tech@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 155,
+        "productIndex": 48,
+        "productName": "Logitech G502 HERO Wired Gaming Mouse",
+        "userEmail": "nour.tech.admin@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 156,
+        "productIndex": 48,
+        "productName": "Logitech G502 HERO Wired Gaming Mouse",
+        "userEmail": "mostafa.kamal.pro@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 157,
+        "productIndex": 49,
+        "productName": "Sony PlayStation 5 Slim 1TB Disc",
+        "userEmail": "andrew.nabil.it@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 158,
+        "productIndex": 49,
+        "productName": "Sony PlayStation 5 Slim 1TB Disc",
+        "userEmail": "mohamed.hassan.eng@gmail.com",
+        "rating": 2
+      },
+      {
+        "reviewIndex": 159,
+        "productIndex": 49,
+        "productName": "Sony PlayStation 5 Slim 1TB Disc",
+        "userEmail": "mona.systems.eng@gmail.com",
+        "rating": 1
+      },
+      {
+        "reviewIndex": 160,
+        "productIndex": 50,
+        "productName": "Microsoft Xbox Series X 1TB Console",
+        "userEmail": "tarek.admin.store@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 161,
+        "productIndex": 50,
+        "productName": "Microsoft Xbox Series X 1TB Console",
+        "userEmail": "rana.techie.review@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 162,
+        "productIndex": 51,
+        "productName": "Nintendo Switch OLED Model White",
+        "userEmail": "mariam.coder.cairo@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 163,
+        "productIndex": 51,
+        "productName": "Nintendo Switch OLED Model White",
+        "userEmail": "hany.elsharkawy.tech@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 164,
+        "productIndex": 52,
+        "productName": "Valve Steam Deck OLED 512GB Handheld",
+        "userEmail": "ziad.designer99@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 165,
+        "productIndex": 52,
+        "productName": "Valve Steam Deck OLED 512GB Handheld",
+        "userEmail": "sherif.ashraf.pc@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 166,
+        "productIndex": 53,
+        "productName": "ASUS ROG Ally Z1 Extreme 512GB",
+        "userEmail": "layla.gaming.zone@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 167,
+        "productIndex": 53,
+        "productName": "ASUS ROG Ally Z1 Extreme 512GB",
+        "userEmail": "reem.almasry.buyer@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 168,
+        "productIndex": 54,
+        "productName": "Sony PlayStation Portal Remote Player",
+        "userEmail": "tamer.hosny.deals@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 169,
+        "productIndex": 54,
+        "productName": "Sony PlayStation Portal Remote Player",
+        "userEmail": "ibrahim.khalil.tech@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 170,
+        "productIndex": 55,
+        "productName": "Microsoft Xbox Series S 512GB Console",
+        "userEmail": "rami.nabil.hardware@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 171,
+        "productIndex": 55,
+        "productName": "Microsoft Xbox Series S 512GB Console",
+        "userEmail": "samar.adel.tech@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 172,
+        "productIndex": 56,
+        "productName": "Apple Watch Ultra 2 49mm Titanium",
+        "userEmail": "asmaa.ali.cairo@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 173,
+        "productIndex": 56,
+        "productName": "Apple Watch Ultra 2 49mm Titanium",
+        "userEmail": "mina.makram.hardware@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 174,
+        "productIndex": 57,
+        "productName": "Samsung Galaxy Watch 6 Classic 47mm",
+        "userEmail": "fady.naguib.mobile@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 175,
+        "productIndex": 57,
+        "productName": "Samsung Galaxy Watch 6 Classic 47mm",
+        "userEmail": "david.morcos.engineer@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 176,
+        "productIndex": 58,
+        "productName": "Apple Watch Series 9 45mm Aluminum",
+        "userEmail": "mirna.magdy.electronics@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 177,
+        "productIndex": 58,
+        "productName": "Apple Watch Series 9 45mm Aluminum",
+        "userEmail": "ahmed.gamal.dev@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 178,
+        "productIndex": 59,
+        "productName": "Garmin Fenix 7 Pro Sapphire Solar",
+        "userEmail": "bassem.youssef.tech@gmail.com",
+        "rating": 2
+      },
+      {
+        "reviewIndex": 179,
+        "productIndex": 59,
+        "productName": "Garmin Fenix 7 Pro Sapphire Solar",
+        "userEmail": "khaled.saleh.tech@gmail.com",
+        "rating": 1
+      },
+      {
+        "reviewIndex": 180,
+        "productIndex": 60,
+        "productName": "Xiaomi Watch 2 Pro 46mm LTE",
+        "userEmail": "youssef.gadgets.eg@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 181,
+        "productIndex": 60,
+        "productName": "Xiaomi Watch 2 Pro 46mm LTE",
+        "userEmail": "dina.ibrahim.alex@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 182,
+        "productIndex": 61,
+        "productName": "Samsung Galaxy Watch 5 Pro Titanium",
+        "userEmail": "salma.electronics.hub@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 183,
+        "productIndex": 61,
+        "productName": "Samsung Galaxy Watch 5 Pro Titanium",
+        "userEmail": "kareem.fawzy.dev@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 184,
+        "productIndex": 62,
+        "productName": "Huawei Watch GT 4 46mm Steel",
+        "userEmail": "amr.audiophile.eg@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 185,
+        "productIndex": 62,
+        "productName": "Huawei Watch GT 4 46mm Steel",
+        "userEmail": "nada.gamal.ui@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 186,
+        "productIndex": 63,
+        "productName": "Anker 737 Power Bank 24000mAh 140W",
+        "userEmail": "aya.abdelrahman.cairo@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 187,
+        "productIndex": 63,
+        "productName": "Anker 737 Power Bank 24000mAh 140W",
+        "userEmail": "mahmoud.saad.studio@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 188,
+        "productIndex": 64,
+        "productName": "Apple MagSafe Charger 15W",
+        "userEmail": "hazem.emam.gamer@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 189,
+        "productIndex": 64,
+        "productName": "Apple MagSafe Charger 15W",
+        "userEmail": "sarah.mansour.gadgets@gmail.com",
+        "rating": 5
+      },
+      {
+        "reviewIndex": 190,
+        "productIndex": 65,
+        "productName": "Belkin BoostCharge Pro 3-in-1 MagSafe",
+        "userEmail": "habiba.elhadary.eg@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 191,
+        "productIndex": 65,
+        "productName": "Belkin BoostCharge Pro 3-in-1 MagSafe",
+        "userEmail": "shaimaa.zaki.developer@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 192,
+        "productIndex": 66,
+        "productName": "Samsung 45W USB-C Fast Wall Charger",
+        "userEmail": "osama.farouk.it@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 193,
+        "productIndex": 66,
+        "productName": "Samsung 45W USB-C Fast Wall Charger",
+        "userEmail": "peter.shafik.audio@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 194,
+        "productIndex": 67,
+        "productName": "SanDisk 1TB Extreme Portable SSD USB-C",
+        "userEmail": "george.hanna.cairo@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 195,
+        "productIndex": 67,
+        "productName": "SanDisk 1TB Extreme Portable SSD USB-C",
+        "userEmail": "farah.elshami.shopper@gmail.com",
+        "rating": 4
+      },
+      {
+        "reviewIndex": 196,
+        "productIndex": 68,
+        "productName": "Anker 575 USB-C Hub 12-in-1 Dock",
+        "userEmail": "christine.rizk.designer@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 197,
+        "productIndex": 68,
+        "productName": "Anker 575 USB-C Hub 12-in-1 Dock",
+        "userEmail": "yasmin.samy.tech@gmail.com",
+        "rating": 3
+      },
+      {
+        "reviewIndex": 198,
+        "productIndex": 69,
+        "productName": "UGREEN Nexode 100W GaN 4-Port Charger",
+        "userEmail": "walid.soliman.dev@gmail.com",
+        "rating": 2
+      },
+      {
+        "reviewIndex": 199,
+        "productIndex": 69,
+        "productName": "UGREEN Nexode 100W GaN 4-Port Charger",
+        "userEmail": "menna.tarek.designer@gmail.com",
+        "rating": 1
+      }
+    ]
+  }
+}
