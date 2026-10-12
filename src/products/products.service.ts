@@ -6,12 +6,15 @@ import { Product } from './products.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserService } from '../users/users.service';
 import { filterObj } from '../utils/filterQuery';
+import { Review } from '../reviews/reviews.entity';
 
 @Injectable()
 export class ProductService {
   constructor(
     @InjectRepository(Product)
     private productsRepository: Repository<Product>,
+    @InjectRepository(Review)
+    private reviewRepository: Repository<Review>,
     private userService: UserService,
   ) {}
 
@@ -97,5 +100,19 @@ export class ProductService {
   public async deleteOneBy(id: number) {
     const product = await this.getOneBy(id);
     await this.productsRepository.remove(product);
+  }
+
+  async getProductRating(productId: number) {
+    const result = await this.reviewRepository
+      .createQueryBuilder('review')
+      .select('AVG(review.rating)', 'averageRating')
+      .addSelect('COUNT(review.id)', 'ratingsCount')
+      .where('review.productId = :productId', { productId })
+      .getRawOne();
+
+    return {
+      averageRating: Number(result.averageRating) || 0,
+      ratingsCount: Number(result.ratingsCount) || 0,
+    };
   }
 }

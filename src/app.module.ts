@@ -18,6 +18,7 @@ import {
 } from '@nestjs/throttler';
 import { dataSourceOptions } from '../db/data-source';
 import { AppController } from './app.controller';
+import { CategoriesModule as CategoryModule } from './categories/categories.module';
 
 @Module({
   controllers: [AppController],
@@ -25,6 +26,7 @@ import { AppController } from './app.controller';
     ProductModule,
     UserModule,
     ReviewModule,
+    CategoryModule,
     UploadsModule,
     MailModule,
     TypeOrmModule.forRoot(dataSourceOptions),
@@ -44,6 +46,10 @@ import { AppController } from './app.controller';
           ? `.env.${process.env.NODE_ENV}`
           : '.env',
     }),
+
+    CategoryModule,
+
+    CategoryModule,
   ],
   providers: [
     {
