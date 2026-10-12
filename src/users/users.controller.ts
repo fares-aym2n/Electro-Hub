@@ -12,6 +12,7 @@ import {
   Res,
   UseGuards,
   UseInterceptors,
+  NotFoundException,
 } from '@nestjs/common';
 
 import { UserService } from './users.service';
@@ -26,7 +27,6 @@ import { AuthRolesGuard } from './guards/auth-role.guard';
 import { updateTDO } from './dto/update.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import type { Response } from 'express';
-import { forgotPasswordDTO } from './dto/forgot-password.dto';
 import { resetPasswordDTO } from './dto/reset-password.dto';
 import {
   ApiSecurity,
@@ -34,6 +34,7 @@ import {
   ApiBody,
 } from '@nestjs/swagger';
 import { uploadImageDTO } from './dto/upload-image.dto';
+import { join } from 'node:path';
 
 @Controller('/api/users')
 export class UserController {
@@ -67,34 +68,22 @@ export class UserController {
 
   // GET: ~/api/users/auth/verify-email/:userId/:verificationToken
   @Get('/auth/verify-email/:userId/:verificationToken')
-  public verificationEmail(
-    @Param('userId')
-    userId: number,
-
-    @Param('verificationToken')
-    verificationToken: string,
+  public async verificationEmail(
+    @Param('userId') userId: string,
+    @Param('verificationToken') verificationToken: string,
+    @Res() res: Response,
   ) {
-    return this.userService.verifyEmail(
-      userId,
+    const isVerified = await this.userService.verifyEmail(
+      Number(userId),
       verificationToken,
     );
-  }
 
-  // POST: ~/api/users/forgot-password
-  @Post('forgot-password')
-  public forgotPassword(@Body() email: forgotPasswordDTO) {
-    return this.userService.sendResetPassword(email);
-  }
+    if (!isVerified) {
+      throw new NotFoundException('Invalid verification link');
+    }
 
-  // GET: ~/api/users/reset-password/:userId/:resetPasswordToken
-  @Get('reset-password/:userId/:resetPasswordToken')
-  public getResetPassword(
-    @Param('userId', ParseIntPipe) userId: number,
-    @Param('resetPasswordToken') resetPasswordToken: string,
-  ) {
-    return this.userService.getResetPassword(
-      userId,
-      resetPasswordToken,
+    return res.sendFile(
+      join(process.cwd(), 'public', 'email-verified.html'),
     );
   }
 

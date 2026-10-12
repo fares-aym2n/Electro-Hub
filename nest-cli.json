@@ -8,9 +8,13 @@
     "assets": [
       {
         "include": "mails/templates/**/*",
-        "outDir": "dist/",
-        "watchAssets": true
+        "outDir": "dist/src"
+      },
+      {
+        "include": "../public/**/*",
+        "outDir": "dist/public"
       }
-    ]
+    ],
+    "watchAssets": true
   }
 }

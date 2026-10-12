@@ -198,7 +198,7 @@ export class UserService {
     user.isEmailValidation = true;
     user.verificationToken = null;
     await this.userRepository.save(user);
-    return 'Your email is verify successfuly .please login';
+    return true;
   }
   /**
    * send Reset Password Email
