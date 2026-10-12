@@ -24,7 +24,10 @@ export class CategoriesService {
   public async findAll() {
     const cateogries = await this.categoryRepository.find();
 
-    return cateogries;
+    return {
+      results: cateogries.length,
+      cateogries,
+    };
   }
 
   async findOne(id: number) {
