@@ -1,15 +1,14 @@
 import { IsOptional, Length } from 'class-validator';
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiPropertyOptional } from '@nestjs/swagger';
 
 export class updateTDO {
   @IsOptional()
   @Length(2, 150)
-  @IsOptional()
-  @ApiProperty({ example: 'test-user' })
-  public username: string;
+  @ApiPropertyOptional({ example: 'test-user' })
+  username?: string;
 
-  @Length(5, 150)
   @IsOptional()
-  @ApiProperty({ example: 'test1234' })
-  public password: string;
+  @Length(5, 150)
+  @ApiPropertyOptional({ example: 'test1234' })
+  password?: string;
 }

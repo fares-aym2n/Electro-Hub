@@ -80,7 +80,7 @@ export class UserService {
     id: number,
     dto: updateTDO,
   ): Promise<User> {
-    const { username, password } = dto;
+    const { username } = dto;
     const user = await this.userRepository.findOne({
       where: { id },
     });
@@ -88,9 +88,11 @@ export class UserService {
       throw new NotFoundException('User is not found');
     }
 
-    user.password =
-      (await this.authService.hashePassword(password)) ??
-      user.password;
+    if (dto.password) {
+      dto.password = await this.authService.hashePassword(
+        dto.password,
+      );
+    }
     user.username = username ?? user.username;
     return this.userRepository.save(user);
   }
