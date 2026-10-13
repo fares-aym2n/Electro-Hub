@@ -1,6 +1,5 @@
 import {
   BadRequestException,
-  Controller,
   Injectable,
 } from '@nestjs/common';
 import { registerTDO } from './dto/register.dto';
@@ -18,7 +17,6 @@ import { forgotPasswordDTO } from './dto/forgot-password.dto';
 import { resetPasswordDTO } from './dto/reset-password.dto';
 
 @Injectable()
-@Controller()
 export class AuthService {
   constructor(
     @InjectRepository(User)
@@ -124,8 +122,7 @@ export class AuthService {
    * @returns success message
    */
 
-  public async sendResetPasswordLink(dto: forgotPasswordDTO) {
-    const { email } = dto;
+  public async sendResetPasswordLink(email: string) {
 
     const user = await this.userRepository.findOne({
       where: { email },
@@ -205,7 +202,7 @@ export class AuthService {
     const hashedPassword = await bcrypt.hash(newPassword, 12);
     user.password = hashedPassword;
     user.resetPasswordToken = null;
-    this.userRepository.save(user);
+    await this.userRepository.save(user);
     return { message: 'Password reset successfuly' };
   }
 

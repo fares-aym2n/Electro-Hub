@@ -415,13 +415,13 @@ describe('UserService', () => {
 
   describe('sendResetPassword', () => {
     it('should delegate to authService.sendResetPasswordLink', async () => {
-      const dto: forgotPasswordDTO = { email: 'user@example.com' };
+      const email = 'user@example.com';
       const expected = { message: 'Reset email sent' };
       mockAuthService.sendResetPasswordLink.mockResolvedValue(expected);
 
-      const result = await userService.sendResetPassword(dto);
+      const result = await userService.sendResetPassword(email);
 
-      expect(mockAuthService.sendResetPasswordLink).toHaveBeenCalledWith(dto);
+      expect(mockAuthService.sendResetPasswordLink).toHaveBeenCalledWith(email);
       expect(result).toEqual(expected);
     });
   });

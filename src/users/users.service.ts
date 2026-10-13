@@ -248,8 +248,8 @@ export class UserService {
    * @param email user emil
    * @returns success message
    */
-  public sendResetPassword(body: forgotPasswordDTO) {
-    return this.authService.sendResetPasswordLink(body);
+  public sendResetPassword(email: string) {
+    return this.authService.sendResetPasswordLink(email);
   }
   /**
    * get reset password link

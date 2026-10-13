@@ -97,13 +97,25 @@ export class UserController {
   @Post('/auth/forgot-password')
   @HttpCode(200)
   public forgotPassword(@Body() body: forgotPasswordDTO) {
-    return this.userService.sendResetPassword(body);
+    return this.userService.sendResetPassword(body.email);
   }
 
   // POST: ~/api/users/auth/reset-password
   @Post('/auth/reset-password')
-  public resetPassword(@Body() body: resetPasswordDTO) {
+  public resetPassword(p0: number, p1: string, @Body()
+body: resetPasswordDTO) {
     return this.userService.resetPassword(body);
+  }
+
+  @Get('/auth/reset-password/:userId/:resetPasswordToken')
+  public getResetPasswordLink(
+    @Param('userId', ParseIntPipe) userId: number,
+    @Param('resetPasswordToken') resetPasswordToken: string,
+  ) {
+    return this.userService.getResetPassword(
+      userId,
+      resetPasswordToken,
+    );
   }
 
   // GET: ~/api/users/me
