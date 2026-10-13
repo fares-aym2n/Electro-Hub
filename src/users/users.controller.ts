@@ -94,14 +94,15 @@ export class UserController {
     );
   }
 
-  // POST: ~/api/users/reset-password
-  @Post('reset-password')
-  public resetPassword(
-    p0: number,
-    p1: string,
-    @Body()
-    body: resetPasswordDTO,
-  ) {
+  @Post('/auth/forgot-password')
+  @HttpCode(200)
+  public forgotPassword(@Body() body: forgotPasswordDTO) {
+    return this.userService.sendResetPassword(body);
+  }
+
+  // POST: ~/api/users/auth/reset-password
+  @Post('/auth/reset-password')
+  public resetPassword(@Body() body: resetPasswordDTO) {
     return this.userService.resetPassword(body);
   }
 

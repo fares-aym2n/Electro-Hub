@@ -9,9 +9,11 @@ import { ApiProperty } from '@nestjs/swagger';
 export class resetPasswordDTO {
   @IsNotEmpty()
   @IsNumber()
+  @ApiProperty()
   public userId: number;
   @IsString()
   @IsNotEmpty()
+  @ApiProperty()
   public resetPasswordToken: string;
   @Length(5, 150)
   @IsString()

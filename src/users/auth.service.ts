@@ -123,28 +123,36 @@ export class AuthService {
    * @param email user emil
    * @returns success message
    */
-  public async sendResetPasswordLink(email: forgotPasswordDTO) {
+
+  public async sendResetPasswordLink(dto: forgotPasswordDTO) {
+    const { email } = dto;
+
     const user = await this.userRepository.findOne({
-      where: email,
+      where: { email },
     });
 
     if (!user) {
       throw new BadRequestException(
-        'User with given email is not exist.',
+        'User with given email does not exist.',
       );
     }
+
     user.resetPasswordToken = randomBytes(32).toString('hex');
     await this.userRepository.save(user);
+
     const resetPasswordLink = `${this.config.get<string>('CLIENT_URL')}/reset-password/${user.id}/${user.resetPasswordToken}`;
+
     await this.mailService.sendResetPasswordEmail(
       user,
       resetPasswordLink,
     );
+
     return {
       message:
-        'Password reset link send to email , check your inbox.',
+        'Password reset link sent to email, check your inbox.',
     };
   }
+
   /**
    * get reset password link
    * @param userId user id from the link
