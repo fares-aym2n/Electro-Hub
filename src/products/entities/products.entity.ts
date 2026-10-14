@@ -8,10 +8,10 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-import { TIMESTAMP } from '../utils/constrants';
-import { Review } from '../reviews/reviews.entity';
-import { User } from '../users/users.entity';
-import { Category } from '../categories/entities/category.entity';
+import { TIMESTAMP } from '../../utils/constrants';
+import { User } from '../../users/entities/users.entity';
+import { Category } from '../../categories/entities/category.entity';
+import { Review } from '../../reviews/entities/reviews.entity';
 
 @Entity({ name: 'products' })
 export class Product {
@@ -57,7 +57,7 @@ export class Product {
     default: 0,
   })
   discount: number;
-  
+
   @CreateDateColumn({
     type: 'timestamp',
     default: () => TIMESTAMP,

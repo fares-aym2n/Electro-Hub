@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { registerTDO } from './dto/register.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { User } from './users.entity';
+import { User } from './entities/users.entity';
 import { Repository } from 'typeorm';
 import { loginTDO } from './dto/login.dto';
 import { payloadTypes } from '../utils/payload';

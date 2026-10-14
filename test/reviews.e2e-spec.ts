@@ -4,11 +4,11 @@ import { DataSource } from 'typeorm';
 import request from 'supertest';
 import * as bcrypt from 'bcryptjs';
 import { AppModule } from '../src/app.module';
-import { User } from '../src/users/users.entity';
+import { User } from '../src/users/entities/users.entity';
 import { UserTypes } from '../src/utils/user-types';
 import { createReviewDTO } from '../src/reviews/dto/create-reviews.dto';
 import { Review } from '../src/reviews/reviews.entity';
-import { Product } from '../src/products/products.entity';
+import { Product } from '../src/products/entities/products.entity';
 
 describe('Review Controller e2e', () => {
   let app: INestApplication;

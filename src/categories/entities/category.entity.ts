@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Product } from '../../products/products.entity';
+import { Product } from '../../products/entities/products.entity';
 import { TIMESTAMP } from '../../utils/constrants';
 
 @Entity({ name: 'categories' })

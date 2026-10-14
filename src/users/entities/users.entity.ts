@@ -7,11 +7,11 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { TIMESTAMP } from '../utils/constrants';
-import { UserTypes } from '../utils/user-types';
-import { Product } from '../products/products.entity';
-import { Review } from '../reviews/reviews.entity';
+import { TIMESTAMP } from '../../utils/constrants';
+import { UserTypes } from '../../utils/user-types';
+import { Product } from '../../products/entities/products.entity';
 import { Exclude } from 'class-transformer';
+import { Review } from '../../reviews/entities/reviews.entity';
 
 @Entity({ name: 'users' })
 export class User {

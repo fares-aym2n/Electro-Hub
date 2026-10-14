@@ -1,9 +1,9 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
-import { User } from '../src/users/users.entity';
-import { Product } from '../src/products/products.entity';
-import { Review } from '../src/reviews/reviews.entity';
+import { User } from '../src/users/entities/users.entity';
+import { Product } from '../src/products/entities/products.entity';
 import { config } from 'dotenv';
 import { Category } from '../src/categories/entities/category.entity';
+import { Review } from '../src/reviews/entities/reviews.entity';
 config({ path: '.env' });
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',

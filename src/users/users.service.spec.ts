@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 import { JwtService } from '@nestjs/jwt';
 import { UserService } from './users.service';
 import { AuthService } from './auth.service';
-import { User } from './users.entity';
+import { User } from './entities/users.entity';
 import { UserTypes } from '../utils/user-types';
 import { payloadTypes } from '../utils/payload';
 import { registerTDO } from './dto/register.dto';

@@ -1,7 +1,7 @@
 
-import { Product } from '../src/products/products.entity.js';
-import { Review } from '../src/reviews/reviews.entity.js';
-import { User } from '../src/users/users.entity.js';
+import { Product } from '../src/products/entities/products.entity.js';
+import { Review } from '../src/reviews/entities/reviews.entity.js';
+import { User } from '../src/users/entities/users.entity.js';
 import dataSource from './data-source.js';
 
 function getReviewTemplates(categoryName: string): string[] {

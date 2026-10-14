@@ -1,5 +1,5 @@
 import { getMetadataArgsStorage } from 'typeorm';
-import { User } from './users.entity';
+import { User } from './entities/users.entity';
 import { UserTypes } from '../utils/user-types';
 import { TIMESTAMP } from '../utils/constrants';
 

@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { MailService } from './mail.service';
 import { MailerService } from '@nestjs-modules/mailer';
 import { RequestTimeoutException } from '@nestjs/common';
-import { User } from '../users/users.entity';
+import { User } from '../users/entities/users.entity';
 
 describe('MailService', () => {
   let mailService: MailService;

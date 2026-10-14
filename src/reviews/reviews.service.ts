@@ -5,7 +5,6 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { Repository } from 'typeorm';
-import { Review } from './reviews.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { createReviewDTO } from './dto/create-reviews.dto';
 import { UserService } from '../users/users.service';
@@ -13,6 +12,7 @@ import { ProductService } from '../products/products.service';
 import { updateReviewDTO } from './dto/upate-review.dto';
 import { payloadTypes } from '../utils/payload';
 import { UserTypes } from '../utils/user-types';
+import { Review } from './entities/reviews.entity';
 
 @Injectable()
 @Controller()

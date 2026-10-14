@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 import bcrypt from 'bcryptjs';
 
 import dataSource from './data-source.js';
-import { User } from '../src/users/users.entity.js';
+import { User } from '../src/users/entities/users.entity.js';
 
 async function seedUsers() {
   try {

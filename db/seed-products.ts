@@ -3,8 +3,8 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 import dataSource from './data-source.js';
-import { Product } from '../src/products/products.entity.js';
-import { User } from '../src/users/users.entity.js';
+import { Product } from '../src/products/entities/products.entity.js';
+import { User } from '../src/users/entities/users.entity.js';
 import { Category } from '../src/categories/entities/category.entity.js';
 
 async function seedProducts() {

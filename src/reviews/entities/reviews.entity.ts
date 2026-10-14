@@ -8,9 +8,10 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-import { TIMESTAMP } from '../utils/constrants';
-import { Product } from '../products/products.entity';
-import { User } from '../users/users.entity';
+import { Product } from '../../products/entities/products.entity';
+import { User } from '../../users/entities/users.entity';
+import { TIMESTAMP } from '../../utils/constrants';
+
 
 @Entity({ name: 'reviews' })
 @Check('"rating" >= 1 AND "rating" <= 5')
