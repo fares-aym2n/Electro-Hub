@@ -49,6 +49,12 @@ export class ProductController {
     required: false,
   })
   @ApiQuery({
+    name: 'category',
+    type: 'string',
+    description: 'Filter products by category name',
+    required: false,
+  })
+  @ApiQuery({
     name: 'page',
     type: 'number',
     description: 'Specify the page number to retrieve',
@@ -59,12 +65,14 @@ export class ProductController {
     @Query('name') name?: string,
     @Query('minPrice') minPrice?: string,
     @Query('maxPrice') maxPrice?: string,
+    @Query('category') category?: string,
   ) {
     return this.productService.getAll(
       page,
       name,
       minPrice,
       maxPrice,
+      category,
     );
   }
 

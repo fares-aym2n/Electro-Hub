@@ -9,6 +9,7 @@ export const filterObj = (
   name?: string,
   minPrice?: string,
   maxPrice?: string,
+  category?: string,
 ) => {
   return {
     ...(name ? { name: Like(`%${name.toLowerCase()}%`) } : {}),
@@ -21,5 +22,6 @@ export const filterObj = (
         : maxPrice
           ? { price: LessThanOrEqual(parseInt(maxPrice)) }
           : {}),
+    ...(category ? { category: { slug: category } } : {}),
   };
 };
