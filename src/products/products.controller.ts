@@ -80,6 +80,7 @@ export class ProductController {
       minPrice,
       maxPrice,
       category,
+      discount,
     );
   }
 

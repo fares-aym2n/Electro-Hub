@@ -34,18 +34,17 @@ export class ProductService {
     products: Product[];
   }> {
     const limitResult = 10;
-    const [products] =
-      await this.productsRepository.findAndCount({
-        where: filterObj(
-          name,
-          minPrice,
-          maxPrice,
-          category,
-          discount,
-        ),
-        skip: (page - 1) * limitResult,
-        take: limitResult,
-      });
+    const products = await this.productsRepository.find({
+      where: filterObj(
+        name,
+        minPrice,
+        maxPrice,
+        category,
+        discount,
+      ),
+      skip: (page - 1) * limitResult,
+      take: limitResult,
+    });
     return { results: products.length, products };
   }
 
