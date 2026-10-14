@@ -55,6 +55,12 @@ export class ProductController {
     required: false,
   })
   @ApiQuery({
+    name: 'discount',
+    type: 'boolean',
+    description: 'Filter products by offers',
+    required: false,
+  })
+  @ApiQuery({
     name: 'page',
     type: 'number',
     description: 'Specify the page number to retrieve',
@@ -66,6 +72,7 @@ export class ProductController {
     @Query('minPrice') minPrice?: string,
     @Query('maxPrice') maxPrice?: string,
     @Query('category') category?: string,
+    @Query('discount') discount?: string,
   ) {
     return this.productService.getAll(
       page,

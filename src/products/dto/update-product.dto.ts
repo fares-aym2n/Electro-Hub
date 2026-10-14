@@ -67,4 +67,11 @@ export class updateProductDTO {
     description: 'ID of an existing category',
   })
   categoryId?: number;
+
+  @IsInt()
+  @ApiPropertyOptional({
+    example: 30,
+    description: 'Precision of the discount',
+  })
+  discount?: number;
 }

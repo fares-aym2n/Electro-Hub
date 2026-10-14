@@ -3,6 +3,7 @@ import {
   Between,
   MoreThanOrEqual,
   LessThanOrEqual,
+  MoreThan,
 } from 'typeorm';
 
 export const filterObj = (
@@ -10,6 +11,7 @@ export const filterObj = (
   minPrice?: string,
   maxPrice?: string,
   category?: string,
+  discount?: string,
 ) => {
   return {
     ...(name ? { name: Like(`%${name.toLowerCase()}%`) } : {}),
@@ -23,5 +25,6 @@ export const filterObj = (
           ? { price: LessThanOrEqual(parseInt(maxPrice)) }
           : {}),
     ...(category ? { category: { slug: category } } : {}),
+    ...(discount === 'true' ? { discount: MoreThan(0) } : {}),
   };
 };

@@ -50,6 +50,14 @@ export class Product {
   @Column({ type: 'int', default: 0 })
   ratingsCount: number;
 
+  @Column({
+    type: 'numeric',
+    precision: 3,
+    scale: 0,
+    default: 0,
+  })
+  discount: number;
+  
   @CreateDateColumn({
     type: 'timestamp',
     default: () => TIMESTAMP,

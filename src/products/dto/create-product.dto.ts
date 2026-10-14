@@ -63,4 +63,11 @@ export class createProductDTO {
     description: 'ID of an existing category',
   })
   categoryId: number;
+  @IsInt()
+  @ApiProperty({
+    example: 30,
+    description: 'Precision of the discount',
+    default: 0,
+  })
+  discount?: number;
 }

@@ -28,6 +28,7 @@ export class ProductService {
     minPrice?: string,
     maxPrice?: string,
     category?: string,
+    discount?: string,
   ): Promise<{
     results: number;
     products: Product[];
@@ -35,7 +36,13 @@ export class ProductService {
     const limitResult = 10;
     const [products] =
       await this.productsRepository.findAndCount({
-        where: filterObj(name, minPrice, maxPrice, category),
+        where: filterObj(
+          name,
+          minPrice,
+          maxPrice,
+          category,
+          discount,
+        ),
         skip: (page - 1) * limitResult,
         take: limitResult,
       });
