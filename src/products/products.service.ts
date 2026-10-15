@@ -7,6 +7,7 @@ import { filterObj } from '../utils/filterQuery';
 import { createProductDTO } from './dto/create-product.dto';
 import { updateProductDTO } from './dto/update-product.dto';
 import { Review } from '../reviews/entities/reviews.entity';
+import { Category } from '../categories/entities/category.entity';
 
 @Injectable()
 export class ProductService {
@@ -15,6 +16,8 @@ export class ProductService {
     private productsRepository: Repository<Product>,
     @InjectRepository(Review)
     private reviewRepository: Repository<Review>,
+    @InjectRepository(Category)
+    private categoryRepository: Repository<Category>,
     private userService: UserService,
   ) {}
 
@@ -72,14 +75,20 @@ export class ProductService {
    */
   public async createOne(
     dto: createProductDTO,
-    categoryName: string,
+    categorySlug: string,
     userID: number,
   ): Promise<Product> {
     const user = await this.userService.getCurrentUser(userID);
+    const category = await this.categoryRepository.findOne({
+      where: { slug: categorySlug },
+    });
+    if (!category) {
+      throw new NotFoundException('Not category have this slug');
+    }
     const product = this.productsRepository.create({
       ...dto,
       name: dto.name.toLowerCase(),
-      category: { slug: categoryName },
+      category: { slug: categorySlug },
       user,
     });
     return await this.productsRepository.save(product);

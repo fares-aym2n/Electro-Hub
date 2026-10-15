@@ -90,19 +90,19 @@ export class ProductController {
     return this.productService.getOneBy(id);
   }
 
-  // POST: ~/api/products/categoryId
-  @Post('/:categoryId')
+  // POST: ~/api/products/categorySlug
+  @Post('/:categorySlug')
   @UseGuards(AuthRolesGuard)
   @Roles(UserTypes.ADMIN)
   @ApiSecurity('bearer')
   public createProduct(
     @Body() dto: createProductDTO,
-    @Param() categoryName: string,
+    @Param() categorySlug: string,
     @CurrentUser() payload: payloadTypes,
   ) {
     return this.productService.createOne(
       dto,
-      categoryName,
+      categorySlug,
       payload.id,
     );
   }
