@@ -6,6 +6,7 @@ import {
   Delete,
   UseGuards,
   ParseIntPipe,
+  HttpCode,
 } from '@nestjs/common';
 import { WhitelistService } from './whitelist.service';
 import { CurrentUser } from '../users/decorators/auth.decorator';
@@ -44,6 +45,7 @@ export class WhitelistController {
     );
   }
 
+  @HttpCode(204)
   @Delete('/:productId')
   @UseGuards(AuthRolesGuard)
   @Roles(UserTypes.USER, UserTypes.ADMIN)

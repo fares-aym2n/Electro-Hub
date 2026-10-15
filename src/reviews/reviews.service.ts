@@ -72,13 +72,25 @@ export class ReviewService {
     const product =
       await this.productService.getOneBy(productId);
 
-    const newReview = await this.reviewRepository.create({
+    const newReview = this.reviewRepository.create({
       ...dto,
       user,
       product,
     });
-    return await this.reviewRepository.save(newReview);
 
+    const savedReview =
+      await this.reviewRepository.save(newReview);
+
+    const { averageRating, ratingsCount } =
+      await this.productService.getProductRating(productId);
+
+    await this.productService.updateRating(
+      productId,
+      averageRating,
+      ratingsCount,
+    );
+
+    return savedReview;
   }
   /**
    * Update review
@@ -115,7 +127,6 @@ export class ReviewService {
       payload.role == UserTypes.ADMIN
     ) {
       return await this.reviewRepository.remove(review);
-      
     }
     throw new ForbiddenException(
       'You are not allawed to update review',

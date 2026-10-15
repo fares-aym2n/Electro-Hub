@@ -134,4 +134,14 @@ export class ProductService {
       ratingsCount: Number(result.ratingsCount) || 0,
     };
   }
+  public async updateRating(
+    productId: number,
+    averageRating: number,
+    ratingsCount: number,
+  ) {
+    await this.productsRepository.update(productId, {
+      averageRating: averageRating,
+      ratingsCount,
+    });
+  }
 }
