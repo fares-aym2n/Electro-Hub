@@ -57,13 +57,6 @@ export class createProductDTO {
   isFeatured?: boolean;
 
   @IsInt()
-  @Min(1)
-  @ApiProperty({
-    example: 1,
-    description: 'ID of an existing category',
-  })
-  categoryId: number;
-  @IsInt()
   @ApiProperty({
     example: 30,
     description: 'Precision of the discount',

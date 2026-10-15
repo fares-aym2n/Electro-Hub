@@ -90,16 +90,21 @@ export class ProductController {
     return this.productService.getOneBy(id);
   }
 
-  // POST: ~/api/products
-  @Post()
+  // POST: ~/api/products/categoryId
+  @Post('/:categoryId')
   @UseGuards(AuthRolesGuard)
   @Roles(UserTypes.ADMIN)
   @ApiSecurity('bearer')
   public createProduct(
-    @Body() body: createProductDTO,
+    @Body() dto: createProductDTO,
+    @Param() categoryId: number,
     @CurrentUser() payload: payloadTypes,
   ) {
-    return this.productService.createOne(body, payload.id);
+    return this.productService.createOne(
+      dto,
+      categoryId,
+      payload.id,
+    );
   }
 
   // PATCH: ~/api/products/:id

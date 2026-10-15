@@ -60,15 +60,6 @@ export class updateProductDTO {
   isFeatured?: boolean;
 
   @IsInt()
-  @Min(1)
-  @IsOptional()
-  @ApiPropertyOptional({
-    example: 2,
-    description: 'ID of an existing category',
-  })
-  categoryId?: number;
-
-  @IsInt()
   @ApiPropertyOptional({
     example: 30,
     description: 'Precision of the discount',

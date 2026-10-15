@@ -72,12 +72,14 @@ export class ProductService {
    */
   public async createOne(
     dto: createProductDTO,
+    categoryId: number,
     userID: number,
   ): Promise<Product> {
     const user = await this.userService.getCurrentUser(userID);
     const product = this.productsRepository.create({
       ...dto,
       name: dto.name.toLowerCase(),
+      category: { id: categoryId },
       user,
     });
     return await this.productsRepository.save(product);
