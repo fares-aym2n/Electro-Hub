@@ -82,14 +82,7 @@ export class ReviewService {
     const savedReview =
       await this.reviewRepository.save(newReview);
 
-    const { averageRating, ratingsCount } =
-      await this.productService.getProductRating(productId);
-
-    await this.productService.updateRating(
-      productId,
-      averageRating,
-      ratingsCount,
-    );
+    await this.refreshProductRating(productId);
 
     return savedReview;
   }
@@ -105,7 +98,17 @@ export class ReviewService {
     userId: number,
     dto: updateReviewDTO,
   ) {
-    const review = await this.getOne(reviewId);
+    const review = await this.reviewRepository.findOne({
+      where: { id: reviewId },
+      relations: {
+        user: true,
+        product: true,
+      },
+    });
+
+    if (!review) {
+      throw new NotFoundException('Review is not found');
+    }
     if (review.user.id !== userId) {
       throw new ForbiddenException(
         'You are not allawed to update review',
@@ -113,7 +116,10 @@ export class ReviewService {
     }
     review.review = dto.review ?? review.review;
     review.rating = dto.rating ?? review.rating;
-    return this.reviewRepository.save(review);
+    const updatedReview =
+      await this.reviewRepository.save(review);
+    await this.refreshProductRating(review.product.id);
+    return updatedReview;
   }
   /**
    * Delete review
@@ -127,10 +133,24 @@ export class ReviewService {
       review.user.id === payload.id ||
       payload.role == UserTypes.ADMIN
     ) {
-      return await this.reviewRepository.remove(review);
+      const productId = review.product.id;
+
+      await this.reviewRepository.remove(review);
+      await this.refreshProductRating(productId);
+      return 0;
     }
     throw new ForbiddenException(
       'You are not allawed to update review',
+    );
+  }
+  private async refreshProductRating(productId: number) {
+    const { averageRating, ratingsCount } =
+      await this.productService.getProductRating(productId);
+
+    await this.productService.updateRating(
+      productId,
+      averageRating,
+      ratingsCount,
     );
   }
 }
