@@ -97,7 +97,7 @@ export class ProductController {
   @ApiSecurity('bearer')
   public createProduct(
     @Body() dto: createProductDTO,
-    @Param() categorySlug: string,
+    @Param('categorySlug') categorySlug: string,
     @CurrentUser() payload: payloadTypes,
   ) {
     return this.productService.createOne(
