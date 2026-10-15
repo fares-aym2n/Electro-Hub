@@ -170,7 +170,8 @@ export class CartService {
       throw new NotFoundException('Product is not in the cart');
     }
 
-    return this.cartItemRepository.remove(cartItem);
+    await this.cartItemRepository.remove(cartItem);
+    return this.getCart(userId);
   }
   public async clearCart(userID: number) {
     // 1. Get the user's cart

@@ -8,6 +8,7 @@ import {
   Delete,
   UseGuards,
   ParseIntPipe,
+  HttpCode,
 } from '@nestjs/common';
 import { CartService } from './cart.service';
 import { AddCartItemDto } from './dto/add_cart-item.dto';
@@ -16,7 +17,7 @@ import { Roles } from '../users/decorators/user-roles.decorator';
 import { UserTypes } from '../utils/user-types';
 import type { payloadTypes } from '../utils/payload';
 import { updateCartItemDto } from './dto/update-cart.dto';
-import {ApiSecurity } from '@nestjs/swagger';
+import { ApiOperation, ApiSecurity } from '@nestjs/swagger';
 import { AuthRolesGuard } from '../users/guards/auth-role.guard';
 
 @Controller('/api/carts')
@@ -28,6 +29,7 @@ export class CartController {
   @UseGuards(AuthRolesGuard)
   @Roles(UserTypes.USER)
   @ApiSecurity('bearer')
+  @ApiOperation({ summary: 'Get logged in user cart' })
   findCart(@CurrentUser() payload: payloadTypes) {
     return this.cartService.getCart(payload.id);
   }
@@ -83,9 +85,11 @@ export class CartController {
   }
 
   // DELETE: ~/api/carts
+  @HttpCode(204)
   @UseGuards(AuthRolesGuard)
   @Roles(UserTypes.USER)
   @ApiSecurity('bearer')
+  @ApiOperation({ summary: 'Clear Logged in user cart' })
   @Delete()
   clearCart(@CurrentUser() payload: payloadTypes) {
     return this.cartService.clearCart(payload.id);

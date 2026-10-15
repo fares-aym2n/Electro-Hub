@@ -55,7 +55,20 @@ async function bootstrap() {
     .setVersion('1.0')
     .addServer(`${process.env.BASE_URL}`)
     .addServer('http://localhost:3000')
+    .setDescription(
+      `
+## Test Account
 
+Use the following account to test authenticated endpoints:
+
+- **Email:** test@gmail.com
+- **Password:** test1234
+
+This account is intended for API testing only.
+
+If authentication fails, verify that the account is active and that the credentials are correct.
+`,
+    )
     .addBearerAuth()
     .build();
 
