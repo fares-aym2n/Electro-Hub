@@ -8,6 +8,7 @@ import {
   ParseIntPipe,
   Patch,
   Post,
+  Query,
   UseGuards,
 } from '@nestjs/common';
 
@@ -21,17 +22,25 @@ import { UserTypes } from '../utils/user-types';
 import { updateReviewDTO } from './dto/upate-review.dto';
 import {
   ApiParam,
+  ApiQuery,
   ApiSecurity,
 } from '@nestjs/swagger';
+import { QueryResult } from 'typeorm';
 
 @Controller('/api/reviews')
 export class ReviewController {
   constructor(private readonly reviewService: ReviewService) {}
 
   // GET: ~/api/reviews
+  @ApiQuery({
+    name: 'productId',
+    type: 'number',
+    description: 'Filter Reviews by ProductId',
+    required: false,
+  })
   @Get()
-  public getAllReviews() {
-    return this.reviewService.getAll();
+  public getAllReviews(@Query('productId') productId: number) {
+    return this.reviewService.getAll(productId);
   }
 
   // GET: ~/api/reviews/:id

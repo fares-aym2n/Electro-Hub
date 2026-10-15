@@ -28,12 +28,13 @@ export class ReviewService {
    * get all reviews
    * @returns reviews
    */
-  public async getAll(): Promise<{
+  public async getAll(productId: number): Promise<{
     result: number;
     reviews: Review[];
   }> {
     const reviews = await this.reviewRepository.find({
       order: { createdAt: 'DESC' },
+      where: productId ? { product: { id: productId } } : {},
     });
     return {
       result: reviews.length,
