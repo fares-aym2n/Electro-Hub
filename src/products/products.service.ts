@@ -88,7 +88,7 @@ export class ProductService {
     const product = this.productsRepository.create({
       ...dto,
       name: dto.name.toLowerCase(),
-      category: { slug: categorySlug },
+      category: { id: category.id },
       user,
     });
     return await this.productsRepository.save(product);
