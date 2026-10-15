@@ -12,7 +12,6 @@ import { loginTDO } from './dto/login.dto';
 import { payloadTypes } from '../utils/payload';
 import { updateTDO } from './dto/update.dto';
 import { AuthService } from './auth.service';
-import { forgotPasswordDTO } from './dto/forgot-password.dto';
 import { resetPasswordDTO } from './dto/reset-password.dto';
 import { CloudinaryService } from '../cloudinary/cloudinary.service';
 

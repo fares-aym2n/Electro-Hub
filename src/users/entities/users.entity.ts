@@ -4,6 +4,7 @@ import {
   CreateDateColumn,
   Entity,
   OneToMany,
+  OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -12,6 +13,7 @@ import { UserTypes } from '../../utils/user-types';
 import { Product } from '../../products/entities/products.entity';
 import { Exclude } from 'class-transformer';
 import { Review } from '../../reviews/entities/reviews.entity';
+import { Whitelist } from '../../whitelist/entities/whitelist.entity';
 
 @Entity({ name: 'users' })
 export class User {
@@ -63,4 +65,7 @@ export class User {
   products: Product[];
   @OneToMany(() => Review, (review) => review.user)
   reviews: Review[];
+
+  @OneToOne(() => Whitelist, (whitelist) => whitelist.user)
+  whitelist: Whitelist;
 }

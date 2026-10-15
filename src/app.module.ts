@@ -19,6 +19,7 @@ import {
 import { dataSourceOptions } from '../db/data-source';
 import { AppController } from './app.controller';
 import { CategoriesModule as CategoryModule } from './categories/categories.module';
+import { WhitelistModule } from './whitelist/whitelist.module';
 
 @Module({
   controllers: [AppController],
@@ -48,6 +49,7 @@ import { CategoriesModule as CategoryModule } from './categories/categories.modu
     }),
 
     CategoryModule,
+    WhitelistModule,
   ],
   providers: [
     {

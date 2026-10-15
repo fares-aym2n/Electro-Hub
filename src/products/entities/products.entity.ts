@@ -2,6 +2,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToMany,
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
@@ -12,6 +13,7 @@ import { TIMESTAMP } from '../../utils/constrants';
 import { User } from '../../users/entities/users.entity';
 import { Category } from '../../categories/entities/category.entity';
 import { Review } from '../../reviews/entities/reviews.entity';
+import { Whitelist } from '../../whitelist/entities/whitelist.entity';
 
 @Entity({ name: 'products' })
 export class Product {
@@ -85,4 +87,10 @@ export class Product {
     onDelete: 'RESTRICT',
   })
   category: Category;
+
+  @ManyToMany(
+    () => Whitelist,
+    (whitelists) => whitelists.products,
+  )
+  whitelists: Whitelist[];
 }
