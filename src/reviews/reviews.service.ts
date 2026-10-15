@@ -47,16 +47,23 @@ export class ReviewService {
    * @param id id of the reveiw
    * @returns review
    */
+
   public async getOne(id: number): Promise<Review> {
     const review = await this.reviewRepository.findOne({
       where: { id },
-      relations: { user: true },
+      relations: {
+        user: true,
+        product: true,
+      },
     });
+
     if (!review) {
       throw new NotFoundException('Review is not found');
     }
+
     return review;
   }
+
   /**
    *
    * @param dto data for create review
