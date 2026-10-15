@@ -97,12 +97,12 @@ export class ProductController {
   @ApiSecurity('bearer')
   public createProduct(
     @Body() dto: createProductDTO,
-    @Param() categoryId: number,
+    @Param() categoryName: string,
     @CurrentUser() payload: payloadTypes,
   ) {
     return this.productService.createOne(
       dto,
-      categoryId,
+      categoryName,
       payload.id,
     );
   }
