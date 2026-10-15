@@ -14,6 +14,7 @@ import { Product } from '../../products/entities/products.entity';
 import { Exclude } from 'class-transformer';
 import { Review } from '../../reviews/entities/reviews.entity';
 import { Whitelist } from '../../whitelist/entities/whitelist.entity';
+import { Cart } from '../../cart/entities/cart.entity';
 
 @Entity({ name: 'users' })
 export class User {
@@ -68,4 +69,7 @@ export class User {
 
   @OneToOne(() => Whitelist, (whitelist) => whitelist.user)
   whitelist: Whitelist;
+
+  @OneToOne(() => Cart, (cart) => cart.user)
+  cart: Cart;
 }

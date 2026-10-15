@@ -20,6 +20,7 @@ import { dataSourceOptions } from '../db/data-source';
 import { AppController } from './app.controller';
 import { CategoriesModule as CategoryModule } from './categories/categories.module';
 import { WhitelistModule } from './whitelist/whitelist.module';
+import { CartModule } from './cart/cart.module';
 
 @Module({
   controllers: [AppController],
@@ -30,6 +31,8 @@ import { WhitelistModule } from './whitelist/whitelist.module';
     CategoryModule,
     UploadsModule,
     MailModule,
+    WhitelistModule,
+    CartModule,
     TypeOrmModule.forRoot(dataSourceOptions),
     ThrottlerModule.forRoot({
       throttlers: [
@@ -47,9 +50,6 @@ import { WhitelistModule } from './whitelist/whitelist.module';
           ? `.env.${process.env.NODE_ENV}`
           : '.env',
     }),
-
-    CategoryModule,
-    WhitelistModule,
   ],
   providers: [
     {
