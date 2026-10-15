@@ -25,7 +25,6 @@ import {
   ApiQuery,
   ApiSecurity,
 } from '@nestjs/swagger';
-import { QueryResult } from 'typeorm';
 
 @Controller('/api/reviews')
 export class ReviewController {

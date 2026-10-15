@@ -53,8 +53,8 @@ async function bootstrap() {
       'RESTful API for an electronics e-commerce platform',
     )
     .setVersion('1.0')
-    .addServer('http://localhost:3000')
     .addServer(`${process.env.BASE_URL}`)
+    .addServer('http://localhost:3000')
 
     .addBearerAuth()
     .build();
