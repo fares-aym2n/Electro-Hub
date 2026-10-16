@@ -65,12 +65,26 @@ export class UserController {
     if ('token' in result) {
       res.cookie('token', result.token, {
         httpOnly: true,
-        secure: false,
-        sameSite: 'lax',
-        maxAge: 24 * 60 * 60 * 1000,
+        secure: true,
+        sameSite: 'none',
+        path: '/',
+        maxAge: 90*24 * 60 * 60 * 1000,
       });
     }
     return result;
+  }
+
+  // POST: ~/api/users/auth/logout
+  @HttpCode(200)
+  @Post('/auth/logout')
+  public logout(@Res({ passthrough: true }) res: Response) {
+    res.clearCookie('token', {
+      httpOnly: true,
+      secure: false,
+      sameSite: 'lax',
+      path: '/',
+    });
+    return { message: 'Logged out successfully' };
   }
 
   // GET: ~/api/users/auth/verify-email/:userId/:verificationToken
