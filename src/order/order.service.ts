@@ -263,7 +263,7 @@ export class OrderService {
   }
 
   public async getMyOrders(userId: number) {
-    return this.orderRepository.find({
+    const orders = await this.orderRepository.find({
       where: {
         user: { id: userId },
       },
@@ -276,5 +276,9 @@ export class OrderService {
         createdAt: 'DESC',
       },
     });
+    return {
+      result: orders.length,
+      orders,
+    };
   }
 }
