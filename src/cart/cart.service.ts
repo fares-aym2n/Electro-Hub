@@ -41,6 +41,7 @@ export class CartService {
         cartItems: { product: true },
       },
     });
+    const numberOfItem = cart?.cartItems.length;
 
     if (!cart) {
       throw new NotFoundException('Cart is not found');
@@ -55,6 +56,7 @@ export class CartService {
     }, 0);
 
     return {
+      numberOfItem
       ...cart,
       totalPrice,
     };
