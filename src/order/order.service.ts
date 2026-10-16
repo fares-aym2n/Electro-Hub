@@ -176,12 +176,6 @@ export class OrderService {
   public async confirmStripePayment(
     session: import('stripe').Checkout.Session,
   ) {
-    console.log('Confirming Stripe payment:', {
-      sessionId: session.id,
-      orderId: session.metadata?.orderId,
-      paymentStatus: session.payment_status,
-    });
-
     if (!session.id || !session.metadata?.orderId) {
       throw new BadRequestException(
         'Missing order information in Stripe session',
@@ -200,37 +194,50 @@ export class OrderService {
       throw new BadRequestException('Invalid order ID');
     }
 
-    const order = await this.orderRepository.findOne({
-      where: { id: orderId },
-    });
+    await this.dataSource.transaction(async (manager) => {
+      const order = await manager.findOne(Order, {
+        where: { id: orderId },
+        relations: { user: true },
+      });
 
-    if (!order) {
-      throw new BadRequestException('Order not found');
-    }
+      if (!order) {
+        throw new NotFoundException('Order not found');
+      }
 
-    if (order.stripeSessionId !== session.id) {
-      throw new BadRequestException(
-        'Stripe session does not match this order',
-      );
-    }
+      if (order.stripeSessionId !== session.id) {
+        throw new BadRequestException(
+          'Stripe session does not match this order',
+        );
+      }
 
-    if (order.paymentStatus === PaymentStatus.PAID) {
-      return { received: true };
-    }
+      // Idempotency: repeated webhook events must be safe.
+      if (order.paymentStatus === PaymentStatus.PAID) {
+        return;
+      }
 
-    await this.orderRepository.update(order.id, {
-      paymentStatus: PaymentStatus.PAID,
-      status: OrderStatus.CONFIRMED,
-    });
+      order.paymentStatus = PaymentStatus.PAID;
+      order.status = OrderStatus.CONFIRMED;
 
-    const updatedOrder = await this.orderRepository.findOne({
-      where: { id: order.id },
-    });
+      await manager.save(Order, order);
 
-    console.log('Order updated:', {
-      orderId: updatedOrder?.id,
-      status: updatedOrder?.status,
-      paymentStatus: updatedOrder?.paymentStatus,
+      // Clear the purchased user's cart only after payment confirmation.
+      const userId = order.user?.id;
+
+      if (!userId) {
+        throw new BadRequestException(
+          'Order has no associated user',
+        );
+      }
+
+      const cart = await manager.findOne(Cart, {
+        where: { user: { id: userId } },
+      });
+
+      if (cart) {
+        await manager.delete('CartItem', {
+          cart: { id: cart.id },
+        });
+      }
     });
 
     return { received: true };
