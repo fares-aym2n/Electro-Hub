@@ -6,13 +6,16 @@ import {
 import { CreateOrderDto } from './dto/create-order.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Cart } from '../cart/entities/cart.entity';
+import { CartItem } from '../cart/entities/cart_item.entity';
 import { DataSource, Repository } from 'typeorm';
 import { Order } from './entities/order.entity';
 import { OrderItem } from './entities/order_item.entity';
+import { Product } from '../products/entities/products.entity';
 import { OrderStatus } from '../utils/order-status';
 import { StripeService } from '../stripe/stripe.service';
 import { PaymentStatus } from '../utils/payment-status';
 import { paymentMethod } from '../utils/payment-method';
+import Stripe from 'stripe';
 
 @Injectable()
 export class OrderService {
@@ -24,7 +27,7 @@ export class OrderService {
   ) {}
 
   public async createOrder(userId: number, dto: CreateOrderDto) {
-    // Phase 1: Create the order and its items atomically
+    // Phase 1: Create the order and its items atomically.
     const orderData = await this.dataSource.transaction(
       async (manager) => {
         const cart = await manager.findOne(Cart, {
@@ -120,7 +123,7 @@ export class OrderService {
       },
     );
 
-    // Phase 2: Handle payment according to the selected method
+    // Phase 2: Handle payment according to the selected method.
 
     if (orderData.paymentMethod === paymentMethod.CASH) {
       return {
@@ -174,7 +177,7 @@ export class OrderService {
   }
 
   public async confirmStripePayment(
-    session: import('stripe').Checkout.Session,
+    session: Stripe.Checkout.Session,
   ) {
     if (!session.id || !session.metadata?.orderId) {
       throw new BadRequestException(
@@ -197,7 +200,15 @@ export class OrderService {
     await this.dataSource.transaction(async (manager) => {
       const order = await manager.findOne(Order, {
         where: { id: orderId },
-        relations: { user: true },
+        relations: {
+          user: true,
+          orderItems: {
+            product: true,
+          },
+        },
+        lock: {
+          mode: 'pessimistic_write',
+        },
       });
 
       if (!order) {
@@ -210,17 +221,77 @@ export class OrderService {
         );
       }
 
-      // Idempotency: repeated webhook events must be safe.
+      // Idempotency: do not process the same paid order twice.
       if (order.paymentStatus === PaymentStatus.PAID) {
         return;
       }
 
+      if (!order.orderItems?.length) {
+        throw new BadRequestException(
+          'Order has no items to process',
+        );
+      }
+
+      // Lock and validate every product before deducting stock.
+      const productsToUpdate: Product[] = [];
+
+      for (const item of order.orderItems) {
+        const productId = item.product?.id;
+
+        if (!productId) {
+          throw new BadRequestException(
+            `Product information is missing for ${item.productName}`,
+          );
+        }
+
+        const product = await manager.findOne(Product, {
+          where: { id: productId },
+          lock: {
+            mode: 'pessimistic_write',
+          },
+        });
+
+        if (!product || !product.isActive) {
+          throw new BadRequestException(
+            `Product ${item.productName} is unavailable`,
+          );
+        }
+
+        if (
+          item.quantity <= 0 ||
+          product.stockQuantity < item.quantity
+        ) {
+          throw new BadRequestException(
+            `Insufficient stock for ${product.name}`,
+          );
+        }
+
+        productsToUpdate.push(product);
+      }
+
+      // Deduct stock only after all products pass validation.
+      for (const item of order.orderItems) {
+        const product = productsToUpdate.find(
+          (candidate) => candidate.id === item.product?.id,
+        );
+
+        if (!product) {
+          throw new BadRequestException(
+            `Product ${item.productName} could not be loaded`,
+          );
+        }
+
+        product.stockQuantity -= item.quantity;
+        await manager.save(Product, product);
+      }
+
+      // Confirm payment and order.
       order.paymentStatus = PaymentStatus.PAID;
       order.status = OrderStatus.CONFIRMED;
 
       await manager.save(Order, order);
 
-      // Clear the purchased user's cart only after payment confirmation.
+      // Clear the user's cart after successful payment processing.
       const userId = order.user?.id;
 
       if (!userId) {
@@ -234,7 +305,7 @@ export class OrderService {
       });
 
       if (cart) {
-        await manager.delete('CartItem', {
+        await manager.delete(CartItem, {
           cart: { id: cart.id },
         });
       }
@@ -245,9 +316,7 @@ export class OrderService {
 
   public async getOrderById(orderId: number) {
     const order = await this.orderRepository.findOne({
-      where: {
-        id: orderId,
-      },
+      where: { id: orderId },
       relations: {
         orderItems: {
           product: true,
@@ -276,6 +345,7 @@ export class OrderService {
         createdAt: 'DESC',
       },
     });
+
     return {
       result: orders.length,
       orders,
