@@ -21,6 +21,9 @@ import { AppController } from './app.controller';
 import { CategoriesModule as CategoryModule } from './categories/categories.module';
 import { WhitelistModule } from './whitelist/whitelist.module';
 import { CartModule } from './cart/cart.module';
+import { OrderModule } from './order/order.module';
+import { StripeModule } from './stripe/stripe.module';
+import { StripeWebhookModule } from './stripe/stripe-webhook.module';
 
 @Module({
   controllers: [AppController],
@@ -50,6 +53,10 @@ import { CartModule } from './cart/cart.module';
           ? `.env.${process.env.NODE_ENV}`
           : '.env',
     }),
+
+    OrderModule,
+    StripeWebhookModule,
+    StripeModule,
   ],
   providers: [
     {

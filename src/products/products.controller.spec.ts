@@ -8,7 +8,6 @@ import { createProductDTO } from './dto/create-product.dto';
 import { payloadTypes } from '../utils/payload';
 import { UserTypes } from '../utils/user-types';
 import { NotFoundException } from '@nestjs/common';
-import { updateProductTDO } from './dto/update-product.dto';
 
 type productsTypes = {
   id: number;
@@ -116,7 +115,7 @@ describe('Product Controller', () => {
               }),
 
               updateOneBy: jest.fn(
-                (id: number, dto: updateProductTDO) =>
+                (id: number, dto: Partial<createProductDTO>) =>
                   Promise.resolve({ ...dto, id }),
               ),
               deleteOneBy: jest.fn((id: number) => true),
@@ -144,6 +143,7 @@ describe('Product Controller', () => {
       await productController.createProduct(
         createProduct,
         currentUser,
+        undefined as any,
       );
       expect(productService.createOne).toHaveBeenCalled();
       expect(productService.createOne).toHaveBeenCalledTimes(1);
@@ -157,6 +157,7 @@ describe('Product Controller', () => {
       const product = await productController.createProduct(
         createProduct,
         currentUser,
+        undefined as any,
       );
       expect(product).toMatchObject(createProduct);
       expect(product.id).toBe(1);

@@ -36,6 +36,7 @@ describe('Product Service', () => {
     name: 'book',
     description: 'I love it',
     price: 1000,
+    image: ''
   };
   let products: productsTypes[];
   const REPOSITORY_TOKEN = getRepositoryToken(Product);
@@ -136,12 +137,12 @@ describe('Product Service', () => {
   // Create Product
   describe('Create Product', () => {
     test("should call 'create' method in productsRepository", async () => {
-      await productService.createOne(createDto, 1);
+      await productService.createOne(createDto, 1, createDto.image);
       expect(productsRepository.create).toHaveBeenCalled();
       expect(productsRepository.create).toHaveBeenCalledTimes(1);
     });
     test("should call 'save' method in productsRepository", async () => {
-      await productService.createOne(createDto, 1);
+      await productService.createOne(createDto, 1, createDto.image);
       expect(productsRepository.save).toHaveBeenCalled();
       expect(productsRepository.save).toHaveBeenCalledTimes(1);
     });
@@ -149,6 +150,7 @@ describe('Product Service', () => {
       const result = await productService.createOne(
         createDto,
         1,
+        createDto.image,
       );
       expect(result).toBeDefined();
       expect(result.name).toBe('book');

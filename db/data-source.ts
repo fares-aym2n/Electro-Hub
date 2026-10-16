@@ -7,6 +7,8 @@ import { Review } from '../src/reviews/entities/reviews.entity';
 import { Whitelist } from '../src/whitelist/entities/whitelist.entity';
 import { Cart } from '../src/cart/entities/cart.entity';
 import { CartItem } from '../src/cart/entities/cart_item.entity';
+import { Order } from '../src/order/entities/order.entity';
+import { OrderItem } from '../src/order/entities/order_item.entity';
 config({ path: '.env' });
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
@@ -19,6 +21,8 @@ export const dataSourceOptions: DataSourceOptions = {
     Whitelist,
     Cart,
     CartItem,
+    Order,
+    OrderItem,
   ],
   migrations: ['dist/db/migrations'],
 };
