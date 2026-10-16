@@ -56,7 +56,7 @@ export class CartService {
     }, 0);
 
     return {
-      numberOfItem
+      numberOfItem,
       ...cart,
       totalPrice,
     };
