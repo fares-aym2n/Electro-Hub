@@ -40,12 +40,24 @@ async function bootstrap() {
     }),
   );
 
+  
   app.enableCors({
     origin: [
       'http://localhost:3001',
       'https://electro-hub-website.vercel.app',
     ],
+    credentials: true,
+    methods: [
+      'GET',
+      'POST',
+      'PUT',
+      'PATCH',
+      'DELETE',
+      'OPTIONS',
+    ],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   });
+
 
   const swagger = new DocumentBuilder()
     .setTitle('ElectroHub API')
