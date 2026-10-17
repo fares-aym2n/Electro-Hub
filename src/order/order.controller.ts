@@ -16,7 +16,7 @@ import { Roles } from '../users/decorators/user-roles.decorator';
 import { UserTypes } from '../utils/user-types';
 import { ApiOperation, ApiSecurity } from '@nestjs/swagger';
 
-@Controller(['/api/order', '/api/orders'])
+@Controller('/api/orders')
 export class OrderController {
   constructor(private readonly orderService: OrderService) {}
 
