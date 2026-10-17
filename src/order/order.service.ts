@@ -1,7 +1,7 @@
 import {
-  BadRequestException,
-  Injectable,
-  NotFoundException,
+  BadRequestException,
+  Injectable,
+  NotFoundException,
 } from '@nestjs/common';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -9,11 +9,11 @@ import { Cart } from '../cart/entities/cart.entity';
 import { DataSource, Repository } from 'typeorm';
 import { Order } from './entities/order.entity';
 import { OrderItem } from './entities/order_item.entity';
+import { Product } from '../products/entities/products.entity';
 import { OrderStatus } from '../utils/order-status';
 import { StripeService } from '../stripe/stripe.service';
 import { PaymentStatus } from '../utils/payment-status';
 import { paymentMethod } from '../utils/payment-method';
-import { Product } from '../products/entities/products.entity';
 
 @Injectable()
 export class OrderService {
@@ -25,7 +25,7 @@ export class OrderService {
   ) {}
 
   public async createOrder(userId: number, dto: CreateOrderDto) {
-    // Phase 1: Create the order and its items atomically
+    // Phase 1: Create the order and its items atomically.
     const orderData = await this.dataSource.transaction(
       async (manager) => {
         const cart = await manager.findOne(Cart, {
@@ -119,8 +119,9 @@ export class OrderService {
           })),
         };
       },
-    ); // Phase 2: Handle payment according to the selected method
+    );
 
+    // Phase 2: Handle payment according to the selected method.
     if (orderData.paymentMethod === paymentMethod.CASH) {
       return {
         orderId: orderData.orderId,
@@ -194,18 +195,9 @@ export class OrderService {
     }
 
     await this.dataSource.transaction(async (manager) => {
-      // Lock the order row to prevent concurrent webhook processing.
       const order = await manager.findOne(Order, {
         where: { id: orderId },
-        relations: {
-          user: true,
-          orderItems: {
-            product: true,
-          },
-        },
-        lock: {
-          mode: 'pessimistic_write',
-        },
+        relations: { user: true },
       });
 
       if (!order) {
@@ -218,41 +210,34 @@ export class OrderService {
         );
       }
 
-      // Idempotency: never deduct stock twice for an already-paid order.
+      // Idempotency: repeated webhook events must be safe.
       if (order.paymentStatus === PaymentStatus.PAID) {
         return;
       }
 
-      if (!order.orderItems?.length) {
+      // Load order items explicitly before updating stock.
+      const orderItems = await manager.find(OrderItem, {
+        where: { order: { id: orderId } },
+        relations: { product: true },
+      });
+
+      if (orderItems.length === 0) {
         throw new BadRequestException(
           'Order has no items to process',
         );
       }
 
-      // Lock and validate all products before changing any stock.
-      const productsToUpdate = [];
-
-      for (const item of order.orderItems) {
-        const productId = item.product?.id;
-
-        if (!productId) {
+      // Deduct stock for each purchased product.
+      for (const item of orderItems) {
+        if (!item.product) {
           throw new BadRequestException(
-            `Product information is missing for ${item.productName}`,
+            `Product missing for order item ${item.id}`,
           );
         }
 
-        const product = await manager.findOne(Product, {
-          where: { id: productId },
-          lock: {
-            mode: 'pessimistic_write',
-          },
+        const product = await manager.findOneByOrFail(Product, {
+          id: item.product.id,
         });
-
-        if (!product) {
-          throw new NotFoundException(
-            `Product not found: ${item.productName}`,
-          );
-        }
 
         if (
           item.quantity <= 0 ||
@@ -263,25 +248,16 @@ export class OrderService {
           );
         }
 
-        productsToUpdate.push({
-          product,
-          quantity: item.quantity,
-        });
+        product.stockQuantity -= item.quantity;
+        await manager.save(Product, product);
       }
 
-      // Deduct stock only after every product passes validation.
-      for (const entry of productsToUpdate) {
-        entry.product.stockQuantity -= entry.quantity;
-        await manager.save(entry.product);
-      }
-
-      // Mark the order paid only after stock updates succeed.
       order.paymentStatus = PaymentStatus.PAID;
       order.status = OrderStatus.CONFIRMED;
 
       await manager.save(Order, order);
 
-      // Preserve the existing cart-clearing behavior.
+      // Clear the purchased user's cart only after payment confirmation.
       const userId = order.user?.id;
 
       if (!userId) {
@@ -337,6 +313,7 @@ export class OrderService {
         createdAt: 'DESC',
       },
     });
+
     return {
       result: orders.length,
       orders,
