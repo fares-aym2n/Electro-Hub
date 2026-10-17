@@ -22,7 +22,7 @@ export class Review {
   @Column({ type: 'varchar', length: 500 })
   review: string;
 
-  @Column({ type: 'int' })
+  @Column({ type: 'numeric' })
   rating: number;
 
   @CreateDateColumn({
