@@ -16,13 +16,13 @@ import { Roles } from '../users/decorators/user-roles.decorator';
 import { UserTypes } from '../utils/user-types';
 import { ApiOperation, ApiSecurity } from '@nestjs/swagger';
 
-@Controller('/api/order')
+@Controller(['/api/order', '/api/orders'])
 export class OrderController {
   constructor(private readonly orderService: OrderService) {}
 
   @Post('/checkout')
   @UseGuards(AuthRolesGuard)
-  @Roles(UserTypes.USER)
+  @Roles(UserTypes.USER, UserTypes.ADMIN)
   @ApiSecurity('bearer')
   createOrder(
     @CurrentUser() payload: payloadTypes,
@@ -33,7 +33,7 @@ export class OrderController {
 
   @Get('my-orders')
   @UseGuards(AuthRolesGuard)
-  @Roles(UserTypes.USER)
+  @Roles(UserTypes.USER, UserTypes.ADMIN)
   @ApiSecurity('bearer')
   getMyOrders(@CurrentUser() payload: payloadTypes) {
     return this.orderService.getMyOrders(payload.id);
