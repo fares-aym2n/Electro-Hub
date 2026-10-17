@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ReviewService } from './reviews.service';
-import { Review } from './reviews.entity';
+import { Review } from './entities/reviews.entity';
 import { UserService } from '../users/users.service';
 import { ProductService } from '../products/products.service';
 import { NotFoundException, ForbiddenException } from '@nestjs/common';
@@ -57,6 +57,8 @@ describe('ReviewService', () => {
 
   const mockProductService = {
     getOneBy: jest.fn(),
+    getProductRating: jest.fn().mockResolvedValue({ averageRating: 4.5, ratingsCount: 1 }),
+    updateRating: jest.fn().mockResolvedValue(undefined),
   };
 
   beforeEach(async () => {
@@ -92,6 +94,7 @@ describe('ReviewService', () => {
       const result = await reviewService.getAll();
 
       expect(mockReviewRepository.find).toHaveBeenCalledWith({
+        where: {},
         order: { createdAt: 'DESC' },
       });
       expect(result).toEqual({
@@ -120,7 +123,7 @@ describe('ReviewService', () => {
 
       expect(mockReviewRepository.findOne).toHaveBeenCalledWith({
         where: { id: 1 },
-        relations: { user: true },
+        relations: { user: true, product: true },
       });
       expect(result).toEqual(mockReview);
     });
@@ -133,7 +136,7 @@ describe('ReviewService', () => {
       );
       expect(mockReviewRepository.findOne).toHaveBeenCalledWith({
         where: { id: 999 },
-        relations: { user: true },
+        relations: { user: true, product: true },
       });
     });
   });
@@ -171,14 +174,7 @@ describe('ReviewService', () => {
       expect(mockReviewRepository.save).toHaveBeenCalledWith(
         createdReviewEntity,
       );
-      expect(result).toEqual({
-        review: dto.review,
-        rating: dto.rating,
-        userId: mockUser.id,
-        productId: mockProduct.id,
-        createdAt: createdReviewEntity.createdAt,
-        updatedAt: createdReviewEntity.updatedAt,
-      });
+      expect(result).toEqual(createdReviewEntity);
     });
 
     it('should propagate NotFoundException if user is not found', async () => {
@@ -321,7 +317,7 @@ describe('ReviewService', () => {
       const result = await reviewService.delete(1, payload);
 
       expect(mockReviewRepository.remove).toHaveBeenCalledWith(existingReview);
-      expect(result).toBe('Review deleted successfuly');
+      expect(result).toBe(0);
     });
 
     it('should allow an admin to delete any user review', async () => {
@@ -342,7 +338,7 @@ describe('ReviewService', () => {
       const result = await reviewService.delete(1, adminPayload);
 
       expect(mockReviewRepository.remove).toHaveBeenCalledWith(existingReview);
-      expect(result).toBe('Review deleted successfuly');
+      expect(result).toBe(0);
     });
 
     it('should throw ForbiddenException if user is not the owner and not an admin', async () => {

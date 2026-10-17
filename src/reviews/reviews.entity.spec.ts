@@ -1,5 +1,5 @@
 import { getMetadataArgsStorage } from 'typeorm';
-import { Review } from './reviews.entity';
+import { Review } from './entities/reviews.entity';
 import { TIMESTAMP } from '../utils/constrants';
 
 describe('Review Entity', () => {

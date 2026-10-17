@@ -122,10 +122,14 @@ export class ReviewService {
       );
     }
     review.review = dto.review ?? review.review;
-    review.rating = dto.rating ?? review.rating;
+    if (dto.rating !== undefined) {
+      review.rating = Number(dto.rating);
+    }
     const updatedReview =
       await this.reviewRepository.save(review);
-    await this.refreshProductRating(review.product.id);
+    if (review.product?.id) {
+      await this.refreshProductRating(review.product.id);
+    }
     return updatedReview;
   }
   /**
@@ -140,10 +144,12 @@ export class ReviewService {
       review.user.id === payload.id ||
       payload.role == UserTypes.ADMIN
     ) {
-      const productId = review.product.id;
+      const productId = review.product?.id;
 
       await this.reviewRepository.remove(review);
-      await this.refreshProductRating(productId);
+      if (productId) {
+        await this.refreshProductRating(productId);
+      }
       return 0;
     }
     throw new ForbiddenException(

@@ -129,9 +129,13 @@ export class ProductService {
       .where('review.productId = :productId', { productId })
       .getRawOne();
 
+    const rawAvg = Number(result?.averageRating) || 0;
+    const averageRating = Math.round(rawAvg * 10) / 10;
+    const ratingsCount = Number(result?.ratingsCount) || 0;
+
     return {
-      averageRating: Number(result.averageRating) || 0,
-      ratingsCount: Number(result.ratingsCount) || 0,
+      averageRating,
+      ratingsCount,
     };
   }
   public async updateRating(

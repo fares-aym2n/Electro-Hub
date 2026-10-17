@@ -22,7 +22,14 @@ export class Review {
   @Column({ type: 'varchar', length: 500 })
   review: string;
 
-  @Column({ type: 'numeric' })
+  @Column({
+    type: 'numeric',
+    transformer: {
+      to: (value: number) => value,
+      from: (value: string | number) =>
+        value !== null && value !== undefined ? Number(value) : value,
+    },
+  })
   rating: number;
 
   @CreateDateColumn({
