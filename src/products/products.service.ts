@@ -40,17 +40,6 @@ export class ProductService {
     const limitResult = limit
       ? Math.min(Math.max(1, Number(limit)), 50)
       : 10;
-    console.log({
-      environment: process.env.NODE_ENV,
-      name,
-      filter: filterObj(
-        name,
-        minPrice,
-        maxPrice,
-        category,
-        discount,
-      ),
-    });
     const products = await this.productsRepository.find({
       where: filterObj(
         name,
