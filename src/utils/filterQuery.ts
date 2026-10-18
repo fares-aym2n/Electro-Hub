@@ -1,5 +1,5 @@
 import {
-  Like,
+  ILike,
   Between,
   MoreThanOrEqual,
   LessThanOrEqual,
@@ -13,8 +13,13 @@ export const filterObj = (
   category?: string,
   discount?: string,
 ) => {
+  const cleanName = name ? name.trim() : '';
+  const searchPattern = cleanName
+    ? `%${cleanName.toLowerCase().replace(/\s+/g, '%')}%`
+    : '';
+
   return {
-    ...(name ? { name: Like(`%${name.toLowerCase()}%`) } : {}),
+    ...(cleanName ? { name: ILike(searchPattern) } : {}),
     ...(minPrice && maxPrice
       ? {
           price: Between(parseInt(minPrice), parseInt(maxPrice)),

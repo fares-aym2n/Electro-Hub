@@ -66,6 +66,12 @@ export class ProductController {
     description: 'Specify the page number to retrieve',
     required: true,
   })
+  @ApiQuery({
+    name: 'limit',
+    type: 'number',
+    description: 'Specify the number of products to retrieve',
+    required: false,
+  })
   public getAllProducts(
     @Query('page', ParseIntPipe) page: number,
     @Query('name') name?: string,
@@ -73,6 +79,7 @@ export class ProductController {
     @Query('maxPrice') maxPrice?: string,
     @Query('category') category?: string,
     @Query('discount') discount?: string,
+    @Query('limit') limit?: string,
   ) {
     return this.productService.getAll(
       page,
@@ -81,6 +88,7 @@ export class ProductController {
       maxPrice,
       category,
       discount,
+      limit,
     );
   }
 

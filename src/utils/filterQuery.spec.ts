@@ -2,7 +2,7 @@ import { filterObj } from './filterQuery';
 import {
   Between,
   LessThanOrEqual,
-  Like,
+  ILike,
   MoreThanOrEqual,
 } from 'typeorm';
 
@@ -15,7 +15,14 @@ describe('filterObj', () => {
   it('should return name filter with lowercase like query when only name is provided', () => {
     const result = filterObj('PHONE');
     expect(result).toEqual({
-      name: Like('%phone%'),
+      name: ILike('%phone%'),
+    });
+  });
+
+  it('should handle leading and trailing spaces and multi-word queries', () => {
+    const result = filterObj('   iPhone   Pro   ');
+    expect(result).toEqual({
+      name: ILike('%iphone%pro%'),
     });
   });
 
@@ -43,7 +50,7 @@ describe('filterObj', () => {
   it('should combine name and price Between filter when all parameters are provided', () => {
     const result = filterObj('Book', '15', '45');
     expect(result).toEqual({
-      name: Like('%book%'),
+      name: ILike('%book%'),
       price: Between(15, 45),
     });
   });
@@ -51,7 +58,7 @@ describe('filterObj', () => {
   it('should combine name and minPrice when maxPrice is not provided', () => {
     const result = filterObj('Chair', '80', undefined);
     expect(result).toEqual({
-      name: Like('%chair%'),
+      name: ILike('%chair%'),
       price: MoreThanOrEqual(80),
     });
   });
@@ -59,7 +66,7 @@ describe('filterObj', () => {
   it('should combine name and maxPrice when minPrice is not provided', () => {
     const result = filterObj('Table', undefined, '300');
     expect(result).toEqual({
-      name: Like('%table%'),
+      name: ILike('%table%'),
       price: LessThanOrEqual(300),
     });
   });

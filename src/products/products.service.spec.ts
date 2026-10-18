@@ -5,6 +5,8 @@ import { Product } from './entities/products.entity';
 import { ProductService } from './products.service';
 import { createProductDTO } from './dto/create-product.dto';
 import { Repository } from 'typeorm';
+import { Review } from '../reviews/entities/reviews.entity';
+import { Category } from '../categories/entities/category.entity';
 
 type optionsTypes = {
   where: {
@@ -117,6 +119,18 @@ describe('Product Service', () => {
                   );
                 }
               }),
+            },
+          },
+          {
+            provide: getRepositoryToken(Review),
+            useValue: {
+              find: jest.fn().mockResolvedValue([]),
+            },
+          },
+          {
+            provide: getRepositoryToken(Category),
+            useValue: {
+              findOne: jest.fn().mockResolvedValue({ id: 1, name: 'Books', slug: 'books' }),
             },
           },
         ],

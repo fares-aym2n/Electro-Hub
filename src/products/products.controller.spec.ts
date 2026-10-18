@@ -76,7 +76,7 @@ describe('Product Controller', () => {
             provide: ProductService,
             useValue: {
               createOne: jest.fn(
-                (dto: createProductDTO, userId: number) =>
+                (dto: createProductDTO, categorySlug: string, userId: number) =>
                   Promise.resolve({ ...dto, id: userId }),
               ),
               getAll: jest.fn(
@@ -142,13 +142,14 @@ describe('Product Controller', () => {
     test("should calll 'createOne' method", async () => {
       await productController.createProduct(
         createProduct,
+        'electronics',
         currentUser,
-        undefined as any,
       );
       expect(productService.createOne).toHaveBeenCalled();
       expect(productService.createOne).toHaveBeenCalledTimes(1);
       expect(productService.createOne).toHaveBeenCalledWith(
         createProduct,
+        'electronics',
         currentUser.id,
       );
     });
@@ -156,8 +157,8 @@ describe('Product Controller', () => {
     test('should return new product with given data', async () => {
       const product = await productController.createProduct(
         createProduct,
+        'electronics',
         currentUser,
-        undefined as any,
       );
       expect(product).toMatchObject(createProduct);
       expect(product.id).toBe(1);

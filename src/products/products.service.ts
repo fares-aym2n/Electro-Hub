@@ -32,11 +32,25 @@ export class ProductService {
     maxPrice?: string,
     category?: string,
     discount?: string,
+    limit?: string | number,
   ): Promise<{
     results: number;
     products: Product[];
   }> {
-    const limitResult = 10;
+    const limitResult = limit
+      ? Math.min(Math.max(1, Number(limit)), 50)
+      : 10;
+    console.log({
+      environment: process.env.NODE_ENV,
+      name,
+      filter: filterObj(
+        name,
+        minPrice,
+        maxPrice,
+        category,
+        discount,
+      ),
+    });
     const products = await this.productsRepository.find({
       where: filterObj(
         name,
@@ -45,7 +59,8 @@ export class ProductService {
         category,
         discount,
       ),
-      skip: (page - 1) * limitResult,
+      relations: { category: true },
+      skip: ((page || 1) - 1) * limitResult,
       take: limitResult,
     });
     return { results: products.length, products };
@@ -119,6 +134,7 @@ export class ProductService {
   public async deleteOneBy(id: number) {
     const product = await this.getOneBy(id);
     await this.productsRepository.remove(product);
+    return { message: 'Product deleted successfuly' };
   }
 
   async getProductRating(productId: number) {
