@@ -169,9 +169,8 @@ export class UserService {
       if (oldImageUrl && oldImageUrl !== newImageUrl) {
         try {
           await this.cloudinaryService.deleteImage(oldImageUrl);
-        } catch {
-          // The new image is saved; a failed old-image deletion
-          // should not undo the successful update.
+        } catch (error) {
+          console.log(error);
         }
       }
 
