@@ -38,13 +38,6 @@ export class StripeWebhookController {
     if (event.type === 'checkout.session.completed') {
       const session = event.data
         .object as Stripe.Checkout.Session;
-
-      console.log('Stripe session:', {
-        id: session.id,
-        metadata: session.metadata,
-        paymentStatus: session.payment_status,
-      });
-
       if (session.payment_status === 'paid') {
         try {
           await this.orderService.confirmStripePayment(session);
